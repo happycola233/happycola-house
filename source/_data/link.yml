@@ -25,11 +25,15 @@
       tag: 技术
     - name: wuziqian211's Blog
       link: https://www.yumeharu.top/
-      avatar: https://www.yumeharu.top/images/face.png
+      avatar: https://www.yumeharu.top/images/icon.png
       descr: Not for the best, just for the better.
       siteshot: https://www.yumeharu.top/images/screenshot.png
       color: vip
       tag: 技术
+    - name: Pheqorの小破站
+      link: https://me.onlyra1n.top/
+      avatar: https://cravatar.cn/avatar/949b4b017cd9c5b03ec65cfc715c17ec?s=250
+      descr: Ciallo～(∠・ω< )⌒★！
 
 - class_name: 小伙伴
   class_desc: 那些人，那些事
