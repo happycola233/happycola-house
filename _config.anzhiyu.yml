@@ -153,7 +153,7 @@ avatar:
 disable_top_img: false
 
 # 首页home page的横幅图片
-index_img: "background: url(/img/index_img.png) top / cover no-repeat" # "background: url() top / cover no-repeat"
+index_img: "background: url(/img/index_img.jpg) top / cover no-repeat" # "background: url() top / cover no-repeat"
 
 # If the banner of page not setting, it will show the top_img
 default_top_img: /img/full-avatar.png
