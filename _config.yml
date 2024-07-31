@@ -51,7 +51,7 @@ highlight:
   line_number: false
   auto_detect: false
   tab_replace: '  '
-  wrap: false
+  wrap: true
   hljs: false
 prismjs:
   preprocess: true
@@ -121,6 +121,31 @@ nofollow:
   field: site
   exclude:
     - www.happycola.top
+
+markdown:
+  preset: 'commonmark'
+  render:
+    html: true
+    xhtmlOut: true
+    langPrefix: 'language-'
+    breaks: true
+    linkify: true
+    typographer: true
+    quotes: '“”‘’'
+  enable_rules:
+    - table
+    - strikethrough
+  disable_rules:
+  plugins:
+  anchors:
+    level: 2
+    collisionSuffix: ''
+    permalink: true
+    permalinkClass: 'headerlink'
+    permalinkSide: 'right'
+    permalinkSymbol: ''
+    case: 1
+    separator: '-'
 
 all_minifier: true
 js_concator:
