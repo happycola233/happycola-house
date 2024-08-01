@@ -81,14 +81,14 @@ author_status:
   # 可以是任何图片，建议放表情包或者emoji图片，效果都很好，[表情包速查](https://emotion.xiaokang.me/)
   statusImg: /img/dynamic-emote/tv_微笑.gif
   skills:
-    - 🤖️ 数码科技爱好者
-    # - 🔍 分享与热心帮助
-    # - 🏠 智能家居小能手
-    - 🔨 设计开发一条龙
-    # - 🤝 专修交互与设计
-    # - 🏃 脚踏实地行动派
-    # - 🧱 团队小组发动机
-    # - 💢 壮汉人狠话不多
+    - 📚 在读高中生
+    - 🎥 哔哩哔哩UP主
+    - 🖥️ 擅长Python编程
+    - 📱 数码科技爱好者
+    - 💡 喜爱探索新技术
+    - 📷 热爱摄影艺术
+    - 🏸 擅长打羽毛球
+    - 🎧 喜欢听音乐
 
 # search (搜索)
 # see https://blog.anheyu.com/posts/c27d.html#搜索系统
@@ -178,8 +178,9 @@ error_img:
 # A simple 404 page
 error_404:
   enable: true
-  subtitle: "请尝试站内搜索寻找文章"
-  background: https://bu.dusays.com/2023/05/08/645907596997d.gif
+  subtitle: "这里什么都没有哦qwq"
+  # background: https://bu.dusays.com/2023/05/08/645907596997d.gif
+  background: /img/404_background.png
 
 post_meta:
   page: # Home Page
@@ -822,10 +823,10 @@ footer:
   runtime:
     enable: true
     launch_time: 2024/07/07 13:25:47 # 网站上线时间
-    work_img: https://npm.elemecdn.com/anzhiyu-blog@2.0.4/img/badge/安知鱼-上班摸鱼中.svg
-    work_description: 距离月入25k也就还差一个大佬带我~
-    offduty_img: https://npm.elemecdn.com/anzhiyu-blog@2.0.4/img/badge/安知鱼-下班啦.svg
-    offduty_description: 下班了就该开开心心的玩耍，嘿嘿~
+    work_img: # https://npm.elemecdn.com/anzhiyu-blog@2.0.4/img/badge/安知鱼-上班摸鱼中.svg
+    work_description: # 距离月入25k也就还差一个大佬带我~
+    offduty_img: # https://npm.elemecdn.com/anzhiyu-blog@2.0.4/img/badge/安知鱼-下班啦.svg
+    offduty_description: # 下班了就该开开心心的玩耍，嘿嘿~
   # 徽标部分配置项 https://shields.io/
   # https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&logo=jsDelivr
   bdageitem:
@@ -866,9 +867,9 @@ footer:
         link: https://space.bilibili.com/324042405
         icon: anzhiyu-icon-bilibili
     right:
-      - title: RSS
-        link: atom.xml
-        icon: anzhiyu-icon-rss
+      - title: Twitter
+        link: https://x.com/happycola233
+        icon: fa-brands fa-twitter
       # - title: 抖音
       #   link: https://v.douyin.com/DwCpMEy/
       #   icon: anzhiyu-icon-tiktok
@@ -1283,7 +1284,7 @@ translate:
   # Right-click menu to simplified Chinese
   rightMenuMsgToSimplifiedChinese: "转为简体"
 
-# Read Mode (閲读模式)
+# Read Mode (阅读模式)
 readmode: true
 
 # 中控台
@@ -1501,7 +1502,7 @@ LA:
 diytitle:
   enable: true
   leaveTitle: w(ﾟДﾟ)w 不要走！再看看嘛！
-  backTitle: ♪(^∇^*)欢迎肥来！
+  backTitle: ♪(^∇^*)欢迎回来awa
 
 # 留言弹幕配置
 comment_barrage_config:
@@ -1542,12 +1543,12 @@ ptool:
 # 欢迎语配置
 greetingBox:
   enable: true #开启后必须配置下面的list对应的时间段，不然会出现小白条
-  default: 晚上好👋
+  default: 晚上好呀👋
   list:
-    - greeting: 晚安😴
+    - greeting: 晚安🌙
       startTime: 0
       endTime: 5
-    - greeting: 早上好鸭👋, 祝你一天好心情！
+    - greeting: 早上好呀ヾ(≧▽≦*)o, 祝你一天好心情！
       startTime: 6
       endTime: 9
     - greeting: 上午好👋, 状态很好，鼓励一下～
@@ -1556,16 +1557,16 @@ greetingBox:
     - greeting: 11点多啦, 在坚持一下就吃饭啦～
       startTime: 11
       endTime: 11
-    - greeting: 午安👋, 宝贝
+    - greeting: 中午累的话就睡一觉吧ヾ(•ω•`)o
       startTime: 12
       endTime: 14
     - greeting: 🌈充实的一天辛苦啦！
       startTime: 14
-      endTime: 18
-    - greeting: 19点喽, 奖励一顿丰盛的大餐吧🍔。
-      startTime: 19
+      endTime: 17
+    - greeting: 奖励一顿丰盛的大餐吧🍔。
+      startTime: 18
       endTime: 19
-    - greeting: 晚上好👋, 在属于自己的时间好好放松😌~
+    - greeting: 晚上好👋, 在属于自己的时间好好放松呀~
       startTime: 20
       endTime: 24
 
@@ -1608,7 +1609,7 @@ agreementPopup:
 
 # 右键菜单
 rightClickMenu:
-  enable: false
+  enable: true
 
 # 首页随便逛逛people模式 而非技能点模式，关闭后为技能点模式需要配置creativity.yml
 peoplecanvas:

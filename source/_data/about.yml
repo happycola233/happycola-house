@@ -3,17 +3,17 @@
   avatarImg: /img/avatar.png
   avatarSkills:
     left:
-      - 🤖️ 数码科技爱好者
-      - 🔍 分享与热心帮助
-      - 🏠 智能家居小能手
-      - 🔨 设计开发一条龙
+      - 📚 在读高中生
+      - 🎥 哔哩哔哩UP主
+      - 🖥️ 擅长Python编程
+      - 📱 数码科技爱好者
     right:
-      - 专修交互与设计 🤝
-      - 脚踏实地行动派 🏃
-      - 团队小组发动机 🧱
-      - 壮汉人狠话不多 💢
+      - 喜爱探索新技术 💡
+      - 热爱摄影艺术 📷
+      - 擅长打羽毛球 🏸
+      - 喜欢听音乐 🎧
   name: 肥宅水水呀
-  description: 是一名 前端工程师、学生、独立开发者、博主
+  description: 是一名 学生、B站up主、业余的程序员
   aboutsiteTips:
     tips: 追求
     title1: 源于
@@ -38,8 +38,8 @@
   map:
     title: 我现在住在
     StrengthenTitle: 中国，上海市
-    background: https://bu.dusays.com/2023/07/05/64a4c61cb20ef.jpg
-    backgroundDark: https://bu.dusays.com/2023/07/05/64a4c63495ac5.jpg
+    background: https://message.biliimg.com/bfs/im_new/ba58c19eee793f4ed599f5725abeb6e7324042405.png
+    backgroundDark: https://message.biliimg.com/bfs/im_new/4a27809bb2c6b687528f805e215c7584324042405.png
   selfInfo:
     selfInfoTips1: 生于
     selfInfoContentYear: 2007
@@ -50,17 +50,17 @@
   personalities:
     author_name: 可爱
     personality_type: ESFJ-T
-    photo_url: https://bu.dusays.com/2023/07/05/64a4c63495ac5.jpg
+    photo_url: https://i0.hdslb.com/bfs/garb/item/209cac9335f92e2aa928a0d480a3e203bb79c110.png
     personality_img: https://npm.elemecdn.com/anzhiyu-blog@2.0.8/img/svg/ESFJ-A.svg
     name_url: https://www.16personalities.com/ch/esfj-%E4%BA%BA%E6%A0%BC
   maxim:
     maxim_tips: 座右铭
-    maxim_top: 待定
-    maxim_bottom: 待定
+    maxim_top: 学而不思则罔
+    maxim_bottom: 思而不学则殆
   buff:
     buff_tips: 特长
-    buff_top: 待定
-    buff_bottom: 待定
+    buff_top: 编程
+    buff_bottom: 打羽毛球
   game:
     game_tips: 爱好游戏
     game_title: 待定
@@ -92,7 +92,7 @@
     like_bottom: 手机、电脑软件
   music:
     music_tips: 音乐偏好
-    music_title: 待定
-    music_bg: https://p2.music.126.net/Mrg1i7DwcwjWBvQPIMt_Mg==/79164837213438.jpg
+    music_title: 欧美流行、电音
+    music_bg: https://music-file.y.qq.com/songlist/u/ow-sNK4F7ecFoz/6a7e/4e8cba4a4eb42db1efd3b4bb5341c28213e430d7_722be.jpg?imageView2/4/w/600/h/600
     music_link: /music
   reward_list:
