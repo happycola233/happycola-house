@@ -38,13 +38,13 @@
   map:
     title: 我现在住在
     StrengthenTitle: 中国，上海市
-    background: /img/AboutMe/background.png
-    backgroundDark: /img/AboutMe/backgroundDark.png
+    background: /img/AboutMe/map_background.png
+    backgroundDark: /img/AboutMe/map_backgroundDark.png
   selfInfo:
     selfInfoTips1: 生于
     selfInfoContentYear: 2007
-    selfInfoTips2: 待定
-    selfInfoContent2: 待定
+    selfInfoTips2: 性别
+    selfInfoContent2: 保密
     selfInfoTips3: 现在职业
     selfInfoContent3: 高三学生👨‍🎓
   personalities:

@@ -1,0 +1,32 @@
+- class_name: 开启创造力
+  creativity_list:
+    - name: Adobe Photoshop
+      color: "#4082c3"
+      icon: https://skillicons.dev/icons?i=ps
+    - name: Adobe Audition
+      color: "#9998ff"
+      icon: https://skillicons.dev/icons?i=au
+    - name: Adobe Illustrator
+      color: "#ff9a00"
+      icon: https://skillicons.dev/icons?i=ai
+    - name: Python
+      color: "#fff"
+      icon: https://bu.dusays.com/2023/04/09/643293b1230f7.png
+    - name: HTML
+      color: "#e9572b"
+      icon: https://skillicons.dev/icons?i=html
+    - name: CSS
+      color: "#0277bd"
+      icon: https://skillicons.dev/icons?i=css
+    - name: JS
+      color: "#f7cb4f"
+      icon: https://bu.dusays.com/2023/04/09/643293b121f02.png
+    - name: Markdown
+      color: "#242938"
+      icon: https://skillicons.dev/icons?i=md
+    - name: Github
+      color: "#eff1f4"
+      icon: https://skillicons.dev/icons?i=github
+    - name: Alist
+      color: "#fff"
+      icon: https://alist.nn.ci/logo.svg
