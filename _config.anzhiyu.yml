@@ -156,7 +156,7 @@ disable_top_img: false
 index_img: "background: url(/img/index_img.jpg) top / cover no-repeat" # "background: url() top / cover no-repeat"
 
 # If the banner of page not setting, it will show the top_img
-default_top_img: /img/full-avatar.png
+# default_top_img:
 
 cover:
   # display the cover or not (是否显示文章封面)
@@ -168,7 +168,7 @@ cover:
   position: both
   # When cover is not set, the default cover is displayed (当没有设置cover时，默认的封面显示)
   default_cover:
-    - /img/default_cover.jpg
+    - /img/full-avatar.png
 
 # Replace Broken Images (替换无法显示的图片)
 error_img:
@@ -195,7 +195,7 @@ post_meta:
     categories: true # true or false 文章页是否显示分类
     tags: true # true or false 文章页是否显示标籤
     label: true # true or false 显示描述性文字
-    unread: false # true or false 文章未读功能
+    unread: true # true or false 文章未读功能
 
 # 主色调相关配置
 mainTone:
@@ -263,7 +263,7 @@ reward:
 # Post edit
 # Easily browse and edit blog source code online.
 post_edit: # 目前仅可选择一个平台在线编辑
-  enable: true
+  enable: false
   # github: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name/
   # For example: https://github.com/jerryc127/butterfly.js.org/edit/main/source/
   github: https://github.com/happycola233/happycola-house/tree/main/source/
@@ -1000,38 +1000,38 @@ site_verification:
 # Beautify/Effect (美化/效果)
 # --------------------------------------
 
-# Theme color for customize
-# Notice: color value must in double quotes like "#000" or may cause error!
+# 用于自定义的主题颜色
+# 注意：颜色值必须用双引号括起来，例如 "#000"，否则可能会导致错误！
 
 theme_color:
-  enable: true
-  main: "#425AEF"
-  dark_main: "#f2b94b"
-  paginator: "#425AEF"
-  #   button_hover: "#FF7242"
-  text_selection: "#2128bd"
-  link_color: "var(--anzhiyu-fontcolor)"
-  meta_color: "var(--anzhiyu-fontcolor)"
-  hr_color: "#4259ef23"
-  code_foreground: "#fff"
-  code_background: "var(--anzhiyu-code-stress)"
-  toc_color: "#425AEF"
-  #   blockquote_padding_color: "#425AEF"
-  #   blockquote_background_color: "#425AEF"
-  scrollbar_color: "var(--anzhiyu-scrollbar)"
-  meta_theme_color_light: "#f7f9fe"
-  meta_theme_color_dark: "#18171d"
+  enable: true  # 启用主题颜色
+  main: "#425AEF"  # 主要颜色
+  dark_main: "#f2b94b"  # 暗色主题的主要颜色
+  paginator: "#425AEF"  # 分页器颜色
+  #   button_hover: "#FF7242"  # 按钮悬停颜色
+  text_selection: "#2128bd"  # 文本选择颜色
+  link_color: "var(--anzhiyu-fontcolor)"  # 链接颜色
+  meta_color: "var(--anzhiyu-fontcolor)"  # 元信息颜色
+  hr_color: "#4259ef23"  # 水平线颜色
+  code_foreground: "#fff"  # 代码前景色
+  code_background: "var(--anzhiyu-code-stress)"  # 代码背景色
+  toc_color: "#425AEF"  # 目录颜色
+  #   blockquote_padding_color: "#425AEF"  # 块引用填充颜色
+  #   blockquote_background_color: "#425AEF"  # 块引用背景颜色
+  scrollbar_color: "var(--anzhiyu-scrollbar)"  # 滚动条颜色
+  meta_theme_color_light: "#f7f9fe"  # 明亮主题的元主题颜色
+  meta_theme_color_dark: "#18171d"  # 暗色主题的元主题颜色
 
-# 移动端侧栏
+# 移动端侧栏设置
 sidebar:
   site_data:
-    archive: true
-    tag: true
-    category: true
-  menus_items: true
-  tags_cloud: true
-  display_mode: true
-  nav_menu_project: true
+    archive: true  # 显示归档
+    tag: true  # 显示标签
+    category: true  # 显示分类
+  menus_items: true  # 显示菜单项
+  tags_cloud: true  # 显示标签云
+  display_mode: true  # 显示模式切换
+  nav_menu_project: true  # 显示导航菜单项目
 
 # 文章h2添加分隔线
 h2Divider: false
@@ -1055,7 +1055,7 @@ index_top_img_height:
 category_ui: # 留空或 index
 tag_ui: # 留空或 index
 
-# Footer Background
+# Footer Background（页脚背景）
 footer_bg: false
 
 # the position of bottom right button/default unit: px (右下角按钮距离底部的距离/默认单位为px)
@@ -1076,8 +1076,8 @@ canvas_ribbon:
 
 # Fluttering Ribbon (动态彩带)
 canvas_fluttering_ribbon:
-  enable: true
-  mobile: true
+  enable: false
+  mobile: false
 
 # canvas_nest
 # https://github.com/hustcc/canvas-nest.js
@@ -1152,7 +1152,7 @@ hr_icon:
 
 # the subtitle on homepage (主页subtitle)
 subtitle:
-  enable: false
+  enable: true
   # Typewriter Effect (打字效果)
   effect: true
   # Effect Speed Options (打字效果速度参数)
@@ -1182,7 +1182,7 @@ preloader:
   source: 3
   # pace theme (see https://codebyzach.github.io/pace/)
   pace_css_url:
-  avatar: /img/avatar.png # 自定加载动画义头像
+  avatar: # 自定义头像
 
 # aside (侧边栏)
 # --------------------------------------
@@ -1440,7 +1440,7 @@ css_prefix: true
 
 # 首页顶部相关配置
 home_top:
-  enable: true # 开关
+  enable: false # 开关
   timemode: date #date/updated
   title: 生活明朗
   subTitle: 万物可爱。
@@ -1566,7 +1566,7 @@ greetingBox:
     - greeting: 奖励一顿丰盛的大餐吧🍔。
       startTime: 18
       endTime: 19
-    - greeting: 晚上好👋, 在属于自己的时间好好放松呀~
+    - greeting: 晚上好🌃, 在属于自己的时间好好放松呀~
       startTime: 20
       endTime: 24
 
