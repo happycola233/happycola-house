@@ -38,8 +38,8 @@
   map:
     title: 我现在住在
     StrengthenTitle: 中国，上海市
-    background: https://message.biliimg.com/bfs/im_new/ba58c19eee793f4ed599f5725abeb6e7324042405.png
-    backgroundDark: https://message.biliimg.com/bfs/im_new/4a27809bb2c6b687528f805e215c7584324042405.png
+    background: /img/AboutMe/background.png
+    backgroundDark: /img/AboutMe/backgroundDark.png
   selfInfo:
     selfInfoTips1: 生于
     selfInfoContentYear: 2007
@@ -50,7 +50,7 @@
   personalities:
     author_name: 可爱
     personality_type: ESFJ-T
-    photo_url: https://i0.hdslb.com/bfs/garb/item/209cac9335f92e2aa928a0d480a3e203bb79c110.png
+    photo_url: https://i0.hdslb.com/bfs/garb/item/c234fe0684d4ef44ceb96df318e1916475a96068.png
     personality_img: https://npm.elemecdn.com/anzhiyu-blog@2.0.8/img/svg/ESFJ-A.svg
     name_url: https://www.16personalities.com/ch/esfj-%E4%BA%BA%E6%A0%BC
   maxim:
