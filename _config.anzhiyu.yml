@@ -9,6 +9,7 @@ menu:
   #   朋友圈: /fcircle/ || anzhiyu-icon-artstation
     留言板: /comments/ || anzhiyu-icon-envelope
 
+  小空调: /air-conditioner/ || anzhiyu-icon-fan
   # 我的:
   #   音乐馆: /music/ || anzhiyu-icon-music
   #   追番页: /bangumis/ || anzhiyu-icon-bilibili
@@ -41,7 +42,11 @@ nav:
 # 注意： 仅网站首页变灰，其他页面正常显示
 mourn:
   enable: true
-  days: [4-5, 5-12, 7-7, 9-18, 12-13]
+  days: [5-12, 7-7, 9-18, 12-13]
+  # 5月12日：汶川地震纪念日
+  # 7月7日：七七事变（卢沟桥事变）纪念日
+  # 9月18日：“九一八”纪念日
+  # 12月13日：南京大屠杀死难者国家公祭日
 
 # Code Blocks (代码相关)
 # --------------------------------------
@@ -49,9 +54,9 @@ mourn:
 highlight_theme: pale night #  darker / pale night / light / ocean / mac / mac light / false
 highlight_copy: true # copy button
 highlight_lang: true # show the code language
-highlight_shrink: false # true: shrink the code blocks / false: expand the code blocks | none: expand code blocks and hide the button
-highlight_height_limit: 330 # unit: px
-code_word_wrap: true
+highlight_shrink: false # true: 收缩代码块 / false: 展开代码块 | none: 展开代码块并隐藏按钮
+highlight_height_limit: 330 # 代码高度限制，单位: px
+code_word_wrap: true # 代码自动换行
 
 # copy settings
 # copyright: Add the copyright information after copied content (複制的内容后面加上版权信息)
@@ -68,6 +73,7 @@ copy:
 social:
   Github: https://github.com/happycola233 || anzhiyu-icon-github
   BiliBili: https://space.bilibili.com/324042405 || anzhiyu-icon-bilibili
+  # Twitter: https://x.com/happycola233 || fa-brands fa-twitter
 
 # 作者卡片 状态
 author_status:
@@ -75,14 +81,14 @@ author_status:
   # 可以是任何图片，建议放表情包或者emoji图片，效果都很好，[表情包速查](https://emotion.xiaokang.me/)
   statusImg: /img/dynamic-emote/tv_微笑.gif
   skills:
-    - 🤖️ 数码科技爱好者
-    # - 🔍 分享与热心帮助
-    # - 🏠 智能家居小能手
-    - 🔨 设计开发一条龙
-    # - 🤝 专修交互与设计
-    # - 🏃 脚踏实地行动派
-    # - 🧱 团队小组发动机
-    # - 💢 壮汉人狠话不多
+    - 📚 在读高中生
+    - 🎥 哔哩哔哩UP主
+    - 🖥️ 擅长Python编程
+    - 📱 数码科技爱好者
+    - 💡 喜爱探索新技术
+    - 📷 热爱摄影艺术
+    - 🏸 擅长打羽毛球
+    - 🎧 喜欢听音乐
 
 # search (搜索)
 # see https://blog.anheyu.com/posts/c27d.html#搜索系统
@@ -146,11 +152,11 @@ avatar:
 # Disable all banner image
 disable_top_img: false
 
-# The banner image of home page
-index_img: "background: url(/img/full-avatar.png) top / cover no-repeat" # "background: url() top / cover no-repeat"
+# 首页home page的横幅图片
+index_img: "background: url(/img/index_img.jpg) top / cover no-repeat" # "background: url() top / cover no-repeat"
 
 # If the banner of page not setting, it will show the top_img
-default_top_img: /img/full-avatar.png
+# default_top_img:
 
 cover:
   # display the cover or not (是否显示文章封面)
@@ -162,7 +168,7 @@ cover:
   position: both
   # When cover is not set, the default cover is displayed (当没有设置cover时，默认的封面显示)
   default_cover:
-    - /img/default_cover.jpg
+    - /img/full-avatar.png
 
 # Replace Broken Images (替换无法显示的图片)
 error_img:
@@ -172,8 +178,9 @@ error_img:
 # A simple 404 page
 error_404:
   enable: true
-  subtitle: "请尝试站内搜索寻找文章"
-  background: https://bu.dusays.com/2023/05/08/645907596997d.gif
+  subtitle: "这里什么都没有哦qwq"
+  # background: https://bu.dusays.com/2023/05/08/645907596997d.gif
+  background: /img/404_background.png
 
 post_meta:
   page: # Home Page
@@ -188,7 +195,7 @@ post_meta:
     categories: true # true or false 文章页是否显示分类
     tags: true # true or false 文章页是否显示标籤
     label: true # true or false 显示描述性文字
-    unread: false # true or false 文章未读功能
+    unread: true # true or false 文章未读功能
 
 # 主色调相关配置
 mainTone:
@@ -256,7 +263,7 @@ reward:
 # Post edit
 # Easily browse and edit blog source code online.
 post_edit: # 目前仅可选择一个平台在线编辑
-  enable: true
+  enable: false
   # github: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name/
   # For example: https://github.com/jerryc127/butterfly.js.org/edit/main/source/
   github: https://github.com/happycola233/happycola-house/tree/main/source/
@@ -816,10 +823,10 @@ footer:
   runtime:
     enable: true
     launch_time: 2024/07/07 13:25:47 # 网站上线时间
-    work_img: https://npm.elemecdn.com/anzhiyu-blog@2.0.4/img/badge/安知鱼-上班摸鱼中.svg
-    work_description: 距离月入25k也就还差一个大佬带我~
-    offduty_img: https://npm.elemecdn.com/anzhiyu-blog@2.0.4/img/badge/安知鱼-下班啦.svg
-    offduty_description: 下班了就该开开心心的玩耍，嘿嘿~
+    work_img: # https://npm.elemecdn.com/anzhiyu-blog@2.0.4/img/badge/安知鱼-上班摸鱼中.svg
+    work_description: # 距离月入25k也就还差一个大佬带我~
+    offduty_img: # https://npm.elemecdn.com/anzhiyu-blog@2.0.4/img/badge/安知鱼-下班啦.svg
+    offduty_description: # 下班了就该开开心心的玩耍，嘿嘿~
   # 徽标部分配置项 https://shields.io/
   # https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&logo=jsDelivr
   bdageitem:
@@ -860,9 +867,9 @@ footer:
         link: https://space.bilibili.com/324042405
         icon: anzhiyu-icon-bilibili
     right:
-      - title: RSS
-        link: atom.xml
-        icon: anzhiyu-icon-rss
+      - title: Twitter
+        link: https://x.com/happycola233
+        icon: fa-brands fa-twitter
       # - title: 抖音
       #   link: https://v.douyin.com/DwCpMEy/
       #   icon: anzhiyu-icon-tiktok
@@ -993,38 +1000,38 @@ site_verification:
 # Beautify/Effect (美化/效果)
 # --------------------------------------
 
-# Theme color for customize
-# Notice: color value must in double quotes like "#000" or may cause error!
+# 用于自定义的主题颜色
+# 注意：颜色值必须用双引号括起来，例如 "#000"，否则可能会导致错误！
 
 theme_color:
-  enable: true
-  main: "#425AEF"
-  dark_main: "#f2b94b"
-  paginator: "#425AEF"
-  #   button_hover: "#FF7242"
-  text_selection: "#2128bd"
-  link_color: "var(--anzhiyu-fontcolor)"
-  meta_color: "var(--anzhiyu-fontcolor)"
-  hr_color: "#4259ef23"
-  code_foreground: "#fff"
-  code_background: "var(--anzhiyu-code-stress)"
-  toc_color: "#425AEF"
-  #   blockquote_padding_color: "#425AEF"
-  #   blockquote_background_color: "#425AEF"
-  scrollbar_color: "var(--anzhiyu-scrollbar)"
-  meta_theme_color_light: "#f7f9fe"
-  meta_theme_color_dark: "#18171d"
+  enable: true  # 启用主题颜色
+  main: "#425AEF"  # 主要颜色
+  dark_main: "#f2b94b"  # 暗色主题的主要颜色
+  paginator: "#425AEF"  # 分页器颜色
+  #   button_hover: "#FF7242"  # 按钮悬停颜色
+  text_selection: "#2128bd"  # 文本选择颜色
+  link_color: "var(--anzhiyu-fontcolor)"  # 链接颜色
+  meta_color: "var(--anzhiyu-fontcolor)"  # 元信息颜色
+  hr_color: "#4259ef23"  # 水平线颜色
+  code_foreground: "#fff"  # 代码前景色
+  code_background: "var(--anzhiyu-code-stress)"  # 代码背景色
+  toc_color: "#425AEF"  # 目录颜色
+  #   blockquote_padding_color: "#425AEF"  # 块引用填充颜色
+  #   blockquote_background_color: "#425AEF"  # 块引用背景颜色
+  scrollbar_color: "var(--anzhiyu-scrollbar)"  # 滚动条颜色
+  meta_theme_color_light: "#f7f9fe"  # 明亮主题的元主题颜色
+  meta_theme_color_dark: "#18171d"  # 暗色主题的元主题颜色
 
-# 移动端侧栏
+# 移动端侧栏设置
 sidebar:
   site_data:
-    archive: true
-    tag: true
-    category: true
-  menus_items: true
-  tags_cloud: true
-  display_mode: true
-  nav_menu_project: true
+    archive: true  # 显示归档
+    tag: true  # 显示标签
+    category: true  # 显示分类
+  menus_items: true  # 显示菜单项
+  tags_cloud: true  # 显示标签云
+  display_mode: true  # 显示模式切换
+  nav_menu_project: true  # 显示导航菜单项目
 
 # 文章h2添加分隔线
 h2Divider: false
@@ -1048,7 +1055,7 @@ index_top_img_height:
 category_ui: # 留空或 index
 tag_ui: # 留空或 index
 
-# Footer Background
+# Footer Background（页脚背景）
 footer_bg: false
 
 # the position of bottom right button/default unit: px (右下角按钮距离底部的距离/默认单位为px)
@@ -1069,8 +1076,8 @@ canvas_ribbon:
 
 # Fluttering Ribbon (动态彩带)
 canvas_fluttering_ribbon:
-  enable: true
-  mobile: true
+  enable: false
+  mobile: false
 
 # canvas_nest
 # https://github.com/hustcc/canvas-nest.js
@@ -1145,7 +1152,7 @@ hr_icon:
 
 # the subtitle on homepage (主页subtitle)
 subtitle:
-  enable: false
+  enable: true
   # Typewriter Effect (打字效果)
   effect: true
   # Effect Speed Options (打字效果速度参数)
@@ -1175,7 +1182,7 @@ preloader:
   source: 3
   # pace theme (see https://codebyzach.github.io/pace/)
   pace_css_url:
-  avatar: /img/avatar.png # 自定加载动画义头像
+  avatar: # 自定义头像
 
 # aside (侧边栏)
 # --------------------------------------
@@ -1197,7 +1204,7 @@ aside:
 
   card_announcement:
     enable: true
-    content: 欢迎来看我的博客鸭~
+    content: 欢迎参观我的Blog呀awa
   card_weixin:
     enable: false
     face: https://bu.dusays.com/2023/01/13/63c02edf44033.png
@@ -1277,7 +1284,7 @@ translate:
   # Right-click menu to simplified Chinese
   rightMenuMsgToSimplifiedChinese: "转为简体"
 
-# Read Mode (閲读模式)
+# Read Mode (阅读模式)
 readmode: true
 
 # 中控台
@@ -1433,7 +1440,7 @@ css_prefix: true
 
 # 首页顶部相关配置
 home_top:
-  enable: true # 开关
+  enable: false # 开关
   timemode: date #date/updated
   title: 生活明朗
   subTitle: 万物可爱。
@@ -1495,7 +1502,7 @@ LA:
 diytitle:
   enable: true
   leaveTitle: w(ﾟДﾟ)w 不要走！再看看嘛！
-  backTitle: ♪(^∇^*)欢迎肥来！
+  backTitle: ♪(^∇^*)欢迎回来awa
 
 # 留言弹幕配置
 comment_barrage_config:
@@ -1514,10 +1521,10 @@ comment_barrage_config:
 nav_music:
   enable: true
   console_widescreen_music: false # 宽屏状态控制台显示音乐而不是标签 enable为true 控制台依然会显示
-  id: 8152976493
+  id: 12380309322
   server: netease
   volume: 0.7 # 默认音量
-  all_playlist: https://y.qq.com/n/ryqq/playlist/8802438608
+  all_playlist: https://y.qq.com/n/ryqq/playlist/4056257135
 
 # 评论匿名邮箱
 visitorMail:
@@ -1536,12 +1543,12 @@ ptool:
 # 欢迎语配置
 greetingBox:
   enable: true #开启后必须配置下面的list对应的时间段，不然会出现小白条
-  default: 晚上好👋
+  default: 晚上好呀👋
   list:
-    - greeting: 晚安😴
+    - greeting: 晚安🌙
       startTime: 0
       endTime: 5
-    - greeting: 早上好鸭👋, 祝你一天好心情！
+    - greeting: 早上好呀ヾ(≧▽≦*)o, 祝你一天好心情！
       startTime: 6
       endTime: 9
     - greeting: 上午好👋, 状态很好，鼓励一下～
@@ -1550,16 +1557,16 @@ greetingBox:
     - greeting: 11点多啦, 在坚持一下就吃饭啦～
       startTime: 11
       endTime: 11
-    - greeting: 午安👋, 宝贝
+    - greeting: 中午累的话就睡一觉吧ヾ(•ω•`)o
       startTime: 12
       endTime: 14
     - greeting: 🌈充实的一天辛苦啦！
       startTime: 14
-      endTime: 18
-    - greeting: 19点喽, 奖励一顿丰盛的大餐吧🍔。
-      startTime: 19
+      endTime: 17
+    - greeting: 奖励一顿丰盛的大餐吧🍔。
+      startTime: 18
       endTime: 19
-    - greeting: 晚上好👋, 在属于自己的时间好好放松😌~
+    - greeting: 晚上好🌃, 在属于自己的时间好好放松呀~
       startTime: 20
       endTime: 24
 
@@ -1602,7 +1609,7 @@ agreementPopup:
 
 # 右键菜单
 rightClickMenu:
-  enable: false
+  enable: true
 
 # 首页随便逛逛people模式 而非技能点模式，关闭后为技能点模式需要配置creativity.yml
 peoplecanvas:
