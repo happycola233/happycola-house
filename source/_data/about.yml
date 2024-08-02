@@ -13,7 +13,7 @@
       - 擅长打羽毛球 🏸
       - 喜欢听音乐 🎧
   name: 肥宅水水呀
-  description: 是一名 学生、B站up主、业余的程序员
+  description: 是一名 学生、B站UP主、业余的程序员
   aboutsiteTips:
     tips: 追求
     title1: 源于
@@ -29,8 +29,8 @@
     title: 开启创造力
   careers:
     tips: 生涯
-    title: 无限进步
-    img: https://bu.dusays.com/2023/04/21/644287166329b.png
+    title: 无限进步！
+    img: /img/GirlWatchingSunset.png
   statistic:
     link: /archives
     text: 文章隧道
@@ -38,8 +38,8 @@
   map:
     title: 我现在住在
     StrengthenTitle: 中国，上海市
-    background: /img/AboutMe/map_background.png
-    backgroundDark: /img/AboutMe/map_backgroundDark.png
+    background: /img/about-me/map_background_light.jpg
+    backgroundDark: /img/about-me/map_background_dark.jpg
   selfInfo:
     selfInfoTips1: 生于
     selfInfoContentYear: 2007
