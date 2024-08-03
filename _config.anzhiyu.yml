@@ -262,11 +262,11 @@ reward:
 # Post edit
 # Easily browse and edit blog source code online.
 post_edit: # 目前仅可选择一个平台在线编辑
-  enable: false
+  enable: true
   # github: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name/
   # For example: https://github.com/jerryc127/butterfly.js.org/edit/main/source/
-  github: https://github.com/happycola233/happycola-house/tree/main/source/
-
+  github: true
+  url: https://github.com/happycola233/happycola-house/blob/main/source/
   # yuque: https://www.yuque.com/user-name/repo-name/
   # 示例: https://www.yuque.com/yuque/yuque/
   # 你需要在语雀文章 Front Matter 添加参数 id 并确保其唯一性（例如 “id: yuque”, “id: 01”）
@@ -873,7 +873,7 @@ footer:
       #   link: https://v.douyin.com/DwCpMEy/
       #   icon: anzhiyu-icon-tiktok
       - title: CC
-        link: /copyright
+        link: https://creativecommons.org/licenses/by-nc-sa/4.0/
         icon: anzhiyu-icon-copyright-line
   list:
     enable: true
