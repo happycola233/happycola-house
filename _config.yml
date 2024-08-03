@@ -202,21 +202,23 @@ envelope_comment:
     type: envelope
 
 # electric_clock
-# see https://akilar.top/posts/4e39cf4a/
+# see https://anzhiy.cn/posts/fc18.html or https://github.com/anzhiyu-c/hexo-butterfly-clock-anzhiyu
 electric_clock:
   enable: true # 开关
-  priority: 5 #过滤器优先权
-  enable_page: all # 应用页面
-  exclude:
+  priority: 5 # 过滤器优先级，数值越小，执行越早，默认为 10，选填
+  enable_page: all # 填写想要应用的页面的相对路径（即路由地址）,如根目录就填’/‘,分类页面就填’/categories/‘。若要应用于所有页面，就填’all’，默认为 all
+  exclude: # 填写想要屏蔽的页面，可以多个。写法见示例。原理是将屏蔽项的内容逐个放到当前路径去匹配，若当前路径包含任一屏蔽项，则不会挂载。
     # - /posts/
     # - /about/
   layout: # 挂载容器类型
     type: class
     name: sticky_layout
     index: 0
-  loading: https://npm.elemecdn.com/hexo-butterfly-clock/lib/loading.gif #加载动画自定义
-  clock_css: https://npm.elemecdn.com/hexo-butterfly-clock/lib/clock.min.css
-  clock_js: https://npm.elemecdn.com/hexo-butterfly-clock/lib/clock.min.js
-  ip_api: https://pv.sohu.com/cityjson?ie=utf-8
-
-  
+  loading: https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/loading.gif # 加载动画自定义
+  clock_css: https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.css
+  clock_js: https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.js
+  ip_api: https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0
+  qweather_key: a36f8d093631479ea3364ad09f5b0280 # 和风天气key
+  gaud_map_key: 69a9c6cfd94b1276946f0267a7c5a14b # 高德地图Web服务key
+  default_rectangle: false # 开启后将一直显示rectangle位置的天气，否则将获取访问者的地理位置与天气
+  rectangle: 116.407001,39.904600 # （设置为北京市）获取访问者位置失败时会显示该位置的天气，同时该位置为开启default_rectangle后的位置
