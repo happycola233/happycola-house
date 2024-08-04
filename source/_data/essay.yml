@@ -1,0 +1,25 @@
+- title: 闲言碎语
+  subTitle: 随便写点啥(=・ω・=)
+  tips: 随时随地，分享生活
+  buttonText: 关于我
+  buttonLink: /about/
+  limit: 30
+  home_essay: true
+  top_background: /img/envelope_comment_cover.jpg
+  essay_list:
+    - content: 我的Blog今天正式公开啦！
+      date: 2024/08/04
+    - content: 歌曲推荐
+      date: 2024/08/03
+      aplayer:
+        server: tencent
+        id: 00020Fp91FKBVu
+      link: https://c6.y.qq.com/base/fcgi-bin/u?__=0NFoOIJCe35V
+    - content: 好耶，终于放暑假了！
+      date: 2024/07/01
+    - content: 2024年投稿的第一个视频欸，终于不咕咕了awa
+      date: 2024/07/17
+      video:
+        - https://player.bilibili.com/player.html?isOutside=true&aid=1956063066&bvid=BV1Hy411B7px&cid=1618176812&p=1&autoplay=0
+    - content: 建Blog好辛苦啊qwq
+      date: 2024/08/01

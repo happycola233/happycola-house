@@ -18,7 +18,7 @@ menu:
 
   关于:
     关于本人: /about/ || anzhiyu-icon-paper-plane
-  #   闲言碎语: /essay/ || anzhiyu-icon-lightbulb
+    闲言碎语: /essay/ || anzhiyu-icon-lightbulb
     随便逛逛: javascript:toRandomPost() || anzhiyu-icon-shoe-prints1
 
 # nav相关配置
@@ -164,11 +164,11 @@ cover:
   aside_enable: true
   archives_enable: true
   # the position of cover in home page (封面显示的位置)
-  # left/right/both
-  position: both
+  # left/right/both（left是封面在上，right是封面在下，both是随机）
+  position: left
   # When cover is not set, the default cover is displayed (当没有设置cover时，默认的封面显示)
   default_cover:
-    - /img/full-avatar.png
+    - /img/posts/about_cover.jpg
 
 # Replace Broken Images (替换无法显示的图片)
 error_img:
@@ -198,7 +198,7 @@ post_meta:
 
 # 主色调相关配置
 mainTone:
-  enable: true # true or false 文章是否启用获取图片主色调
+  enable: false # true or false 文章是否启用获取图片主色调
   mode: api # cdn/api/both cdn模式为图片url+imageAve参数获取主色调，api模式为请求API获取主色调，both模式会先请求cdn参数，无法获取的情况下将请求API获取，可以在文章内配置main_color: '#3e5658'，使用十六进制颜色，则不会请求both/cdn/api获取主色调，而是直接使用配置的颜色
   # 项目地址：https://github.com/anzhiyu-c/img2color-go
   api: https://img2color-go.vercel.app/api?img= # mode为api时可填写
@@ -267,6 +267,7 @@ post_edit: # 目前仅可选择一个平台在线编辑
   # For example: https://github.com/jerryc127/butterfly.js.org/edit/main/source/
   github: true
   url: https://github.com/happycola233/happycola-house/blob/main/source/
+
   # yuque: https://www.yuque.com/user-name/repo-name/
   # 示例: https://www.yuque.com/yuque/yuque/
   # 你需要在语雀文章 Front Matter 添加参数 id 并确保其唯一性（例如 “id: yuque”, “id: 01”）
@@ -850,20 +851,23 @@ footer:
     enable: true
     list:
       - link: https://hexo.io/ #徽标指向网站链接
-        shields: https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Frame-Hexo.svg #徽标API
+        shields: https://img.shields.io/badge/Frame-Hexo-blue?style=flat-square&logo=hexo&logoColor=dodgerblue #徽标API
         message: 博客框架为Hexo_v5.4.0 #徽标提示语
       - link: https://blog.anheyu.com/
-        shields: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.9/img/Theme-AnZhiYu-2E67D3.svg
+        shields: https://img.shields.io/badge/Theme-AnZhiYu-royalblue?style=flat-square&logo=alchemy&logoColor=white
         message: 本站使用AnZhiYu主题
       # - link: https://www.dogecloud.com/
       #   shields: https://npm.elemecdn.com/anzhiyu-blog@2.2.0/img/badge/CDN-多吉云-3693F3.svg
       #   message: 本站使用多吉云为静态资源提供CDN加速
       - link: https://github.com/happycola233/happycola-house/tree/main/
-        shields: https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Source-Github.svg
+        shields: https://img.shields.io/badge/Source-Github-darkorchid?style=flat-square&logo=github&logoColor=white
         message: 本站项目由Github托管
       - link: https://creativecommons.org/licenses/by-nc-sa/4.0/
-        shields: https://npm.elemecdn.com/anzhiyu-blog@2.2.0/img/badge/Copyright-BY-NC-SA.svg
+        shields: https://img.shields.io/badge/Copyright-BY--NC--SA_4.0-crimson%20?style=flat-square&logo=claris&logoColor=white
         message: 本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可
+      - link: https://stats.uptimerobot.com/N6QnOYnHVl
+        shields: https://img.shields.io/badge/%E7%BD%91%E7%AB%99%E7%8A%B6%E6%80%81-UptimeRobot-MediumSpringGreen?style=flat-square&logo=HeadSpace&logoColor=lawngreen
+        message: 本站由UptimeRobot提供网站状态监测服务
   socialBar:
     enable: true
     centerImg:
@@ -1356,7 +1360,7 @@ medium_zoom: false
 # http://fancyapps.com/fancybox/3/
 fancybox: true
 
-# Tag Plugins settings (标籤外挂)
+# Tag Plugins settings (标签外挂)
 # --------------------------------------
 
 # mermaid
