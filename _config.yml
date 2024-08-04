@@ -6,7 +6,7 @@
 title: 水水的小屋🏡~
 subtitle: '写点有趣的东东awa'
 description: ''
-keywords: '肥宅, 水水, 肥宅水水呀'
+keywords: '肥宅水, 水水, 肥宅水水呀'
 author: 肥宅水水呀
 language: zh-CN
 timezone: Asia/Shanghai
@@ -29,7 +29,7 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
-  - images/**/*
+  - img/**/*
   - robots.txt
 
 # Writing
