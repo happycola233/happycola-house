@@ -1,16 +1,15 @@
 ---
-title: 关于肥宅水水呀的介绍
+title: 关于肥宅水水呀
 date: 2024-08-01 23:30:17
 updated: 2024-08-04 20:26:53
 tags: # 标签
   - 肥宅水水呀
-  - 关于
   - 介绍
   - 个人
 categories: # 分类
   - 生活
   - 日常
-description: 这里是一篇关于肥宅水水呀的介绍哟~
+description: 这里是一篇肥宅水水呀的介绍哟~
 cover: /img/posts/about_cover.jpg
 permalink:
 sticky: 99 # 置顶文章。数值越大，置顶的优先级越大
@@ -23,7 +22,7 @@ sticky: 99 # 置顶文章。数值越大，置顶的优先级越大
 
 ## 基本信息
 
-肥宅水水呀是一个可爱的知识区、科技区UP主，来自上海，喜欢很多类型的东西，生日是6月22日(=・ω・=)
+肥宅水水呀是一个可爱的知识区、科技区UP主，来自上海，喜欢很多类型的东西，生日是06月22日(=・ω・=)
 
 性别不告诉您{% hideInline （是男生哦）,(｀・ω・´) ,#FBD5BB,#000000 %}，您可以叫 TA “水水”、“肥宅水”等等 (｡･ω･｡)
 
@@ -42,20 +41,20 @@ sticky: 99 # 置顶文章。数值越大，置顶的优先级越大
 肥宅水水呀在B站很活跃哦(^・ω・^ ) 如果您有B站账号，可以尝试跟肥宅水水呀互动哟awa
 {% endnote %}
 
-### 头像与昵称
+### 关于头像
 
 肥宅水水呀用过一些不同的头像(=・ω・=) 下面是肥宅水水呀用过的头像哟awa
 
 | 头像 | 开始使用时间 | 来源＆对应人物 | 备注 |
 | :--: | :----------: | :------------: | ---- |
 | <img class="avatar" alt src="/img/posts/avatar1_circle.png" width="150"> | 2019-05-01 | MEMZ（彩虹猫病毒）LOGO | 感染彩虹猫病毒后，重启系统，开机画面变成彩虹猫动画画面 |
-| <img class="avatar" alt src="/img/posts/avatar2_circle.png" width="150"> | 2021-07-26 | かふう ちの（香风智乃） | 『ご注文はうさぎですか？』（《请问您今天要来点兔子吗？》），原图：https://www.pixiv.net/artworks/53170539 |
+| <img class="avatar" alt src="/img/posts/avatar2_circle.png" width="150"> | 2021-07-26 | かふう ちの（香风智乃） | 『ご注文はうさぎですか？』（《请问您今天要来点兔子吗？》），原图：<https://www.pixiv.net/artworks/53170539> |
 
 ### 关于本 Blog
 
 肥宅水水呀在2020年03月创建了一个用[凡科建站](https://jz.fkw.com/)搭建的[网站](https://et19798147-2.icoc.vc/)，但是这个平台的免费版的功能太少，比如不支持自定义域名、自定义文件等，而且只能使用他们的网页模板，升级又要花很多的钱(´；ω；\`) 最重要的是，那个网站每个月只能访问300次，超过300次，这个月就不能再访问了！(´；ω；\`)
 
-为了解决上面的问题，肥宅水水呀一直计划着重新自己建立一个Blog。2023年07月10日，肥宅水水呀注册了 `happycola.top` 这个域名。但是由于一些原因，建站计划被久久搁置。千呼万唤始出来，2024年07月，该Blog的建立工作正式开始。在B站用户“[wuziqian211](https://space.bilibili.com/425503913)的大力帮助下，建站有条不紊地进行着。2024年08月04日 21:37:11，该Blog：“水水的小屋🏡~” 正式在哔哩哔哩动态中公开。
+为了解决上面的问题，肥宅水水呀一直计划着重新自己建立一个Blog。2023年07月10日，肥宅水水呀注册了 `happycola.top` 这个域名。但是由于一些原因，建站计划被久久搁置。千呼万唤始出来，2024年07月，该Blog的建立工作正式开始。在B站用户“[wuziqian211](https://space.bilibili.com/425503913)”的大力帮助下，建站工作有条不紊地进行着。2024年08月04日 21:37:11，该Blog：“水水的小屋🏡~” 正式在哔哩哔哩动态中公开。
 
 这个Blog的页面是用[Hexo](https://hexo.io/)生成的，用的主题是[安知鱼](https://docs.anheyu.com/)(^・ω・^ ) 这个主题可以自定义许多功能哟，也不自带任何广告与收费项目(=・ω・=)，本Blog的源码可以在[GitHub](https://github.com/happycola233/happycola-house/tree/main/)查看哟(=・ω・=)
 
@@ -165,7 +164,7 @@ sticky: 99 # 置顶文章。数值越大，置顶的优先级越大
 哔哩哔哩粉丝数达到**1500**
 <!-- endtimeline -->
 <!-- timeline 07-26 -->
-更换头像为 <img class="avatar" alt="" src="/img/posts/avatar2_circle.png" width="80" style="display: inline; vertical-align: middle;" /> ，详见 [头像与昵称](#头像与昵称)
+更换头像为 <img class="avatar" alt="" src="/img/posts/avatar2_circle.png" width="80" style="display: inline; vertical-align: middle;" /> ，详见 [关于头像](#关于头像)
 <!-- endtimeline -->
 <!-- timeline 10-04 -->
 注册GitHub账号：[肥宅水水呀](https://github.com/happycola233)

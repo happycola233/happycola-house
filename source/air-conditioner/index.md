@@ -10,7 +10,7 @@ keywords:
 aside: false # 显示侧边栏 (默认 true)
 ---
 
-{% note blue 'anzhiyufont anzhiyu-icon-fan' simple%}终于为给我的Blog安装上了便携小空调ヾ(≧▽≦*)o{% endnote %}
+{% note blue 'anzhiyufont anzhiyu-icon-fan' simple%}终于给我的Blog安装上了便携小空调ヾ(≧▽≦*)o{% endnote %}
 
 <style>
 .copyright-box a {
