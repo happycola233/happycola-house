@@ -218,7 +218,7 @@ wordcount:
 # 3: auto_excerpt (default)
 # false: do not show the article introduction
 index_post_content:
-  method: 3
+  method: 2
   length: 500 # if you set method to 2 or 3, the length need to config
 
 # anchor
@@ -280,7 +280,7 @@ related_post:
   date_type: created # or created or updated 文章日期显示创建日或者更新日
 
 # figcaption (图片描述文字)
-photofigcaption: false
+photofigcaption: true
 
 # post_pagination (分页)
 # value: 1 || 2 || 3 || 4 || false
@@ -327,7 +327,7 @@ comments:
   # 如果将其设置为true，评论计数将无效
   lazyload: false
   count: true # 在文章的top_img中显示评论数
-  card_post_count: true # 在主页显示评论数
+  card_post_count: false # 在主页显示评论数
 
 # valine
 # https://valine.js.org
@@ -852,7 +852,7 @@ footer:
     list:
       - link: https://hexo.io/ #徽标指向网站链接
         shields: https://img.shields.io/badge/Frame-Hexo-blue?style=flat-square&logo=hexo&logoColor=dodgerblue #徽标API
-        message: 博客框架为Hexo_v5.4.0 #徽标提示语
+        message: 博客框架为Hexo #徽标提示语
       - link: https://blog.anheyu.com/
         shields: https://img.shields.io/badge/Theme-AnZhiYu-royalblue?style=flat-square&logo=alchemy&logoColor=white
         message: 本站使用AnZhiYu主题
@@ -868,6 +868,9 @@ footer:
       - link: https://stats.uptimerobot.com/N6QnOYnHVl
         shields: https://img.shields.io/badge/%E7%BD%91%E7%AB%99%E7%8A%B6%E6%80%81-UptimeRobot-MediumSpringGreen?style=flat-square&logo=HeadSpace&logoColor=lawngreen
         message: 本站由UptimeRobot提供网站状态监测服务
+      - link: https://icp.gov.moe/?keyword=20248400
+        shields: /img/moe.svg
+        message: 本站由萌国ICP备案提供“ICP备案”服务
   socialBar:
     enable: true
     centerImg:
@@ -919,8 +922,8 @@ footer:
       #       link: /update/
       - title: 导航
         links:
-      #     - title: 即刻短文
-      #       link: /essay/
+          - title: 即刻短文
+            link: /essay/
       #     - title: 友链文章
       #       link: /fcircle/
           - title: 留言板
@@ -1011,12 +1014,12 @@ google_adsense:
 # --------------------------------------
 
 site_verification:
-  - name: google-site-verification
-    content: xxx
-  - name: baidu-site-verification
-    content: code-xxx
-  - name: msvalidate.01
-    content: xxx
+  # - name: google-site-verification
+  #   content: xxx
+  # - name: baidu-site-verification
+  #   content: code-xxx
+  # - name: msvalidate.01
+  #   content: xxx
 
 # Beautify/Effect (美化/效果)
 # --------------------------------------
@@ -1246,8 +1249,8 @@ aside:
     color: false
     sort_order: # Don't modify the setting unless you know how it works
     highlightTags:
-      # - Hexo
-      # - 前端
+      - 知识
+      - 技术
   card_archives:
     enable: true
     type: monthly # yearly or monthly
@@ -1314,11 +1317,11 @@ centerConsole:
   card_tags:
     enable: true
     limit: 40 # if set 0 will show all
-    color: false
+    color: true
     sort_order: # Don't modify the setting unless you know how it works
     highlightTags:
-      # - Hexo
-      # - 前端
+      - 知识
+      - 技术
   card_archives:
     enable: true
     type: monthly # yearly or monthly
@@ -1384,7 +1387,7 @@ note:
   border_radius: 3
   # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).
   # Offset also applied to label tag variables. This option can work with disabled note tag.
-  light_bg_offset: 0
+  light_bg_offset: -18 | 6
 
 icons:
   ali_iconfont_js: # 阿里图标symbol 引用链接，主题会进行加载 symbol 引用
@@ -1464,7 +1467,7 @@ home_top:
   timemode: date #date/updated
   title: 生活明朗
   subTitle: 万物可爱。
-  siteText: anheyu.com
+  siteText: happycola.top
   category:
     - name: 前端
       path: /categories/前端开发/
@@ -1548,7 +1551,7 @@ nav_music:
 
 # 评论匿名邮箱
 visitorMail:
-  enable: true
+  enable: false
   mail: ""
 
 # ptool 文章底部工具
@@ -1633,7 +1636,7 @@ rightClickMenu:
 
 # 首页随便逛逛people模式 而非技能点模式，关闭后为技能点模式需要配置creativity.yml
 peoplecanvas:
-  enable: true
+  enable: false
   img: https://upload-bbs.miyoushe.com/upload/2023/09/03/125766904/ee23df8517f3c3e3efc4145658269c06_5714860933110284659.png
 
 # 动效
@@ -1648,11 +1651,11 @@ dynamicEffect:
 inject:
   head:
     # 自定义css
-    # - <link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'">
+    - <link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"> # 评论区表情大小
 
   bottom:
     # 自定义js
-    - <script src="/js/autoload.js"></script>
+    - <script src="/js/autoload.js"></script> # 看板娘
 
 # CDN
 # Don't modify the following settings unless you know how they work

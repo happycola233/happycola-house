@@ -3,7 +3,7 @@
   hundredSuffix: ""
   link_list:
     - name: Hexo
-      link: https://hexo.io/zh-tw/
+      link: https://hexo.io/zh-cn/
       avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
       descr: 快速、简单且强大的网站框架
     - name: anzhiyu主题
@@ -34,13 +34,15 @@
       link: https://me.onlyra1n.top/
       avatar: https://cravatar.cn/avatar/949b4b017cd9c5b03ec65cfc715c17ec?s=250
       descr: Ciallo～(∠・ω< )⌒★！
+      color: vip
+      tag: 技术
 
 - class_name: 小伙伴
   class_desc: 那些人，那些事
   flink_style: anzhiyu
   hundredSuffix: ""
   link_list:
-    - name: 梦春酱
+    - name: 晨叶梦春
       link: https://www.yumeharu.top/
       avatar: https://www.yumeharu.top/images/face.png
       descr: 你未必光芒万丈，但始终温暖有光。
