@@ -15,7 +15,7 @@ random: true
 
 | 网站名称 | 网站链接 | 网站图标 | 网站描述 | 网站截图 |
 | :------: | :------: | :------: | :------: | :------: |
-| 水水的小屋🏡~ | <https://www.happycola.top/> | ![站点图标](/img/avatar.png)<https://www.happycola.top/img/avatar.png> | 写点有趣的东东awa | ![站点截图](/img/screenshot.png)<https://www.happycola.top/img/screenshot.png>
+| 水水的小屋🏡~ | <https://www.happycola.top/> | ![站点图标](/img/avatar.png)<https://www.happycola.top/img/avatar.png> | 写点有趣的东东awa | ![站点截图](/img/Homepage_Screenshot.jpg)<https://www.happycola.top/img/Homepage_Screenshot.jpg>
 
 <!-- endtab -->
 
@@ -26,7 +26,7 @@ random: true
   link: https://www.happycola.top/ # 网站链接
   avatar: https://www.happycola.top/img/avatar.png # 网站图标
   descr: 写点有趣的东东awa # 网站描述
-  siteshot: https://www.happycola.top/img/screenshot.png # 网站截图
+  siteshot: https://www.happycola.top/img/Homepage_Screenshot.jpg # 网站截图
 ```
 
 <!-- endtab -->
