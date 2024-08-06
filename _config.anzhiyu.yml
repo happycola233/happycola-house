@@ -388,13 +388,13 @@ waline:
     pageSize: 20
     commentSorting: hottest
     reaction:
-      - /img/dynamic-emote/tv_点赞.gif
-      - /img/dynamic-emote/tv_doge.gif
-      - /img/dynamic-emote/tv_疑问.gif
-      - /img/dynamic-emote/tv_微笑.gif
-      - /img/dynamic-emote/tv_难过.gif
+      - /img/emote/tv_小电视/tv_点赞.gif
+      - /img/emote/tv_小电视/tv_doge.gif
+      - /img/emote/tv_小电视/tv_疑问.gif
+      - /img/emote/tv_小电视/tv_微笑.gif
+      - /img/emote/tv_小电视/tv_难过.gif
       - /img/emote/tv_小电视/tv_调侃.png
-      - /img/dynamic-emote/tv_思考.gif
+      - /img/emote/tv_小电视/tv_思考.gif
     emoji:
       - name: 小黄脸
         folder: /img/emote/小黄脸
@@ -411,9 +411,9 @@ waline:
       - name: tv_小电视
         folder: /img/emote/tv_小电视
         prefix: ''
-        type: png
+        type: ''
         icon: index
-        items: ['tv_白眼', 'tv_doge', 'tv_坏笑', 'tv_难过', 'tv_生气', 'tv_委屈', 'tv_斜眼笑', 'tv_呆', 'tv_发怒', 'tv_惊吓', 'tv_呕吐', 'tv_思考', 'tv_微笑', 'tv_疑问', 'tv_大哭', 'tv_鼓掌', 'tv_抠鼻', 'tv_亲亲', 'tv_调皮', 'tv_笑哭', 'tv_晕', 'tv_点赞', 'tv_害羞', 'tv_睡着', 'tv_色', 'tv_吐血', 'tv_无奈', 'tv_再见', 'tv_流汗', 'tv_偷笑', 'tv_抓狂', 'tv_黑人问号', 'tv_困', 'tv_打脸', 'tv_闭嘴', 'tv_鄙视', 'tv_腼腆', 'tv_馋', 'tv_可爱', 'tv_发财', 'tv_生病', 'tv_流鼻血', 'tv_尴尬', 'tv_大佬', 'tv_流泪', 'tv_冷漠', 'tv_皱眉', 'tv_鬼脸', 'tv_调侃', 'tv_目瞪口呆']
+        items: ['tv_白眼.gif', 'tv_doge.gif', 'tv_坏笑.gif', 'tv_难过.gif', 'tv_生气.gif', 'tv_委屈.gif', 'tv_斜眼笑.gif', 'tv_呆.gif', 'tv_发怒.gif', 'tv_惊吓.gif', 'tv_呕吐.gif', 'tv_思考.gif', 'tv_微笑.gif', 'tv_疑问.gif', 'tv_大哭.gif', 'tv_鼓掌.gif', 'tv_抠鼻.gif', 'tv_亲亲.gif', 'tv_调皮.gif', 'tv_笑哭.gif', 'tv_晕.gif', 'tv_点赞.gif', 'tv_害羞.gif', 'tv_睡着.gif', 'tv_色.gif', 'tv_吐血.gif', 'tv_无奈.gif', 'tv_再见.gif', 'tv_流汗.gif', 'tv_偷笑.gif', 'tv_抓狂.gif', 'tv_黑人问号.gif', 'tv_困.gif', 'tv_打脸.gif', 'tv_闭嘴.gif', 'tv_鄙视.gif', 'tv_腼腆.gif', 'tv_馋.gif', 'tv_可爱.gif', 'tv_发财.gif', 'tv_生病.gif', 'tv_流鼻血.gif', 'tv_尴尬.gif', 'tv_大佬.gif', 'tv_流泪.png', 'tv_冷漠.png', 'tv_皱眉.png', 'tv_鬼脸.png', 'tv_调侃.png', 'tv_目瞪口呆.png']
       - name: 2024拜年纪
         folder: /img/emote/2024拜年纪
         prefix: ''
