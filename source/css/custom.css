@@ -1,3 +1,6 @@
+.wl-emoji-popup {
+  width: 100%;
+}
 .wl-content .wl-emoji {
   height: 3em !important;
   vertical-align: sub !important;
