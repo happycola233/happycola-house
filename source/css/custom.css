@@ -5,3 +5,13 @@
 .wl-content .wl-emoji[src^='/img/emote/小黄脸/'], .wl-content .wl-emoji[src^='/img/emote/tv_小电视/'], .wl-content .wl-emoji[src^='/img/emote/喵/'] {
   height: 1.5em !important;
 }
+
+#catalog-list {
+  scrollbar-width: none;
+}
+
+@media screen and (max-width: 768px) {
+  #page-header.post-bg #post-top-cover {
+    filter: blur(10px);
+  }
+}

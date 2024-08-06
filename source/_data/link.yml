@@ -34,8 +34,14 @@
       link: https://me.onlyra1n.top/
       avatar: https://cravatar.cn/avatar/949b4b017cd9c5b03ec65cfc715c17ec?s=250
       descr: Ciallo～(∠・ω< )⌒★！
+      siteshot: /img/friendship-links/me-onlyra1n-top-siteshot.png
       color: vip
       tag: 技术
+    - name: 我汐了_233的小站
+      link: https://woxile.rth10.com/
+      avatar: https://api.yumeharu.top/api/getuser?mid=474683920&type=avatar_redirect
+      descr:
+      siteshot: /img/friendship-links/woxile-rth10-com-siteshot.png
 
 - class_name: 小伙伴
   class_desc: 那些人，那些事

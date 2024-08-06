@@ -1551,7 +1551,7 @@ nav_music:
 
 # 评论匿名邮箱
 visitorMail:
-  enable: false
+  enable: true
   mail: ""
 
 # ptool 文章底部工具
@@ -1651,7 +1651,7 @@ dynamicEffect:
 inject:
   head:
     # 自定义css
-    - <link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"> # 评论区表情大小
+    - <link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"> # 评论区表情大小、首页分类 tab 隐藏滚动条与宽度小的浏览器的顶部图片模糊
 
   bottom:
     # 自定义js
@@ -1721,7 +1721,7 @@ CDN:
     # fireworks:
     # click_heart:
     # ClickShowText:
-    # fontawesome:
+    fontawesome: https://cdn.cbd.int/@fortawesome/fontawesome-free@6/css/all.min.css # 使用 v6.x 的最新版
     # flickr_justified_gallery_js:
     # flickr_justified_gallery_css:
     # aplayer_css:
