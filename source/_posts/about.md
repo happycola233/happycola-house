@@ -32,10 +32,11 @@ sticky: 99 # 置顶文章。数值越大，置顶的优先级越大
 
 肥宅水水呀用过一些不同的头像(=・ω・=) 下面是水水用过的头像哟awa
 
-| 头像 | 开始使用时间 | 来源 | 备注 |
+| 头像 | 开始使用时间 | 人物（内容） | 备注 |
 | :--: | :----------: | :--: | ---- |
 | <img class="avatar" alt src="/img/posts/avatar1_circle.png" width="150"> | 2019-05-01 | MEMZ（彩虹猫病毒）LOGO | 在感染MEMZ病毒后，重启系统，开机画面就会变成彩虹猫动画画面 |
-| <img class="avatar" alt src="/img/posts/avatar2_circle.png" width="150"> | 2021-07-26 | かふう ちの（香风智乃） | 『ご注文はうさぎですか？』（《请问您今天要来点兔子吗？》），原图：<https://www.pixiv.net/artworks/53170539> |
+| <img class="avatar" alt src="/img/posts/avatar2_circle.png" width="150"> | 2021-07-26 | かふう ちの（香风智乃） | 『ご注文はうさぎですか？』（《请问您今天要来点兔子吗？》）<br>作者：みゅとん/뮤우톤<br>原图：<https://www.pixiv.net/artworks/53170539> |
+| <img class="avatar" alt src="/img/posts/avatar3_circle.png" width="150"> | 2024-08-13 | 猫と少女 | 作者：Stella<br>原图：<https://www.pixiv.net/artworks/109239247> |
 
 ### 创作
 
@@ -201,6 +202,9 @@ sticky: 99 # 置顶文章。数值越大，置顶的优先级越大
 {% timeline 2024,purple %}
 <!-- timeline 08-04 21:37:11 -->
 正式在哔哩哔哩[动态](https://t.bilibili.com/961815968671072288)中公开“[水水的小屋🏡~](/)”
+<!-- endtimeline -->
+<!-- timeline 08-13 -->
+更换头像为 <img src="/img/posts/avatar3_circle.png" width="80" style="display: inline; vertical-align: middle;" />，详见 [关于头像](#关于头像)
 <!-- endtimeline -->
 {% endtimeline %}
 

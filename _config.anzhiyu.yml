@@ -142,12 +142,12 @@ katex:
 # --------------------------------------
 
 # Favicon（网站图标）
-favicon: /favicon.ico
+favicon: /img/favicon.ico
 
 # Avatar (头像)
 avatar:
   img: /img/avatar.png
-  effect: true
+  effect: false # 头像旋转动画（设置为true头像会一直旋转）
 
 # Disable all banner image
 disable_top_img: false
