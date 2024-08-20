@@ -23,11 +23,11 @@
       siteshot: https://npm.elemecdn.com/anzhiyu-theme-static@1.1.6/img/blog.anheyu.com.jpg
       color: vip
       tag: 技术
-    - name: wuziqian211's Blog
+    - name: 晨叶梦春的小屋
       link: https://www.yumeharu.top/
-      avatar: https://www.yumeharu.top/images/icon.png
+      avatar: https://www.yumeharu.top/images/icon_compressed.png
       descr: Not for the best, just for the better.
-      siteshot: https://www.yumeharu.top/images/screenshot.png
+      siteshot: https://www.yumeharu.top/images/screenshot_compressed.png
       color: vip
       tag: 技术
     - name: Pheqorの小破站
@@ -50,6 +50,6 @@
   link_list:
     - name: 晨叶梦春
       link: https://www.yumeharu.top/
-      avatar: https://www.yumeharu.top/images/face.png
+      avatar: https://www.yumeharu.top/images/face_compressed.png
       descr: 你未必光芒万丈，但始终温暖有光。
       recommend: true

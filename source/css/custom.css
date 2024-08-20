@@ -15,6 +15,6 @@
 
 @media screen and (max-width: 768px) {
   #page-header.post-bg #post-top-cover {
-    filter: blur(10px);
+    filter: blur(10px) brightness(60%);
   }
 }

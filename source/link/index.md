@@ -14,7 +14,7 @@ type: link
 
 | 网站名称 | 网站链接 | 网站图标 | 网站描述 | 网站截图 |
 | :------: | :------: | :------: | :------: | :------: |
-| 水水的小屋🏡~ | <https://www.happycola.top/> | ![站点图标](/img/avatar.png)<https://www.happycola.top/img/avatar.png> | 写点有趣的东东awa | ![站点截图](/img/Homepage_Screenshot.jpg)<https://www.happycola.top/img/Homepage_Screenshot.jpg>
+| 水水的小屋🏡~ | <https://www.happycola.top/> | ![站点图标](/img/avatar.png)<https://www.happycola.top/img/avatar.png> | 写点有趣的东东awa | ![站点截图](/img/Homepage_Screenshot.jpg)<https://www.happycola.top/img/Homepage_Screenshot.jpg> |
 
 <!-- endtab -->
 
@@ -38,7 +38,6 @@ type: link
 
 <!-- endtab -->
 
-
 {% endtabs %}
 
 ## 申请友情链接
@@ -60,7 +59,7 @@ type: link
 
 在[本页面的评论区](#post-comment)评论即可申请友情链接，建议您参照以下格式评论：
 
-```
+```text
 网站名称：
 网站链接：
 网站图标：
