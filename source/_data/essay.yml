@@ -1,4 +1,4 @@
-- title: 闲言碎语
+- title: 即刻短文
   subTitle: 随便写点啥(=・ω・=)
   tips: 随时随地，分享生活
   buttonText: 关于我
@@ -7,6 +7,10 @@
   home_essay: true
   top_background: /img/envelope_comment_cover.jpg
   essay_list:
+    - content: 今天B站换了新的头像哦(=・ω・=)
+      date: 2024/08/13
+      image:
+        - /img/posts/avatar3_circle.png
     - content: 我的Blog今天正式公开啦！
       date: 2024/08/04
     - content: 歌曲推荐

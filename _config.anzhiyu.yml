@@ -79,7 +79,7 @@ social:
 author_status:
   enable: true
   # 可以是任何图片，建议放表情包或者emoji图片，效果都很好，[表情包速查](https://emotion.xiaokang.me/)
-  statusImg: /img/dynamic-emote/tv_微笑.gif
+  statusImg: /img/emote/tv_小电视/tv_微笑.gif
   skills:
     - 📚 在读高中生
     - 🎥 哔哩哔哩UP主
@@ -142,12 +142,12 @@ katex:
 # --------------------------------------
 
 # Favicon（网站图标）
-favicon: /favicon.ico
+favicon: /img/favicon.ico
 
 # Avatar (头像)
 avatar:
   img: /img/avatar.png
-  effect: true
+  effect: false # 头像旋转动画（设置为true头像会一直旋转）
 
 # Disable all banner image
 disable_top_img: false
