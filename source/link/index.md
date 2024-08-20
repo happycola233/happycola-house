@@ -2,7 +2,6 @@
 title: 友情链接
 date: 2024-07-08 16:53:40
 type: link
-random: true
 ---
 
 ## 我的友链
