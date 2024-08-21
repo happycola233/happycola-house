@@ -18,7 +18,7 @@ menu:
 
   关于:
     关于本人: /about/ || anzhiyu-icon-paper-plane
-    闲言碎语: /essay/ || anzhiyu-icon-lightbulb
+    即刻短文: /essay/ || anzhiyu-icon-lightbulb
     随便逛逛: javascript:toRandomPost() || anzhiyu-icon-shoe-prints1
 
 # nav相关配置
@@ -179,7 +179,7 @@ error_img:
 error_404:
   enable: true
   subtitle: "这里什么都没有哦qwq"
-  background: /img/404_background.png
+  background: /img/404_background.png # https://i1.hdslb.com/bfs/static/jinkela/long/mstation/404.png
 
 post_meta:
   page: # Home Page
@@ -1030,10 +1030,10 @@ site_verification:
 theme_color:
   enable: true  # 启用主题颜色
   main: "#425AEF"  # 主要颜色
-  dark_main: "#f2b94b"  # 暗色主题的主要颜色
+  dark_main: "#48b2e9"  # 暗色主题的主要颜色
   paginator: "#425AEF"  # 分页器颜色
   #   button_hover: "#FF7242"  # 按钮悬停颜色
-  text_selection: "#2128bd"  # 文本选择颜色
+  text_selection: "#0078d7"  # 文本选择颜色
   link_color: "var(--anzhiyu-fontcolor)"  # 链接颜色
   meta_color: "var(--anzhiyu-fontcolor)"  # 元信息颜色
   hr_color: "#4259ef23"  # 水平线颜色

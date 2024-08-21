@@ -80,29 +80,29 @@ sticky: 99 # 置顶文章。数值越大，置顶的优先级越大
 <!-- timeline 05-01 00:39:22 -->
 发布了第一个视频。（虽然是转载的）
 <a href="https://www.bilibili.com/video/av50978032">
-  <img src="/img/posts/1-1card50978032_web.png" alt="视频" style="height:90px; display:block; margin:0;">
+  <img src="/img/posts/1-1card50978032_web.png" alt="投稿的视频" style="height:90px; display:block; margin:0;">
 </a>
 这个视频发布后，播放量越来越多，也有许多人评论，给了肥宅水水呀很大的鼓舞。于是下面的视频陆续发布：
 <a href="https://www.bilibili.com/video/av59136398">
-  <img src="/img/posts/1-1card59136398_web.png" alt="视频" style="height:90px; display:block; margin:0;">
+  <img src="/img/posts/1-1card59136398_web.png" alt="投稿的视频" style="height:90px; display:block; margin:0;">
 </a>
 <a href="https://www.bilibili.com/video/av59146917">
-  <img src="/img/posts/1-1card59146917_web.png" alt="视频" style="height:90px; display:block; margin:0;">
+  <img src="/img/posts/1-1card59146917_web.png" alt="投稿的视频" style="height:90px; display:block; margin:0;">
 </a>
 <a href="https://www.bilibili.com/video/av73626344">
-  <img src="/img/posts/1-1card73626344_web.png" alt="视频" style="height:90px; display:block; margin:0;">
+  <img src="/img/posts/1-1card73626344_web.png" alt="投稿的视频" style="height:90px; display:block; margin:0;">
 </a>
 <!-- endtimeline -->
 <!-- timeline 10-27 -->
 一口气发了两个自己 录制+剪辑 的视频（那是肥宅水水呀第一次接触到虚拟机）。
-<img src="/img/posts/DD13B3DA.jpg" alt="视频" style="height:60px; display:block; margin:0;">
+<img src="/img/posts/DD13B3DA.jpg" alt="投稿的视频" style="height:60px; display:block; margin:0;">
 {% note info disabled %}这期视频现在不存在了{% endnote %}
-<img src="/img/posts/E3CC8140.jpg" alt="视频" style="height:60px; display:block; margin:0;">
+<img src="/img/posts/E3CC8140.jpg" alt="投稿的视频" style="height:60px; display:block; margin:0;">
 {% note info disabled %}这期视频现在不存在了{% endnote %}
 <!-- endtimeline -->
 <!-- timeline 11-01 -->
 发布了第三个有关病毒的视频。
-<img src="/img/posts/5792DD70.jpg" alt="视频" style="height:60px; display:block; margin:0;">
+<img src="/img/posts/5792DD70.jpg" alt="投稿的视频" style="height:60px; display:block; margin:0;">
 {% note info disabled %}这期视频现在不存在了{% endnote %}
 
 > 但是因为种种原因，电脑病毒相关的视频不过审了，于是肥宅水水呀删掉了所有有关电脑病毒的视频。
@@ -117,7 +117,7 @@ sticky: 99 # 置顶文章。数值越大，置顶的优先级越大
 <!-- timeline 03-20 15:56:30 -->
 发布了第一个带有自己亲自制作程序的视频
 <a href="https://www.bilibili.com/video/av97811634">
-  <img src="/img/posts/1-1card97811634_web.png" alt="视频" style="height:90px; display:block; margin:0;">
+  <img src="/img/posts/1-1card97811634_web.png" alt="投稿的视频" style="height:90px; display:block; margin:0;">
 </a>
 于是之后，越来越多的视频中带有自己做的程序，肥宅水水呀的粉丝也越来越多。
 <!-- endtimeline -->
@@ -127,7 +127,7 @@ sticky: 99 # 置顶文章。数值越大，置顶的优先级越大
 <!-- timeline 04-23 00:00:14 -->
 发布了一周年特辑，来感谢一年来粉丝们对肥宅水水呀的支持。(现在感觉做得很烂qwq)
 <a href="https://www.bilibili.com/video/av285200718">
-  <img src="/img/posts/1-1card285200718_web.png" alt="视频" style="height:90px; display:block; margin:0;">
+  <img src="/img/posts/1-1card285200718_web.png" alt="投稿的视频" style="height:90px; display:block; margin:0;">
 </a>
 <!-- endtimeline -->
 <!-- timeline 06-22 -->
@@ -154,8 +154,11 @@ sticky: 99 # 置顶文章。数值越大，置顶的优先级越大
 <!-- timeline 09-24 -->
 哔哩哔哩等级达到**Lv5**
 <!-- endtimeline -->
-<!-- timeline 10-11 10:21:36 -->
+<!-- timeline 10-11 10:03:54 -->
 哔哩哔哩粉丝数达到**1000**
+<!-- endtimeline -->
+<!-- timeline 10-11 10:03:54 -->
+哔哩哔哩应援团开通
 <!-- endtimeline -->
 {% endtimeline %}
 
