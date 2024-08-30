@@ -26,8 +26,6 @@ sticky: 99 # 置顶文章。数值越大，置顶的优先级越大
 
 性别不告诉您{% hideInline （是男生哦）,(｀・ω・´) ,#FBD5BB,#000000 %}您可以叫TA“水水”、“肥宅水”等等 (｡･ω･｡)
 
-“肥宅水水呀”曾经改过名哦，原名是“开心的肥宅快乐水”，名字似乎是随便取的qwq
-
 ### 关于头像
 
 肥宅水水呀用过一些不同的头像(=・ω・=) 下面是水水用过的头像哟awa
@@ -37,6 +35,14 @@ sticky: 99 # 置顶文章。数值越大，置顶的优先级越大
 | <img class="avatar" alt src="/img/posts/avatar1_circle.png" width="150"> | 2019-05-01 | MEMZ（彩虹猫病毒）LOGO | 在感染MEMZ病毒后，重启系统，开机画面就会变成彩虹猫动画画面 |
 | <img class="avatar" alt src="/img/posts/avatar2_circle.png" width="150"> | 2021-07-26 | かふう ちの（香风智乃） | 『ご注文はうさぎですか？』（《请问您今天要来点兔子吗？》）<br>作者：みゅとん/뮤우톤<br>原图：<https://www.pixiv.net/artworks/53170539> |
 | <img class="avatar" alt src="/img/posts/avatar3_circle.png" width="150"> | 2024-08-13 | 猫と少女 | 作者：Stella<br>原图：<https://www.pixiv.net/artworks/109239247> |
+
+### 关于昵称
+
+水水在B站上最初的昵称是“开心的肥宅快乐水”。当初取这个名字时，水水希望找到一个让人感觉轻松愉快的昵称。TA想了想，突然想到“可乐”正好就是快乐的象征，而“可乐”也有一个别称叫“肥宅快乐水”，再加上“快乐”这个元素，最终决定取名为“开心的肥宅快乐水”。
+
+PS：水水平时并不常喝可乐，但偶尔喝的时候也觉得挺过瘾的(^・ω・^)
+
+后来，水水想换一个昵称，于是对原来的昵称进行了修改，变成了现在的“肥宅水水呀”，显得更可爱了呢(=・ω・=)
 
 ### 创作
 
@@ -51,7 +57,7 @@ sticky: 99 # 置顶文章。数值越大，置顶的优先级越大
 - <span style="color: #f25d8e;"><i class="fa-brands fa-bilibili"></i> 哔哩哔哩：[肥宅水水呀](https://space.bilibili.com/324042405)（UID：324042405）</span>
 - <span style="color: #9f7be1;"><i class="fa-brands fa-github"></i> GitHub：[肥宅水水呀](https://github.com/happycola233)（有很多有趣的项目哦，肥宅水水呀的小屋的源代码在这里）</span>
 - <span style="color: #c71d23;"><i class="fa-brands fa-git"></i> Gitee：[肥宅水水呀](https://gitee.com/happycola)（肥宅水水呀的一些程序的源代码在这里，但是基本上都搬到Github了）</span>
-- <span style="color: #12b7f5;"><i class="fa-brands fa-qq"></i> QQ粉丝群：[527957451](https://qm.qq.com/q/qstfdE1CiQ)（肥宅水水呀与B站用户“[wuziqian211](https://space.bilibili.com/425503913)”共用的群聊，因此群主是两个人中的任何一个，可能会随时变化）</span>
+- <span style="color: #12b7f5;"><i class="fa-brands fa-qq"></i> QQ粉丝群：[527957451](https://qm.qq.com/q/qstfdE1CiQ)（肥宅水水呀与B站用户“[晨叶梦春](https://space.bilibili.com/425503913)”共用的群聊，因此群主是两个人中的任何一个，可能会随时变化）</span>
 - <span style="color: #1d9bf0;"><i class="fa-brands fa-twitter"></i> Twitter：[肥宅水水呀](https://twitter.com/happycola233)（很少在线，**在中国除港澳台外的地区无法访问**）</span>
 - <span style="color: #0097fa;"><i class="fa-brands fa-pixiv"></i> Pixiv：[肥宅水水呀](https://www.pixiv.net/users/98014291)（ID：98014291；很少在线，**在中国除港澳台外的地区无法访问**）</span>
 
@@ -63,7 +69,7 @@ sticky: 99 # 置顶文章。数值越大，置顶的优先级越大
 
 肥宅水水呀在2020年3月创建了一个用[凡科建站](https://jz.fkw.com/)搭建的[网站](https://et19798147-2.icoc.vc/)，但是这个平台的免费版的功能太少，比如不支持自定义域名、自定义文件等，而且只能使用他们的网页模板，升级又要花很多的钱(´；ω；\`) 最重要的是，那个网站每个月只能访问300次，超过300次，这个月就不能再访问了！(´；ω；\`)
 
-为了解决上面的问题，水水一直计划着重新自己建立一个小屋。2023年7月10日，水水注册了 `happycola.top` 这个域名。但是由于一些原因，建站计划被久久搁置。千呼万唤始出来，2024年7月，小屋的建立工作正式开始。在B站用户“[wuziqian211](https://space.bilibili.com/425503913)”的大力帮助下，建站工作有条不紊地进行着。2024年8月4日 21:37:11，“水水的小屋🏡~” 正式在哔哩哔哩动态中公开。
+为了解决上面的问题，水水一直计划着重新自己建立一个小屋。2023年7月10日，水水注册了 `happycola.top` 这个域名。但是由于一些原因，建站计划被久久搁置。千呼万唤始出来，2024年7月，小屋的建立工作正式开始。在B站用户“[晨叶梦春](https://space.bilibili.com/425503913)”的大力帮助下，建站工作有条不紊地进行着。2024年8月4日 21:37:11，“水水的小屋🏡~” 正式在哔哩哔哩动态中公开。
 
 这个小屋的页面是用[Hexo](https://hexo.io/)生成的，用的主题是[安知鱼](https://docs.anheyu.com/)(^・ω・^ ) 这个主题可以自定义许多功能哟，也不自带任何广告与收费项目(=・ω・=)，小屋的源码可以在[GitHub](https://github.com/happycola233/happycola-house/tree/main/)查看哟(=・ω・=)
 
