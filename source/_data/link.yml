@@ -42,6 +42,13 @@
       avatar: https://api.yumeharu.top/api/getuser?mid=474683920&type=avatar_redirect
       descr:
       siteshot: /img/friendship-links/woxile-rth10-com-siteshot.png
+    - name: SuzuhaYuki’s Blog
+      link: https://www.727252.xyz/
+      avatar: https://cn.cravatar.com/avatar/c5448269a1fad005917b6b8fad777191?s=128&d=mm
+      descr: Time goes by, and the years go by.
+      siteshot: /img/friendship-links/727252-xyz-siteshot.png
+      color: vip
+      tag: 技术
 
 - class_name: 小伙伴
   class_desc: 那些人，那些事
