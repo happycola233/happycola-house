@@ -947,8 +947,10 @@ footer:
         text: 主题
       # - link: https://image.anheyu.com
       #   text: 图床
-      # - link: https://beian.miit.gov.cn/
-      #   text: 湘ICP备-xxxxxxx号
+      - link: https://beian.miit.gov.cn/#/Integrated/recordQuery
+        text: "沪ICP备2025149364号"
+      - link: https://beian.mps.gov.cn/#/query/webSearch
+        text: 
     subTitle:
       enable: true
       # Typewriter Effect (打字效果)
@@ -1426,10 +1428,10 @@ snackbar:
 instantpage: true
 
 # https://github.com/vinta/pangu.js
-# Insert a space between Chinese character and English character (中英文之间添加空格)
+# Insert a space between Chinese character and English character (盘古之白，中英文之间添加空格)
 pangu:
   enable: true
-  field: site # site/post
+  field: post # site/post
 
 # Lazyload (图片懒加载)
 # https://github.com/verlok/vanilla-lazyload
