@@ -1,5 +1,5 @@
 - title: 即刻短文
-  subTitle: 随便写点啥(=・ω・=)
+  subTitle: 随便写点啥 (=・ω・=)
   tips: 随时随地，分享生活
   buttonText: 关于我
   buttonLink: /about/
@@ -7,25 +7,29 @@
   home_essay: true
   top_background: /img/envelope_comment_cover.jpg
   essay_list:
-    - content: 明天就要开学了qwq
+    - content: 大学生活，全新的开始！✨🎉
+      date: 2025/09/01
+    - content: 高考考完啦！🎊📝✅
+      date: 2025/06/09
+    - content: 明天就要开学了qwq 😭📚
       date: 2024/09/01
-    - content: 今天B站换了新的头像哦(=・ω・=)
+    - content: 今天 B 站换了新的头像哦 (=・ω・=) 📸
       date: 2024/08/13
       image:
-        - /img/posts/avatar3_circle.png
-    - content: 我的Blog今天正式公开啦！
+        - /img/posts/about/avatar3_circle.png
+    - content: 我的 Blog 今天正式公开啦！🖥️🚀
       date: 2024/08/04
-    - content: 歌曲推荐
+    - content: 歌曲推荐 🎧🎶
       date: 2024/08/03
       aplayer:
         server: tencent
         id: 00020Fp91FKBVu
       link: https://c6.y.qq.com/base/fcgi-bin/u?__=0NFoOIJCe35V
-    - content: 好耶，终于放暑假了！
+    - content: 好耶，终于放暑假了！☀️🏖️
       date: 2024/07/01
-    - content: 2024年投稿的第一个视频欸，终于不咕咕了awa
+    - content: 2024 年投稿的第一个视频欸，终于不咕咕了 awa 🎥
       date: 2024/07/17
       video:
         - https://player.bilibili.com/player.html?isOutside=true&aid=1956063066&bvid=BV1Hy411B7px&cid=1618176812&p=1&autoplay=0
-    - content: 建Blog好辛苦啊qwq
+    - content: 建 Blog 好辛苦啊 qwq 🔧😫💻
       date: 2024/08/01

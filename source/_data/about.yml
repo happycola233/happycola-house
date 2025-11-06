@@ -1,11 +1,11 @@
 - class_name: 关于水水
   subtitle: 学而不思则罔，思而不学则殆。
   avatarImg: /img/avatar.png
-  avatarSkills:
+  avatarSkills: # 此处记得与 .\_config.anzhiyu.yml 中的 author_status.skills 保持同步
     left:
-      - 📚 在读高中生
-      - 🎥 哔哩哔哩UP主
-      - 🖥️ 擅长Python编程
+      - 📚 大学生
+      - 🎥 哔哩哔哩 UP 主
+      - 🖥️ 擅长 Python 编程
       - 📱 数码科技爱好者
     right:
       - 喜爱探索新技术 💡
@@ -13,7 +13,7 @@
       - 擅长打羽毛球 🏸
       - 喜欢听音乐 🎧
   name: 肥宅水水呀
-  description: 是一名 学生、B站UP主、业余的程序员
+  description: 是一名 学生、B 站 UP 主、业余的程序员
   aboutsiteTips:
     tips: 追求
     title1: 源于
@@ -46,11 +46,11 @@
     selfInfoTips2: 性别
     selfInfoContent2: 保密
     selfInfoTips3: 现在职业
-    selfInfoContent3: 高三学生👨‍🎓
+    selfInfoContent3: 大一学生👨‍🎓
   personalities:
     author_name: 执政官
     personality_type: ESFJ-T
-    photo_url: https://i0.hdslb.com/bfs/garb/item/c234fe0684d4ef44ceb96df318e1916475a96068.png
+    photo_url: /img/about-me/EveOneCat.png
     personality_img: https://npm.elemecdn.com/anzhiyu-blog@2.0.8/img/svg/ESFJ-A.svg # ESFJ-T 与 ESFJ-A 的图标是相同的
     name_url: https://www.16personalities.com/ch/esfj-%E4%BA%BA%E6%A0%BC
   maxim:
@@ -94,5 +94,5 @@
     music_tips: 音乐偏好
     music_title: 欧美流行、电音
     music_bg: https://music-file.y.qq.com/songlist/u/ow-sNK4F7ecFoz/6a7e/4e8cba4a4eb42db1efd3b4bb5341c28213e430d7_722be.jpg?imageView2/4/w/600/h/600
-    music_link: /music
+    music_link: https://y.qq.com/n/ryqq/playlist/4056257135
   reward_list:

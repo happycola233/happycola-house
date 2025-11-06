@@ -10,7 +10,7 @@ categories:
   - 生活
   - 搞笑
 description: 《论肥宅水水呀的昵称是如何被“生草”100次的》
-cover: /img/posts/Google-Translate-Nickname_cover.jpg
+cover: /img/posts/Google-Translate-Nickname/Google-Translate-Nickname_cover.jpg
 ---
 
 {% folding cyan open, 谷歌生草机介绍 %}

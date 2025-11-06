@@ -13,8 +13,123 @@
   scrollbar-width: none;
 }
 
-@media screen and (max-width: 768px) {
+
+/* 优化移动端文章顶部封面显示效果，适配背景模糊 + 背景减暗 */
+@media (max-width: 768px) {  /* 当屏幕（视口）宽度 小于或等于 768 像素时，才应用里面的 CSS */
+  #page-header.post-bg { 
+    overflow: hidden;           /* 裁掉超出 */
+  }
   #page-header.post-bg #post-top-cover {
     filter: blur(10px) brightness(60%);
+    transform: scale(1.08);     /* 放大 6–10% 视图，以防止 blur 的典型 “边缘裁切”现象。
+                                   当给背景图加 filter: blur(10px) 时，浏览器在元素边缘外还需要“取样”像素；
+                                   但边界外是透明/深色，于是被算进去→两侧就像被压暗了一圈。移动端视口更窄，这个暗边更显眼。 */
+    transform-origin: center;
+    will-change: transform;
+  }
+}
+
+
+/* -------------------------------------------------------
+ * 背景说明：为什么 custom.css 里写的颜色，页面上看起来“不一致/像被加了透明度”？
+ *
+ * 现象：
+ * - 你在 custom.css 里给 #article-container code 设定了固定色值，最后展示却像被叠了透明度或被改色。
+ *
+ * 根因：
+ * 1) 主题在 node_modules/hexo-theme-anzhiyu/source/css/_highlight/highlight.styl:54-57
+ *    对 #article-container code 写了：
+ *      background: $code-background; color: $code-foreground;
+ * 2) _config.anzhiyu.yml:1034-1045 开启 theme_color.enable 后，
+ *    code_background = var(--anzhiyu-code-stress)，code_foreground = #fff，
+ *    因此生成的主样式总会把代码块背景换成“主题主色（含透明度）”。
+ * 3) var(--anzhiyu-code-stress) 在 node_modules/hexo-theme-anzhiyu/source/css/_global/index.styl:74
+ *    定义为 var(--anzhiyu-main)，而 --anzhiyu-main 会跟随主题配色/按钮切换。
+ *    所以你在 source/css/custom.css:21-32 写的固定色值会被主样式再次覆盖，
+ *    视觉上就像“被加了透明度/被染色”。
+ * 4) 深色模式由 <html> 上的 [data-theme="dark"] 控制，
+ *    不是通过 @media (prefers-color-scheme)。所以仅写媒体查询不会随主题按钮联动。
+ *
+ * 处理策略（本文件已采用）：
+ * - 使用更“重”的选择器：[data-theme] / [data-theme='dark']，并配合 !important，直接压过主题主样式。
+ * - 规则顺序：先给所有 data-theme 下的“浅色默认”，再用更具体的 [data-theme='dark'] 覆盖深色。
+ * ----------------------------------------------------- */
+
+
+/* -------------------------------------------------------
+ * 强制覆盖主题：#article-container 内的 <code>
+ * 浅色：背景 #DEE5F6，文字 #2F479F
+ * 深色：背景 #263357，文字 #BBC7FD
+ * 用 [data-theme] 提升选择器优先级 + !important 保证覆盖
+ * ----------------------------------------------------- */
+[data-theme] #article-container :not(pre) > code {
+  background-color: #DEE5F6 !important;
+  color: #2F479F !important;
+}
+[data-theme='dark'] #article-container :not(pre) > code {
+  background-color: #263357 !important;
+  color: #BBC7FD !important;
+}
+
+
+/* -------------------------------------------------------
+ * 强制覆盖主题：全局粗体文本 <b>, <strong> 的文字颜色
+ * 浅色：#4C4948
+ * 深色：#BABABC
+ * 如需仅作用于文章区，可把选择器改成挂在 #article-container 下
+ * ----------------------------------------------------- */
+[data-theme] b,
+[data-theme] strong {
+  color: #4C4948 !important;
+}
+[data-theme='dark'] b,
+[data-theme='dark'] strong {
+  color: #BABABC !important;
+}
+
+
+/* -------------------------------------------------------
+ * 移除文章区内，包裹图片的链接 <a><img></a> 的多余样式
+ * ----------------------------------------------------- */
+#article-container a:has(> img) {
+  padding: 0 !important;
+  border-bottom: none !important;
+}
+#article-container a:has(> img):hover {
+  box-shadow: none !important;
+  background: none !important;
+}
+
+
+
+/* 移动端深色模式：将即刻短文页 Banner 按钮改成黑底白箭头圆形，避免原主题半透明样式导致的“白块”问题 */
+@media screen and (max-width: 768px) {
+  /* essay 页移动端：保持按钮本体紧凑 */
+  body[data-type='essay'] .author-content .banner-button {
+    padding: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  body[data-type='essay'] .author-content .banner-button-text {
+    display: none !important;
+  }
+
+  /* 深色模式下的圆形箭头按钮 */
+  [data-theme='dark'] body[data-type='essay']
+    .author-content .banner-button i,
+  [data-theme='dark'] body[data-type='essay']
+    .author-content .banner-button svg {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      margin: 0;
+      padding: 0;
+      background: rgba(0, 0, 0, 0.92);
+      color: var(--anzhiyu-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
   }
 }

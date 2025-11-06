@@ -8,7 +8,7 @@ tags:
 categories:
   - 技术
 description: 这里是一篇关于稀疏文件的介绍awa
-cover: /img/posts/Sparse-File-Management-and-Usage-Guide_cover.png
+cover: /img/posts/Sparse-File-Management-and-Usage-Guide/Sparse-File-Management-and-Usage-Guide_cover.png
 permalink:
 ---
 

@@ -2,223 +2,206 @@
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 
-# Site
-title: 水水的小屋🏡~
-subtitle: '写点有趣的东东awa'
-description: ''
-keywords: '肥宅水, 水水, 肥宅水水呀'
-author: 肥宅水水呀
-language: zh-CN
-timezone: Asia/Shanghai
+# Site 站点信息
+title: 水水的小屋🏡~           # 站点主标题（浏览器标题、主题头部常用）
+subtitle: '写点有趣的东东 awa'   # 站点副标题（主题可选择是否显示）
+description: ''               # 站点描述（用于 SEO 的 <meta name="description">）
+keywords: '肥宅水, 水水, 肥宅水水呀' # 站点关键词（用于 SEO 的 <meta name="keywords">）
+author: 肥宅水水呀             # 作者名（文章页作者、页脚等位置会用到）
+language: zh-CN               # 站点语言（影响分页、日期等本地化）
+timezone: Asia/Shanghai       # 时区（建议设定，影响文章时间渲染；Hexo 默认用系统时区）
 
-# URL
-## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://www.happycola.top
-permalink: archives/:year/:month/:day/:title/
-permalink_defaults:
+# URL 站点 URL 与固定链接
+## 如果用 GitHub Pages（项目页），url 应为 'https://username.github.io/project'
+url: https://www.happycola.top  # 站点根地址，最终用于生成绝对路径链接（重要）
+permalink: archives/:year/:month/:day/:title/  # 文章固定链接格式（目录式）
+permalink_defaults:            # 固定链接参数的默认值（一般留空）
 pretty_urls:
-  trailing_index: false # Set to false to remove trailing 'index.html' from permalinks
-  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+  trailing_index: false        # 是否去掉末尾的 'index.html'（true=保留，false=移除）
+  trailing_html: true          # 是否保留末尾的 '.html'（true=保留，false=移除）
 
-# Directory
-source_dir: source
-public_dir: public
-tag_dir: tags
-archive_dir: archives
-category_dir: categories
-code_dir: downloads/code
-i18n_dir: :lang
-skip_render:
-  - img/**/*
-  - robots.txt
+# Directory 目录与构建行为
+source_dir: source             # 源文件目录（Markdown、资源等）
+public_dir: public             # 构建输出目录（静态站点产物）
+tag_dir: tags                  # 标签页目录
+archive_dir: archives          # 归档页目录
+category_dir: categories       # 分类页目录
+code_dir: downloads/code       # 代码下载目录（很少用）
+i18n_dir: :lang                # 国际化目录占位
+skip_render:                   # 跳过渲染的路径（原样拷贝到 public）
+  - img/**/*                   # 跳过所有 img 子目录下文件（如需手写 HTML/JS/CSS）
+  - robots.txt                 # 让 robots.txt 原样输出
 
-# Writing
-new_post_name: :title.md # File name of new posts
-default_layout: post
-titlecase: false # Transform title into titlecase
+# Writing 写作与渲染
+new_post_name: :title.md       # 新建文章的默认文件名（:title 会被标题替换）
+default_layout: post           # 新文章默认布局（post/page/draft 等）
+titlecase: false               # 是否将标题转换为 Title Case（英文标题用，中文一般 false）
 external_link:
-  enable: true # Open external links in new tab
-  field: site # Apply to the whole site
-  exclude:
+  enable: true                 # 给外链添加 target="_blank"（新窗口打开）
+  field: site                  # 应用于全站(site)还是文章(post)等
+  exclude:                     # 这些域名不视为外链（不会加 target）
     - www.happycola.top
-filename_case: 0
-render_drafts: false
-post_asset_folder: false
-relative_link: false
-future: true
-syntax_highlighter: highlight.js
-highlight:
-  line_number: false
-  auto_detect: false
-  tab_replace: '  '
-  wrap: true
-  hljs: false
-prismjs:
+filename_case: 0               # 文件名大小写：0=不变，1=小写，2=大写
+render_drafts: false           # 是否构建草稿（source/_drafts）；发布前一般为 false
+post_asset_folder: false       # 是否为每篇文章启用资源文件夹（与 hexo-asset-image 习惯相关）
+relative_link: false           # 是否使用相对链接（true 有助于离线预览，但可能影响某些主题脚本）
+future: true                   # 是否显示未来日期的文章（true=显示，false=隐藏）
+syntax_highlighter: highlight.js # 指定代码高亮器（highlight.js 或 prismjs，建议二选一）
+highlight:                     # highlight.js 相关选项（当 syntax_highlighter=highlight.js 时生效）
+  line_number: true            # 显示行号
+  auto_detect: false           # 自动检测语言（一般禁用，防误判）
+  tab_replace: '  '            # 将制表符替换为两个空格
+  wrap: true                   # 代码换行显示
+  hljs: false  # 不建议开启，开启后主题主题在 node_modules/hexo-theme-anzhiyu/source/css/_highlight/highlight.styl 里
+               # 针对于 .highlight、.gutter、.code 的布局规则失效，因而第一行缩进、左右边距、行高都会乱掉。
+
+prismjs: # Prism 相关（当 syntax_highlighter=prismjs 时生效）
   preprocess: true
   line_number: false
   tab_replace: ''
 
-# Home page setting
-# path: Root path for your blogs index page. (default = '')
-# per_page: Posts displayed per page. (0 = disable pagination)
-# order_by: Posts order. (Order by date descending by default)
+
+# Home page setting 首页文章列表
+# path：博客首页路径（默认 '' 即根路径）
+# per_page：每页文章数（0=不分页）
+# order_by：排序（默认按日期降序 -date）
 index_generator:
-  path: ''
-  per_page: 10
-  order_by: -date
+  path: ''                     # 首页在根路径
+  per_page: 10                 # 首页每页 10 篇
+  order_by: -date              # 按日期降序
 
-# Category & Tag
-default_category: uncategorized
-category_map:
-tag_map:
+# Category & Tag 分类与标签
+default_category: uncategorized   # 未指定分类时的默认分类名
+category_map:                     # 分类别名映射（左为原名，右为别名；可用于多语言/URL 美化）
+tag_map:                          # 标签别名映射
 
-# Metadata elements
+# Metadata elements 元信息
 ## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
-meta_generator: true
+meta_generator: true           # 是否在 <head> 中输出 "generator: Hexo" 元信息
 
-# Date / Time format
-## Hexo uses Moment.js to parse and display date
-## You can customize the date format as defined in
-## http://momentjs.com/docs/#/displaying/format/
-date_format: YYYY-MM-DD
-time_format: HH:mm:ss
-## updated_option supports 'mtime', 'date', 'empty'
+# Date / Time format 日期时间格式
+## Hexo 用 Moment.js 来格式化日期
+## 格式定义：http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD        # 文章日期显示格式
+time_format: HH:mm:ss          # 时间显示格式
+## updated_option：文章“更新于”的来源：'mtime' 文件修改时间、'date' 前台日期、'empty' 不显示
 updated_option: 'mtime'
 
-# Pagination
-## Set per_page to 0 to disable pagination
+# Pagination 全局分页
+## per_page 设为 0 可禁用分页（不建议，列表过长）
 per_page: 10
-pagination_dir: page
+pagination_dir: page           # 分页路径前缀，如 /page/2
 
-# Include / Exclude file(s)
-## include:/exclude: options only apply to the 'source/' folder
-include:
-exclude:
-ignore:
+# Include / Exclude file(s) 仅对 source/ 有效
+include:                       # 强制包含（即便被 ignore 匹配）
+exclude:                       # 强制排除
+ignore:                        # 忽略特定文件/目录（一般与主题无关的开发文件）
 
-# Extensions
+# Extensions 扩展
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: anzhiyu
+theme: anzhiyu                 # 使用的主题名称（需在 themes/anzhiyu 安装好）
 
-# Deployment
+# Deployment 部署
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: ''                     # 部署方式（如 git、rsync、ftp、vercel 等；需相应插件，如 hexo-deployer-git）
 
+# 开发内置服务器（hexo-server）
 server:
-  port: 2333
-  log: true
-  ip: 0.0.0.0
-  compress: true
-  cache: false
-  header: true
+  port: 2333                   # 本地开发端口：hexo server -p 2333
+  log: true                    # 输出访问日志
+  ip: 0.0.0.0                  # 监听地址（0.0.0.0 允许局域网访问）
+  compress: true               # 启用 gzip 压缩（开发可开/关）
+  cache: false                 # 静态缓存（开发建议关闭）
+  header: true                 # 发送响应头
   serveStatic:
-    extensions: false
+    extensions: false          # 是否自动补全静态资源扩展名
 
+# 给外链加 nofollow（需相应插件支持，如 hexo-filter-nofollow）
 nofollow:
   enable: true
   field: site
   exclude:
-    - www.happycola.top
+    - www.happycola.top        # 排除本域名（内部链接不加 nofollow）
 
+# Markdown 渲染器（对应 hexo-renderer-markdown-it 之类）
 markdown:
-  preset: 'commonmark'
+  preset: 'commonmark'         # 语法预设（commonmark/zero/default）
   render:
-    html: true
-    xhtmlOut: true
-    langPrefix: 'language-'
-    breaks: true
-    linkify: true
-    typographer: true
-    quotes: '“”‘’'
+    html: true                 # 允许在 Markdown 中写原始 HTML
+    xhtmlOut: true             # 输出符合 XHTML 的闭合标签
+    langPrefix: 'language-'    # 代码块语言类名前缀
+    breaks: true               # 换行即 <br>（适合中文段落换行）
+    linkify: true              # 自动把 URL 文本识别为链接
+    typographer: true          # 更智能的标点排版
+    quotes: '“”‘’'             # 引号替换风格
   enable_rules:
-    - table
-    - strikethrough
-  disable_rules:
-  plugins:
-  anchors:
-    level: 2
-    collisionSuffix: ''
-    permalink: true
-    permalinkClass: 'headerlink'
-    permalinkSide: 'right'
-    permalinkSymbol: ''
-    case: 1
-    separator: '-'
+    - table                    # 启用表格语法
+    - strikethrough            # 启用删除线语法
+  disable_rules:               # 禁用的语法规则（留空为默认）
+  plugins:                     # markdown-it 插件列表（若有需要可在此添加）
+  anchors:                     # 标题锚点配置（用于给标题生成可链接的 #）
+    level: 2                   # 从 h2 开始生成锚点
+    collisionSuffix: ''        # 重名锚点后缀
+    permalink: true            # 在标题旁显示锚点链接
+    permalinkClass: 'headerlink' # 锚点链接的 class
+    permalinkSide: 'right'     # 锚点显示在标题右侧
+    permalinkSymbol: ''        # 锚点字符（留空只显示图标/样式）
+    case: 1                    # 标题大小写处理：0=不变，1=小写，2=大写
+    separator: '-'             # 生成锚点时的分隔符
 
-all_minifier: true
+# 资源压缩与合并（均需配套插件，如 hexo-all-minifier / hexo-html-minifier 等）
+all_minifier: true             # 总开关（部分集合插件提供该选项）
 js_concator:
-  enable: true
-  bundle_path: '/js/bundle.js'
-  front: false
-  silent: false
+  enable: true                 # 是否合并 JS（合并后减少请求数）
+  bundle_path: '/js/bundle.js' # 合并输出的路径
+  front: false                 # 是否在页面前部插入
+  silent: false                # 静默模式
 html_minifier:
-  enable: true
-  ignore_error: false
+  enable: true                 # 压缩 HTML
+  ignore_error: false          # 压缩出错是否忽略
   silent: false
-  exclude:
+  exclude:                     # 需要排除的路径（留空为无）
 css_minifier:
-  enable: true
+  enable: true                 # 压缩 CSS
   silent: false
   exclude: 
-    - '*.min.css'
+    - '*.min.css'              # 已经是 .min.css 的文件不再压缩
 js_minifier:
-  enable: true
-  mangle: true
+  enable: true                 # 压缩 JS
+  mangle: true                 # 混淆变量名（可能影响调试）
   silent: false
   exclude: 
-    - '*.min.js'
+    - '*.min.js'               # 已经 min 的文件不再压缩
 image_minifier:
-  enable: false
+  enable: false                # 图片压缩（关闭则不处理；开启需较长构建时间）
   interlaced: false
   multipass: false
-  optimizationLevel: 2
-  pngquant: false
-  progressive: false
+  optimizationLevel: 2         # PNG 优化等级（0-7）
+  pngquant: false              # 是否启用 pngquant
+  progressive: false           # JPEG 渐进式
   silent: false
 
-# envelope_comment
-# see https://akilar.top/posts/e2d3c450/
+# envelope_comment 信封样式留言板
+# 参考：https://akilar.top/posts/e2d3c450/
 envelope_comment:
-  enable: true #控制开关
+  enable: true # 控制开关
   custom_pic:
-    cover: /img/envelope_comment_cover.jpg #https://npm.elemecdn.com/hexo-butterfly-envelope/lib/violet.jpg #信笺头部图片
-    line: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/line.png #信笺底部图片
-    beforeimg: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/before.png # 信封前半部分
-    afterimg: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/after.png # 信封后半部分
-  message: #信笺正文，多行文本，写法如下
+    cover: /img/envelope_comment_cover.jpg # https://npm.elemecdn.com/hexo-butterfly-envelope/lib/violet.jpg #信笺头部图片
+    line: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/line.png          # 信笺底部图片
+    beforeimg: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/before.png   # 信封前半部分
+    afterimg: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/after.png     # 信封后半部分
+  message: # 信笺正文，多行文本，写法如下
     - 有什么想问的？
     - 有什么想说的？
     - 有什么想吐槽的？
     - 哪怕是有什么想吃的，都可以告诉我哦~
-  bottom: "☆*: .｡. o(≧▽≦)o .｡.:*☆" #仅支持单行文本
-  height: #1024px，信封划出的高度
-  path: #【可选】comments 的路径名称。默认为 comments，生成的页面为 comments/index.html
-  front_matter: #【可选】comments页面的 front_matter 配置
+  bottom: "☆*: .｡. o(≧▽≦)o .｡.:*☆"  # 仅支持单行文本
+  height:          # 1024px，信封划出的高度
+  path:            # 【可选】comments 的路径名称。默认为 comments，生成的页面为 comments/index.html
+  front_matter:    # 【可选】comments页面的 front_matter 配置
     title: 留言板
     comments: true
     top_img: false
     type: envelope
-
-# electric_clock
-# see https://anzhiy.cn/posts/fc18.html or https://github.com/anzhiyu-c/hexo-butterfly-clock-anzhiyu
-electric_clock:
-  enable: true # 开关
-  priority: 5 # 过滤器优先级，数值越小，执行越早，默认为 10，选填
-  enable_page: all # 填写想要应用的页面的相对路径（即路由地址）,如根目录就填’/‘,分类页面就填’/categories/‘。若要应用于所有页面，就填’all’，默认为 all
-  exclude: # 填写想要屏蔽的页面，可以多个。写法见示例。原理是将屏蔽项的内容逐个放到当前路径去匹配，若当前路径包含任一屏蔽项，则不会挂载。
-    # - /posts/
-    # - /about/
-  layout: # 挂载容器类型
-    type: class
-    name: sticky_layout
-    index: 0
-  loading: https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/loading.gif #加载动画自定义
-  clock_css: https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.css
-  clock_js: https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.js
-  ip_api: https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0
-  qweather_key: a36f8d093631479ea3364ad09f5b0280 # 和风天气key
-  gaud_map_key: 69a9c6cfd94b1276946f0267a7c5a14b # 高德地图Web服务key
-  default_rectangle: false # 开启后将一直显示rectangle位置的天气，否则将获取访问者的地理位置与天气
-  rectangle: 116.407001,39.904600 # （设置为北京市）获取访问者位置失败时会显示该位置的天气，同时该位置为开启default_rectangle后的位置

@@ -10,7 +10,7 @@ categories: # 分类
   - 生活
   - 日常
 description: 这里是一篇肥宅水水呀的介绍哟~
-cover: /img/posts/about_cover.jpg
+cover: /img/posts/about/about_cover.jpg
 permalink:
 sticky: 99 # 置顶文章。数值越大，置顶的优先级越大
 ---
@@ -32,9 +32,9 @@ sticky: 99 # 置顶文章。数值越大，置顶的优先级越大
 
 | 头像 | 开始使用时间 | 人物（内容） | 备注 |
 | :--: | :----------: | :--: | ---- |
-| <img class="avatar" alt src="/img/posts/avatar1_circle.png" width="150"> | 2019-05-01 | MEMZ（彩虹猫病毒）LOGO | 在感染MEMZ病毒后，重启系统，开机画面就会变成彩虹猫动画画面 |
-| <img class="avatar" alt src="/img/posts/avatar2_circle.png" width="150"> | 2021-07-26 | かふう ちの（香风智乃） | 『ご注文はうさぎですか？』（《请问您今天要来点兔子吗？》）<br>作者：みゅとん/뮤우톤<br>原图：<https://www.pixiv.net/artworks/53170539> |
-| <img class="avatar" alt src="/img/posts/avatar3_circle.png" width="150"> | 2024-08-13 | 猫と少女 | 作者：Stella<br>原图：<https://www.pixiv.net/artworks/109239247> |
+| <img class="avatar" alt src="/img/posts/about/avatar1_circle.png" width="150"> | 2019-05-01 | MEMZ（彩虹猫病毒）LOGO | 在感染MEMZ病毒后，重启系统，开机画面就会变成彩虹猫动画画面 |
+| <img class="avatar" alt src="/img/posts/about/avatar2_circle.png" width="150"> | 2021-07-26 | かふう ちの（香风智乃） | 『ご注文はうさぎですか？』（《请问您今天要来点兔子吗？》）<br>作者：みゅとん/뮤우톤<br>原图：<https://www.pixiv.net/artworks/53170539> |
+| <img class="avatar" alt src="/img/posts/about/avatar3_circle.png" width="150"> | 2024-08-13 | 猫と少女 | 作者：Stella<br>原图：<https://www.pixiv.net/artworks/109239247> |
 
 ### 关于昵称
 
@@ -65,7 +65,7 @@ PS：水水平时并不常喝可乐，但偶尔喝的时候也觉得挺过瘾的
 肥宅水水呀在B站很活跃哦(^・ω・^ ) 如果您有B站账号，可以尝试跟水水互动哟awa
 {% endnote %}
 
-## 关于水水的小屋
+## 关于水水的小屋🏡
 
 肥宅水水呀在2020年3月创建了一个用[凡科建站](https://jz.fkw.com/)搭建的[网站](https://et19798147-2.icoc.vc/)，但是这个平台的免费版的功能太少，比如不支持自定义域名、自定义文件等，而且只能使用他们的网页模板，升级又要花很多的钱(´；ω；\`) 最重要的是，那个网站每个月只能访问300次，超过300次，这个月就不能再访问了！(´；ω；\`)
 
@@ -84,31 +84,25 @@ PS：水水平时并不常喝可乐，但偶尔喝的时候也觉得挺过瘾的
 
 {% timeline 2019,purple %}
 <!-- timeline 05-01 00:39:22 -->
-发布了第一个视频。（虽然是转载的）
-<a href="https://www.bilibili.com/video/av50978032">
-  <img src="/img/posts/1-1card50978032_web.png" alt="投稿的视频" style="height:90px; display:block; margin:0;">
-</a>
+发布了第一个视频。（虽然是转载的）  <!-- _config.yml 里 markdown.render.breaks 定义为：换行即添加 br，所以下面的内容html内容都不能随意换行 -->
+<a class="no-text-decoration" href="https://www.bilibili.com/video/av50978032"><img src="/img/posts/about/1-1card50978032_web.png" alt="投稿的视频" style="height:90px; display:block; margin:0;"></a>
+
 这个视频发布后，播放量越来越多，也有许多人评论，给了肥宅水水呀很大的鼓舞。于是下面的视频陆续发布：
-<a href="https://www.bilibili.com/video/av59136398">
-  <img src="/img/posts/1-1card59136398_web.png" alt="投稿的视频" style="height:90px; display:block; margin:0;">
-</a>
-<a href="https://www.bilibili.com/video/av59146917">
-  <img src="/img/posts/1-1card59146917_web.png" alt="投稿的视频" style="height:90px; display:block; margin:0;">
-</a>
-<a href="https://www.bilibili.com/video/av73626344">
-  <img src="/img/posts/1-1card73626344_web.png" alt="投稿的视频" style="height:90px; display:block; margin:0;">
-</a>
+
+<a class="no-text-decoration" href="https://www.bilibili.com/video/av59136398"><img src="/img/posts/about/1-1card59136398_web.png" alt="投稿的视频" style="height:90px; display:block; margin:0;"></a>
+<a class="no-text-decoration" href="https://www.bilibili.com/video/av59146917"><img src="/img/posts/about/1-1card59146917_web.png" alt="投稿的视频" style="height:90px; display:block; margin:0;"></a>
+<a class="no-text-decoration" href="https://www.bilibili.com/video/av73626344"><img src="/img/posts/about/1-1card73626344_web.png" alt="投稿的视频" style="height:90px; display:block; margin:0;"></a>
 <!-- endtimeline -->
 <!-- timeline 10-27 -->
 一口气发了两个自己 录制+剪辑 的视频（那是肥宅水水呀第一次接触到虚拟机）。
-<img src="/img/posts/DD13B3DA.jpg" alt="投稿的视频" style="height:60px; display:block; margin:0;">
+<img src="/img/posts/about/DD13B3DA.jpg" alt="投稿的视频" style="height:60px; display:block; margin:0;">
 {% note info disabled %}这期视频现在不存在了{% endnote %}
-<img src="/img/posts/E3CC8140.jpg" alt="投稿的视频" style="height:60px; display:block; margin:0;">
+<img src="/img/posts/about/E3CC8140.jpg" alt="投稿的视频" style="height:60px; display:block; margin:0;">
 {% note info disabled %}这期视频现在不存在了{% endnote %}
 <!-- endtimeline -->
 <!-- timeline 11-01 -->
 发布了第三个有关病毒的视频。
-<img src="/img/posts/5792DD70.jpg" alt="投稿的视频" style="height:60px; display:block; margin:0;">
+<img src="/img/posts/about/5792DD70.jpg" alt="投稿的视频" style="height:60px; display:block; margin:0;">
 {% note info disabled %}这期视频现在不存在了{% endnote %}
 
 > 但是因为种种原因，电脑病毒相关的视频不过审了，于是肥宅水水呀删掉了所有有关电脑病毒的视频。
@@ -122,9 +116,7 @@ PS：水水平时并不常喝可乐，但偶尔喝的时候也觉得挺过瘾的
 {% timeline 2020,purple %}
 <!-- timeline 03-20 15:56:30 -->
 发布了第一个带有自己亲自制作程序的视频
-<a href="https://www.bilibili.com/video/av97811634">
-  <img src="/img/posts/1-1card97811634_web.png" alt="投稿的视频" style="height:90px; display:block; margin:0;">
-</a>
+<a class="no-text-decoration" href="https://www.bilibili.com/video/av97811634"><img src="/img/posts/about/1-1card97811634_web.png" alt="投稿的视频" style="height:90px; display:block; margin:0;"></a>
 于是之后，越来越多的视频中带有自己做的程序，肥宅水水呀的粉丝也越来越多。
 <!-- endtimeline -->
 <!-- timeline 03-31 16:06:03 -->
@@ -132,9 +124,7 @@ PS：水水平时并不常喝可乐，但偶尔喝的时候也觉得挺过瘾的
 <!-- endtimeline -->
 <!-- timeline 04-23 00:00:14 -->
 发布了一周年特辑，来感谢一年来粉丝们对肥宅水水呀的支持。(现在感觉做得很烂qwq)
-<a href="https://www.bilibili.com/video/av285200718">
-  <img src="/img/posts/1-1card285200718_web.png" alt="投稿的视频" style="height:90px; display:block; margin:0;">
-</a>
+<a class="no-text-decoration" href="https://www.bilibili.com/video/av285200718"><img src="/img/posts/about/1-1card285200718_web.png" alt="投稿的视频" style="height:90px; display:block; margin:0;"></a>
 <!-- endtimeline -->
 <!-- timeline 06-22 -->
 哔哩哔哩粉丝数达到**500**
@@ -174,7 +164,7 @@ PS：水水平时并不常喝可乐，但偶尔喝的时候也觉得挺过瘾的
 哔哩哔哩粉丝数达到**1500**
 <!-- endtimeline -->
 <!-- timeline 07-26 -->
-更换头像为 <img src="/img/posts/avatar2_circle.png" width="80" style="display: inline; vertical-align: middle;" />，详见 [关于头像](#关于头像)
+更换头像为 <img src="/img/posts/about/avatar2_circle.png" width="80" style="display: inline; vertical-align: middle;" />，详见 [关于头像](#关于头像)
 <!-- endtimeline -->
 <!-- timeline 10-04 -->
 注册GitHub账号：[肥宅水水呀](https://github.com/happycola233)
@@ -213,7 +203,7 @@ PS：水水平时并不常喝可乐，但偶尔喝的时候也觉得挺过瘾的
 正式在哔哩哔哩[动态](https://t.bilibili.com/961815968671072288)中公开“[水水的小屋🏡~](/)”
 <!-- endtimeline -->
 <!-- timeline 08-13 -->
-更换头像为 <img src="/img/posts/avatar3_circle.png" width="80" style="display: inline; vertical-align: middle;" />，详见 [关于头像](#关于头像)
+更换头像为 <img src="/img/posts/about/avatar3_circle.png" width="80" style="display: inline; vertical-align: middle;" />，详见 [关于头像](#关于头像)
 <!-- endtimeline -->
 {% endtimeline %}
 

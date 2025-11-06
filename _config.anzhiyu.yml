@@ -9,7 +9,9 @@ menu:
   #   朋友圈: /fcircle/ || anzhiyu-icon-artstation
     留言板: /comments/ || anzhiyu-icon-envelope
 
-  小空调: /air-conditioner/ || anzhiyu-icon-fan
+  好东西:
+    C++ 笔记: https://cpp.happycola.top/ || anzhiyu-icon-book
+    小空调: /air-conditioner/ || anzhiyu-icon-fan
   # 我的:
   #   音乐馆: /music/ || anzhiyu-icon-music
   #   追番页: /bangumis/ || anzhiyu-icon-bilibili
@@ -51,9 +53,9 @@ mourn:
 # Code Blocks (代码相关)
 # --------------------------------------
 
-highlight_theme: pale night #  darker / pale night / light / ocean / mac / mac light / false
+highlight_theme: mac #  darker / pale night / light / ocean / mac / mac light / false
 highlight_copy: true # copy button
-highlight_lang: true # show the code language
+highlight_lang: false # 显示代码语言（打开后感觉不美观）
 highlight_shrink: false # true: 收缩代码块 / false: 展开代码块 | none: 展开代码块并隐藏按钮
 highlight_height_limit: 330 # 代码高度限制，单位: px
 code_word_wrap: false # 代码自动换行
@@ -80,10 +82,10 @@ author_status:
   enable: true
   # 可以是任何图片，建议放表情包或者emoji图片，效果都很好，[表情包速查](https://emotion.xiaokang.me/)
   statusImg: /img/emote/tv_小电视/tv_微笑.gif
-  skills:
-    - 📚 在读高中生
-    - 🎥 哔哩哔哩UP主
-    - 🖥️ 擅长Python编程
+  skills: # 此处记得与 source\_data\about.yml 中的 avatarSkills 保持同步
+    - 📚 大学生
+    - 🎥 哔哩哔哩 UP 主
+    - 🖥️ 擅长 Python 编程
     - 📱 数码科技爱好者
     - 💡 喜爱探索新技术
     - 📷 热爱摄影艺术
@@ -178,7 +180,7 @@ error_img:
 # A simple 404 page
 error_404:
   enable: true
-  subtitle: "这里什么都没有哦qwq"
+  subtitle: "这里什么都没有哦 qwq"
   background: /img/404_background.png # https://i1.hdslb.com/bfs/static/jinkela/long/mstation/404.png
 
 post_meta:
@@ -250,7 +252,7 @@ post_copyright:
 
 # Sponsor/reward
 reward:
-  enable: false
+  enable: false  # 此处即使是 false，仍然会请求相关js，严重拖慢了网站的加载速度。为此在 .\scripts\qrcode-control.js 添加了脚本干预该行为。
   QR_code:
     - img: https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png
       link:
@@ -280,7 +282,7 @@ related_post:
   date_type: created # or created or updated 文章日期显示创建日或者更新日
 
 # figcaption (图片描述文字)
-photofigcaption: true
+photofigcaption: false
 
 # post_pagination (分页)
 # value: 1 || 2 || 3 || 4 || false
@@ -950,7 +952,7 @@ footer:
       - link: https://beian.miit.gov.cn/#/Integrated/recordQuery
         text: "沪ICP备2025149364号"
       - link: https://beian.mps.gov.cn/#/query/webSearch
-        text: 
+        text: "沪公网安备31011202021528号"
     subTitle:
       enable: true
       # Typewriter Effect (打字效果)
@@ -1162,13 +1164,13 @@ font:
   global-font-size: 16px
   code-font-size:
   font-family:
-  code-font-family: consolas, Menlo, monospace, "PingFang SC", "Microsoft JhengHei", "Microsoft YaHei", sans-serif
+  code-font-family: consolas, "Cascadia Code SemiLight", Menlo, monospace, "PingFang SC", "Microsoft JhengHei", "Microsoft YaHei", sans-serif
 
 # Font settings for the site title and site subtitle
 # 左上角网站名字 主页居中网站名字
 blog_title_font:
   font_link:
-  font-family: PingFang SC, 'Hiragino Sans GB', 'Microsoft JhengHei', 'Microsoft YaHei', sans-serif
+  font-family: "Noto Sans SC, PingFang SC, Microsoft YaHei, Microsoft YaHei UI, DengXian, Noto Sans CJK SC, Hiragino Sans GB, sans-serif"
 
 # The setting of divider icon (水平分隔线图标设置)
 hr_icon:
@@ -1230,7 +1232,7 @@ aside:
 
   card_announcement:
     enable: true
-    content: 欢迎参观我的Blog呀awa
+    content: "🔥 万象新生！✨🌱<br>🚀 本 Blog 全面升级！"
   card_weixin:
     enable: false
     face: https://bu.dusays.com/2023/01/13/63c02edf44033.png
@@ -1394,7 +1396,7 @@ note:
 icons:
   ali_iconfont_js: # 阿里图标symbol 引用链接，主题会进行加载 symbol 引用
   fontawesome: true #是否启用fontawesome6图标
-  fontawesome_animation_css: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@1.0.17/lib/assets/font-awesome-animation.min.css
+  fontawesome_animation_css: https://cdnjs-acc.wenshublog.cn/npm/hexo-butterfly-tag-plugins-plus@1.0.17/lib/assets/font-awesome-animation.min.css
 
 # other
 # --------------------------------------
@@ -1507,7 +1509,7 @@ friends_vue:
 
 # 深色模式粒子效果canvas
 universe:
-  enable: true
+  enable: false
 
 # 页面卡片顶部气泡升起效果
 bubble:
@@ -1527,7 +1529,7 @@ LA:
 diytitle:
   enable: true
   leaveTitle: w(ﾟДﾟ)w 不要走！再看看嘛！
-  backTitle: ♪(^∇^*)欢迎回来awa
+  backTitle: ♪(^∇^*) 欢迎回来 awa
 
 # 留言弹幕配置
 comment_barrage_config:
@@ -1546,8 +1548,8 @@ comment_barrage_config:
 nav_music:
   enable: true
   console_widescreen_music: false # 宽屏状态控制台显示音乐而不是标签 enable为true 控制台依然会显示
-  id: 12380309322
-  server: netease
+  id: 4056257135
+  server: tencent
   volume: 0.7 # 默认音量
   all_playlist: https://y.qq.com/n/ryqq/playlist/4056257135
 
@@ -1634,7 +1636,7 @@ agreementPopup:
 
 # 右键菜单
 rightClickMenu:
-  enable: true
+  enable: false
 
 # 首页随便逛逛people模式 而非技能点模式，关闭后为技能点模式需要配置creativity.yml
 peoplecanvas:
@@ -1652,12 +1654,13 @@ dynamicEffect:
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
-    # 自定义css
+    # 自定义 css
     - <link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"> # 评论区表情大小、首页分类 tab 隐藏滚动条与宽度小的浏览器的顶部图片模糊
 
   bottom:
-    # 自定义js
-    - <script src="/js/autoload.js"></script> # 看板娘
+    # 自定义 js
+    - <script src="/js/live2d-widget-loader.js" data-no-pjax></script> # 看板娘加载
+    - <script src="/js/about-music-link-fix.js" data-no-pjax></script> # About 页音乐按钮修复
 
 # CDN
 # Don't modify the following settings unless you know how they work
@@ -1670,16 +1673,26 @@ CDN:
 
   # The CDN provider of third party scripts (第三方 js 的 cdn 配置)
   # option: elemecdn/jsdelivr/unpkg/cdnjs/onmicrosoft/cbd/anheyu/custom
-  third_party_provider: cbd
+  third_party_provider: custom  # 原cbd
 
   # Add version number to CDN, true or false
   version: true
 
   # Custom format
   # For example: https://cdn.staticfile.org/${cdnjs_name}/${version}/${min_cdnjs_file}
-  custom_format: # https://npm.elemecdn.com/${name}@latest/${file}
+# 原：custom_format: # https://npm.elemecdn.com/${name}@latest/${file}
+  custom_format: https://cdnjs-acc.wenshublog.cn/npm/${name}@${version}/${file}
+  # 上面的是中转站：拉取自：https://cdn.jsdelivr.net/npm/${name}@${version}/${file}
+  # 不要使用 @latest，例如 pangu、fontawesome 的最新版存在兼容性问题
+  # 需要注意的是：
+  # cdn.cbd.int 这类镜像站专注 npm 包；URL 固定走 /${name}@${version}/${file}，默认就是 npm 来源，不需额外声明。
+  #  - jsDelivr 属于多源 CDN，支持 npm、GitHub、WordPress 等；为了区分来源，它的路径以 npm/…、gh/…、wp/… 前缀标明数据源。主
+  #    题里之所以写成 https://cdn.jsdelivr.net/npm/${name}@${version}/${min_file}，就是明确告诉 jsDelivr 取自 npm 通道。
+  #  - 其他 CDN（unpkg、cdnjs、elemecdn、onmicrosoft、anheyu 等）各有自己的默认源或专长，用法随之固定；只有 jsDelivr 这类多
+  #    源才需要显式说明拿哪个仓库。
 
-  option:
+
+  option: # 比 custom_format 更高的优先级
     # main_css:
     # main:
     # utils:
@@ -1723,7 +1736,7 @@ CDN:
     # fireworks:
     # click_heart:
     # ClickShowText:
-    fontawesome: https://cdn.cbd.int/@fortawesome/fontawesome-free@6/css/all.min.css # 使用 v6.x 的最新版
+    # fontawesome:
     # flickr_justified_gallery_js:
     # flickr_justified_gallery_css:
     # aplayer_css:

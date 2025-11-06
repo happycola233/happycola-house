@@ -1,32 +1,83 @@
 - class_name: 开启创造力
   creativity_list:
+    # 语言 / 标记
+    - name: Python
+      color: "#ffffff"
+      icon: https://bu.dusays.com/2023/04/09/643293b1230f7.png
+    - name: JS
+      color: "#f7cb4f"
+      icon: https://bu.dusays.com/2023/04/09/643293b121f02.png
+    - name: C++
+      color: "#00599C"
+      icon: https://skillicons.dev/icons?i=cpp
+    - name: HTML
+      color: "#e34f26"
+      icon: https://skillicons.dev/icons?i=html
+    - name: CSS
+      color: "#1572B6"
+      icon: https://skillicons.dev/icons?i=css
+    - name: Markdown
+      color: "#242938"
+      icon: https://skillicons.dev/icons?i=md
+    - name: LaTeX
+      color: "#008080"
+      icon: https://skillicons.dev/icons?i=latex
+    - name: Regex
+      color: "#3366CC"
+      icon: https://skillicons.dev/icons?i=regex
+    - name: SVG
+      color: "#ffb13b"
+      icon: https://skillicons.dev/icons?i=svg
+
+    # 设计 / 多媒体
     - name: Adobe Photoshop
       color: "#4082c3"
       icon: https://skillicons.dev/icons?i=ps
     - name: Adobe Audition
-      color: "#9998ff"
+      color: "#9999FF"
       icon: https://skillicons.dev/icons?i=au
+    - name: Adobe After Effects
+      color: "#9999ff"
+      icon: https://skillicons.dev/icons?i=ae
+    - name: Adobe Premiere Pro
+      color: "#9999FF"
+      icon: https://skillicons.dev/icons?i=pr
     - name: Adobe Illustrator
       color: "#ff9a00"
       icon: https://skillicons.dev/icons?i=ai
-    - name: Python
-      color: "#fff"
-      icon: https://bu.dusays.com/2023/04/09/643293b1230f7.png
-    - name: HTML
-      color: "#e9572b"
-      icon: https://skillicons.dev/icons?i=html
-    - name: CSS
-      color: "#0277bd"
-      icon: https://skillicons.dev/icons?i=css
-    - name: JS
-      color: "#f7cb4f"
-      icon: https://bu.dusays.com/2023/04/09/643293b121f02.png
-    - name: Markdown
-      color: "#242938"
-      icon: https://skillicons.dev/icons?i=md
+    - name: Figma
+      color: "#f24e1e"
+      icon: https://skillicons.dev/icons?i=figma
+
+    # IDE / 编辑器
+    - name: Visual Studio Code
+      color: "#23a9f2"
+      icon: https://skillicons.dev/icons?i=vscode
+    - name: Visual Studio
+      color: "#5c2d91"
+      icon: https://skillicons.dev/icons?i=visualstudio
+    - name: Android Studio
+      color: "#387ced"
+      icon: https://developer.android.google.cn/studio/images/android-studio-stable.svg
+
+    # 包管理 / 平台 / 部署
+    - name: npm
+      color: "#cb3837"
+      icon: https://skillicons.dev/icons?i=npm
     - name: Github
-      color: "#eff1f4"
+      color: "#242938"
       icon: https://skillicons.dev/icons?i=github
-    - name: Alist
-      color: "#fff"
-      icon: https://alist.nn.ci/logo.svg
+    - name: Vercel
+      color: "#000000"
+      icon: https://skillicons.dev/icons?i=vercel
+    - name: OpenList
+      color: "#ffffff"
+      icon: https://doc.oplist.org/logo.svg
+
+    # 操作系统
+    - name: Windows
+      color: "#242938"
+      icon: https://skillicons.dev/icons?i=windows
+    - name: Linux
+      color: "#fcc624"
+      icon: https://skillicons.dev/icons?i=linux

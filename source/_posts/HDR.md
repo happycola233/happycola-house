@@ -7,7 +7,7 @@ tags:
 categories:
   - 技术
 description: 这里是一篇 HDR 的介绍awa
-cover: /img/posts/HDR_cover.png
+cover: /img/posts/HDR/HDR_cover.png
 permalink:
 ---
 
