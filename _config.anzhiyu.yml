@@ -254,10 +254,10 @@ post_copyright:
 reward:
   enable: false  # 此处即使是 false，仍然会请求相关js，严重拖慢了网站的加载速度。为此在 .\scripts\qrcode-control.js 添加了脚本干预该行为。
   QR_code:
-    - img: https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png
+    - img: # https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png
       link:
       text: 微信
-    - img: https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png
+    - img: # https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png
       link:
       text: 支付宝
 
@@ -1396,7 +1396,7 @@ note:
 icons:
   ali_iconfont_js: # 阿里图标symbol 引用链接，主题会进行加载 symbol 引用
   fontawesome: true #是否启用fontawesome6图标
-  fontawesome_animation_css: https://cdnjs-acc.wenshublog.cn/npm/hexo-butterfly-tag-plugins-plus@1.0.17/lib/assets/font-awesome-animation.min.css
+  fontawesome_animation_css: /pluginsSrc/font-awesome-animation/font-awesome-animation.min.css # 示例值：https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@1.0.17/lib/assets/font-awesome-animation.min.css
 
 # other
 # --------------------------------------
@@ -1489,10 +1489,10 @@ home_top:
       class: green
       icon: anzhiyu-icon-book
   default_descr: 再怎么看我也不知道怎么描述它的啦！
-  swiper:
+  swiper: # 即刻短文轮播
     enable: true
-    swiper_css: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css #swiper css依赖
-    swiper_js: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.js #swiper js依赖
+    swiper_css: /pluginsSrc/anzhiyu-theme-static/swiper/swiper.min.css # https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css #swiper css依赖
+    swiper_js: /pluginsSrc/anzhiyu-theme-static/swiper/swiper.min.js # https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.js #swiper js依赖
   banner:
     tips: 新品主题
     title: Theme-AnZhiYu
@@ -1673,16 +1673,15 @@ CDN:
 
   # The CDN provider of third party scripts (第三方 js 的 cdn 配置)
   # option: elemecdn/jsdelivr/unpkg/cdnjs/onmicrosoft/cbd/anheyu/custom
-  third_party_provider: custom  # 原cbd
+  third_party_provider: local  # 原cbd
 
   # Add version number to CDN, true or false
-  version: true
+  version: false
 
   # Custom format
   # For example: https://cdn.staticfile.org/${cdnjs_name}/${version}/${min_cdnjs_file}
 # 原：custom_format: # https://npm.elemecdn.com/${name}@latest/${file}
-  custom_format: https://cdnjs-acc.wenshublog.cn/npm/${name}@${version}/${file}
-  # 上面的是中转站：拉取自：https://cdn.jsdelivr.net/npm/${name}@${version}/${file}
+  custom_format: 
   # 不要使用 @latest，例如 pangu、fontawesome 的最新版存在兼容性问题
   # 需要注意的是：
   # cdn.cbd.int 这类镜像站专注 npm 包；URL 固定走 /${name}@${version}/${file}，默认就是 npm 来源，不需额外声明。
