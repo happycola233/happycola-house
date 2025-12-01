@@ -188,11 +188,11 @@
   }
 
   /* 
-   * 3. 调整 .recent-post-item.lastestpost-item (最新文章卡片)
-   * 使其宽度、边距、圆角与上方的 #category-bar 保持完全一致，
-   * 确保视觉上的对齐和统一。
+   * 3. 调整所有 .recent-post-item 元素 (文章卡片) 的样式
+   *    使其宽度、边距、圆角与上方的 #category-bar 保持完全一致，
+   *    确保视觉上的对齐和统一。
    */
-  .recent-post-item.lastestpost-item {
+  .recent-post-item {
     width: calc(100% - 30px) !important;
     margin-left: 15px !important;
     margin-right: 15px !important;
