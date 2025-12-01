@@ -1,14 +1,20 @@
 ---
-title: HDR 是什么？
+title: "HDR 是什么？"
 date: 2024-08-10 11:20:05
-tags:
-  - 技术
-  - 知识
+updated: 2025-11-06 12:00:00
+published: true
 categories:
   - 技术
-description: 这里是一篇 HDR 的介绍awa
+tags:
+  - HDR
+  - 杜比世界
+  - 高动态范围
+keywords:
+  - HDR
+  - 杜比世界
+  - 高动态范围
+description: "这里是一篇介绍 HDR 的文章 awa"
 cover: /img/posts/HDR/HDR_cover.png
-permalink:
 ---
 
 

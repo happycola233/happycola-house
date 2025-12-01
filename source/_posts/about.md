@@ -1,17 +1,20 @@
 ---
-title: 关于肥宅水水呀
+title: "关于肥宅水水呀"
 date: 2024-08-01 23:30:17
 updated: 2024-08-04 20:26:53
-tags: # 标签
-  - 肥宅水水呀
-  - 介绍
+published: true
+categories:
   - 个人
-categories: # 分类
-  - 生活
-  - 日常
-description: 这里是一篇肥宅水水呀的介绍哟~
-cover: /img/posts/about/about_cover.jpg
-permalink:
+tags:
+  - 肥宅水水呀
+  - happycola
+  - 个人介绍
+keywords:
+  - 肥宅水水呀
+  - happycola
+  - 个人介绍
+description: "这里是一篇肥宅水水呀的介绍哟 ~"
+cover: /img/posts/about/about_cover_expanded.png
 sticky: 99 # 置顶文章。数值越大，置顶的优先级越大
 ---
 

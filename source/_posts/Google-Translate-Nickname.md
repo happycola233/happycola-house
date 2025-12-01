@@ -1,15 +1,28 @@
 ---
-title: Google 生草翻译 100 次昵称
+title: "用 Google 生草翻译 100 次水水的昵称"
 date: 2024-08-03 21:23:33
 updated: 2024-08-04 02:15:53
+published: true
+categories:
+  - 有趣的东东
 tags:
   - 谷歌
-  - 生草
+  - Google
   - 翻译
-categories:
-  - 生活
+  - 谷歌翻译
+  - Google 翻译
+  - 生草
+  - 生草翻译
   - 搞笑
-description: 《论肥宅水水呀的昵称是如何被“生草”100次的》
+keywords:
+  - 谷歌
+  - Google
+  - 翻译
+  - 谷歌翻译
+  - Google 翻译
+  - 生草
+  - 生草翻译
+description: "论 肥宅水水呀 的昵称是如何被 “生草” 100 次的"
 cover: /img/posts/Google-Translate-Nickname/Google-Translate-Nickname_cover.jpg
 ---
 

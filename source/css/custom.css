@@ -1,6 +1,13 @@
+/* （Waline 表情选择弹窗）设置宽度 100%，让弹窗横向铺满容器。 */
 .wl-emoji-popup {
   width: 100%;
 }
+
+/*
+ * 针对 Waline 评论中的表情 .wl-content .wl-emoji 统一高度 3em，
+ * 并对某些前缀路径（/img/emote/小黄…, /img/emote/tv_小电…, /img/emote/…）的表情单独缩小到 1.5em，保持视觉一致；
+ * vertical-align: sub 使表情基线略下沉贴合文字行高。
+ */
 .wl-content .wl-emoji {
   height: 3em !important;
   vertical-align: sub !important;
@@ -9,6 +16,7 @@
   height: 1.5em !important;
 }
 
+/* #catalog-list（目录列表）设置 scrollbar-width: none;，在支持该属性的浏览器隐藏滚动条以美化目录区域。 */
 #catalog-list {
   scrollbar-width: none;
 }
@@ -132,4 +140,21 @@
       justify-content: center;
       font-size: 1.6rem;
   }
+}
+
+/* -------------------------------------------------------
+ * 深色模式取消图片/媒体的整体变暗滤镜
+ * 覆盖主题默认的 [data-theme='dark'] img { filter: brightness(.8); }
+ * ----------------------------------------------------- */
+[data-theme='dark'] img,
+[data-theme='dark'] #article-container iframe,
+[data-theme='dark'] .ads-wrap {
+  filter: none !important;
+}
+
+/* 深色模式：移除顶部/底部背景遮罩，避免 Banner 被压暗 */
+[data-theme='dark'] #page-header:before,
+[data-theme='dark'] #web_bg:before,
+[data-theme='dark'] #footer:before {
+  background-color: transparent !important;
 }

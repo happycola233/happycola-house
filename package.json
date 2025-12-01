@@ -12,6 +12,7 @@
     "version": "7.3.0"
   },
   "dependencies": {
+    "@renbaoshuo/markdown-it-katex": "^2.0.2",
     "hexo": "^7.3.0",
     "hexo-butterfly-envelope": "^1.0.15",
     "hexo-filter-nofollow": "^2.0.2",
@@ -26,6 +27,7 @@
     "hexo-renderer-stylus": "^3.0.1",
     "hexo-server": "^3.0.0",
     "hexo-theme-anzhiyu": "^1.6.15",
-    "hexo-wordcount": "^6.0.1"
+    "hexo-wordcount": "^6.0.1",
+    "katex": "^0.16.25"
   }
 }

@@ -1,15 +1,18 @@
 ---
-title: 稀疏文件介绍
+title: "稀疏文件介绍"
 date: 2024-07-24 13:12:17
-tags:
-  - 技术
-  - Windows
-  - 知识
+updated: 
+published: true
 categories:
   - 技术
-description: 这里是一篇关于稀疏文件的介绍awa
+tags:
+  - Windows
+  - 稀疏文件
+keywords:
+  - Windows
+  - 稀疏文件
+description: "这里是一篇关于 “稀疏文件” 的介绍 awa"
 cover: /img/posts/Sparse-File-Management-and-Usage-Guide/Sparse-File-Management-and-Usage-Guide_cover.png
-permalink:
 ---
 
 

@@ -125,31 +125,62 @@ nofollow:
   exclude:
     - www.happycola.top        # 排除本域名（内部链接不加 nofollow）
 
-# Markdown 渲染器（对应 hexo-renderer-markdown-it 之类）
-markdown:
-  preset: 'commonmark'         # 语法预设（commonmark/zero/default）
+markdown: # hexo-renderer-markdown-it 配置
+  preset: 'default'
+  #- **"commonmark"** - 将解析器配置为严格 [CommonMark](https://commonmark.org/) 模式。
+  #- **"default"** - 类似 [GFM](https://github.github.com/gfm/)，在未指定 preset 名时使用。启用所有可用规则，但不包含 html、typographer 和自动链接。
+  #- **"zero"** - 禁用所有规则。适合通过 `.enable()` 快速手动配置；例如，只需要 `bold` 和 `italic` 标记时使用。
+  
   render:
-    html: true                 # 允许在 Markdown 中写原始 HTML
-    xhtmlOut: true             # 输出符合 XHTML 的闭合标签
-    langPrefix: 'language-'    # 代码块语言类名前缀
-    breaks: true               # 换行即 <br>（适合中文段落换行）
-    linkify: true              # 自动把 URL 文本识别为链接
-    typographer: true          # 更智能的标点排版
-    quotes: '“”‘’'             # 引号替换风格
+    html: true # 是否转义 HTML 内容，若 true 则原样输出 HTML 标签，若 false 则使标签以文本形式显示
+    xhtmlOut: false  # 是否输出完全兼容 XHTML 的标签 (XHTML 语法非常严格, 比如原 HTML 中的 <br> 标签必须要使用 <br/> 这样的形式进行 "自闭和") 可能会出现兼容性问题
+    langPrefix: 'language-' # 只适用 Hexo 默认的两个高亮插件禁用时 # 为围栏代码块中语法定义选项渲染后自动添加 class 名前缀, 如 ---html 渲染为 <class="language-html">
+    breaks: true # 将源文件中的单行换行解析为 `<br>` 标签。也就是说，每按一次 `Enter` 就会产生实际的换行，这不是标准 Markdown / CommonMark / GFM 的默认行为。
+    linkify: true # 解析器可以自动将文本中的链接转为内联 `<a>` 标签。如果你写了一段看起来像链接的文本，它将会被渲染成 `<a src="http://example.com">http://example.com</a>`。
+    typographer: true  # 启用常见排版符号的替换，例如 ©、弯引号、长短横线等。
+    quotes: '“”‘’' # 在 `typographer` 为 `true` 时，用于定义替换“直引号”的双引号与单引号样式。
+    # quotes: '“”‘’' # "double" 将被替换为 “double”
+    #                # 'single' 将被替换为 ‘single’
+    # quotes: '«»“”' # "double" 将被替换为 «double»
+    #                # 'single' 将被替换为 “single”
+               
+  # 不同的 preset 会启用或关闭不同的规则。例如，"zero" preset 会禁用所有规则，"default" preset 会启用所有规则。
   enable_rules:
-    - table                    # 启用表格语法
-    - strikethrough            # 启用删除线语法
-  disable_rules:               # 禁用的语法规则（留空为默认）
-  plugins:                     # markdown-it 插件列表（若有需要可在此添加）
-  anchors:                     # 标题锚点配置（用于给标题生成可链接的 #）
-    level: 2                   # 从 h2 开始生成锚点
-    collisionSuffix: ''        # 重名锚点后缀
-    permalink: true            # 在标题旁显示锚点链接
-    permalinkClass: 'headerlink' # 锚点链接的 class
-    permalinkSide: 'right'     # 锚点显示在标题右侧
-    permalinkSymbol: ''        # 锚点字符（留空只显示图标/样式）
-    case: 1                    # 标题大小写处理：0=不变，1=小写，2=大写
-    separator: '-'             # 生成锚点时的分隔符
+  disable_rules:
+
+  plugins: # 插件选项
+    - markdown-it-abbr
+    - markdown-it-attrs
+    - markdown-it-cjk-breaks
+    - markdown-it-container
+    - markdown-it-deflist
+    - markdown-it-emoji
+    - markdown-it-footnote
+    - markdown-it-ins
+    - markdown-it-mark
+    - markdown-it-sub
+    - markdown-it-sup
+    - name: '@renbaoshuo/markdown-it-katex' # 数学公式支持，需要 `npm install katex @renbaoshuo/markdown-it-katex --save`
+      options: # 如果你需要在定界符前后允许空格（例如 `$ 1 + 1 = 2 $`），将 `skipDelimitersCheck` 选项设为 `true`
+        skipDelimitersCheck: true
+
+  anchors:
+    # 生成 ID 的最小标题级别（如 h2 ~ h6）
+    level: 1
+    # 当 ID 重复时，附加到数字前的后缀
+    collisionSuffix: ''
+    # 若为 true，则在标题旁边创建带永久链接的锚点
+    permalink: true
+    # 永久链接锚点的 class
+    permalinkClass: headerlink
+    # 设为 'right' 时在标题后添加永久链接
+    permalinkSide: 'right'
+    # 永久链接使用的符号
+    permalinkSymbol: ""
+    # ID 大小写处理：0 = 不处理；1 = 全小写；2 = 全大写
+    case: 0
+    # 将空格替换成的字符
+    separator: '-'
 
 # 资源压缩与合并（均需配套插件，如 hexo-all-minifier / hexo-html-minifier 等）
 all_minifier: true             # 总开关（部分集合插件提供该选项）

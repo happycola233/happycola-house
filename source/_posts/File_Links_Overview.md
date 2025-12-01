@@ -1,15 +1,24 @@
 ---
-title: 硬链接、软链接（符号链接）与快捷方式
+title: "硬链接、软链接（符号链接）与快捷方式"
 date: 2024-07-24 13:10:15
-tags:
-  - 技术
-  - Windows
-  - 知识
+updated: 2025-11-06 12:00:00
+published: true
 categories:
   - 技术
-description: 一文吃透：硬链接、软链接（符号链接）与快捷方式
+tags:
+  - Windows
+  - 快捷方式
+  - 符号链接
+  - 硬链接
+  - 软链接
+keywords:
+  - Windows
+  - 快捷方式
+  - 符号链接
+  - 硬链接
+  - 软链接
+description: "本篇文章系统讲透 硬链接（Hard Link）、软链接/符号链接（Symbolic Link） 与 快捷方式（.lnk） 三者的概念、差异与使用场景。"
 cover: /img/posts/File_Links_Overview/File_Links_Overview_cover.png
-permalink:
 ---
 
 

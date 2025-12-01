@@ -1,15 +1,20 @@
 ---
-title: 当快捷方式“深不可测”：Advertised Shortcuts
+title: "一种特殊的快捷方式：Advertised Shortcuts"
 date: 2025-11-04 23:59:39
-tags:
-  - 技术
-  - Windows
-  - 知识
+updated: 
+published: true
 categories:
   - 技术
-description: 神奇的快捷方式
+tags:
+  - Windows
+  - 快捷方式
+  - Advertised Shortcuts
+keywords:
+  - Windows
+  - 快捷方式
+  - Advertised Shortcuts
+description: "当你右键查看某些应用的快捷方式时，可能会发现一个奇怪的现象：“目标”一栏是灰色的，不能编辑；“打开文件所在的位置”也点不了。这些看似“诡异”的快捷方式，其实并没有坏掉，而是一类由 Windows Installer（MSI）特制的 Advertised Shortcut（广告式快捷方式）。"
 cover: /img/posts/Advertised-Shortcuts/Advertised-Shortcuts_cover.png
-permalink:
 ---
 
 # 🌀 当快捷方式“深不可测”：Advertised Shortcuts
