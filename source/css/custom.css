@@ -199,4 +199,26 @@
     border-radius: 12px !important;
     overflow: hidden;
   }
+
+  /*
+   * 消除 aside-content 自带的 padding，避免与自定义宽度的卡片叠加导致间距过大
+   */
+  #aside-content {
+    padding: 0 !important;
+  }
+
+  /*
+   * 4. 调整首页 aside-content 下的 card-widget card-announcement、card-widget card-categories、sticky_layout
+   *    使其宽度、边距、圆角与 #category-bar 和 .recent-post-item 保持完全一致，
+   *    确保视觉上的对齐和统一。
+   */
+  #aside-content .card-widget.card-announcement,
+  #aside-content .card-widget.card-categories,
+  #aside-content .sticky_layout {
+    width: calc(100% - 30px) !important;
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+    border-radius: 12px !important;
+    overflow: hidden;
+  }
 }
