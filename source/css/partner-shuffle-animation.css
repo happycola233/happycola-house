@@ -1,0 +1,32 @@
+/* link 页面友链列表加载动画：
+ * 1. partner-shuffle-ready 未就绪：先隐藏并透明，避免首屏看到乱序过程。
+ * 2. partner-shuffle-ready 就绪：触发淡入 + 轻微上移的动画，平滑展示排好序的列表。
+ */
+
+/* 未就绪阶段：隐藏列表，避免用户看到排序过程 */
+body:not(.partner-shuffle-ready) .flink .anzhiyu-flink-list,
+body:not(.partner-shuffle-ready) .flink .telescopic-site-card-group,
+body:not(.partner-shuffle-ready) .flink .flexcard-flink-list {
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* 就绪阶段：恢复可见并播放淡入动画 */
+body.partner-shuffle-ready .flink .anzhiyu-flink-list,
+body.partner-shuffle-ready .flink .telescopic-site-card-group,
+body.partner-shuffle-ready .flink .flexcard-flink-list {
+  animation: partnerShuffleFade 0.45s ease-out;
+  opacity: 1;
+}
+
+/* 动画：自下而上轻微位移，配合透明度从 0 到 1 */
+@keyframes partnerShuffleFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -43,10 +43,10 @@
       descr: 孩子不懂事，目害写的
       siteshot: /img/friendship-links/woxile-rth1-xyz-siteshot.png
     - name: SuzuhaYuki’s Blog
-      link: https://szh.rainettle.top/
+      link: https://blog.yuk1.uk/
       avatar: https://img.727252.xyz/i/2025/09/02/556752.webp
       descr: Time goes by, and the years go by.
-      siteshot: /img/friendship-links/szh-rainettle-top-siteshot.png
+      siteshot: /img/friendship-links/blog-yuk1-uk-siteshot.png
       color: vip
       tag: 技术
     - name: SЕSSのB10GТЕ5Т
@@ -58,12 +58,16 @@
       tag: 技术
 
 - class_name: 小伙伴
-  class_desc: 那些人，那些事
+  class_desc: 包括但不限于这些哦~
   flink_style: anzhiyu
   hundredSuffix: ""
   link_list:
-    - name: 晨叶梦春
-      link: https://www.yumeharu.top/
-      avatar: https://www.yumeharu.top/images/face_compressed.png
-      descr: 你未必光芒万丈，但始终温暖有光。
-      recommend: true
+    - 324042405 # 肥宅水水呀
+    - 346030399 # 粼光-Plight-普莱特
+    - 425503913 # 晨叶梦春
+    - 433849994 # 梅有在剪视频
+    - 444309392 # 爱玩电脑の小雨
+    - 474683920 # 我汐了_233
+    - 479906059 # 往来霜雪
+    - 363870923 # 云宿山川
+    - 649031753 # cute-ruirui

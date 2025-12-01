@@ -158,3 +158,45 @@
 [data-theme='dark'] #footer:before {
   background-color: transparent !important;
 }
+
+/* -------------------------------------------------------
+ * 修复移动端 #category-bar 样式
+ * 还原圆角，并添加两侧边距使其与 #bbTimeList 等容器对齐
+ * ----------------------------------------------------- */
+@media (max-width: 768px) {
+  /* 
+   * 1. 禁用 #categoryBar (外层容器) 的吸顶效果
+   * 原主题在 mobile 端设置了 position: sticky; top: 60px;
+   * 导致滚动时会滞留在顶部。这里改为 static 让其随页面正常滚动消失。
+   */
+  #categoryBar {
+    position: static !important;
+  }
+
+  /* 
+   * 2. 调整 #category-bar (内层元素) 的外观
+   * - width: calc(100% - 30px): 减去左右总共 30px 的留白，防止宽度溢出
+   * - margin: 0 15px: 左右各 15px 边距，实现居中且有呼吸感
+   * - border-radius: 12px: 强制圆角，覆盖移动端可能被重置的直角样式
+   * - overflow: hidden: 保证内部子元素不溢出圆角
+   */
+  #category-bar {
+    width: calc(100% - 30px) !important;
+    margin: 0 15px !important;
+    border-radius: 12px !important;
+    overflow: hidden;
+  }
+
+  /* 
+   * 3. 调整 .recent-post-item.lastestpost-item (最新文章卡片)
+   * 使其宽度、边距、圆角与上方的 #category-bar 保持完全一致，
+   * 确保视觉上的对齐和统一。
+   */
+  .recent-post-item.lastestpost-item {
+    width: calc(100% - 30px) !important;
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+    border-radius: 12px !important;
+    overflow: hidden;
+  }
+}

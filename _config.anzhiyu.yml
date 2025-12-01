@@ -1657,11 +1657,13 @@ inject:
     # 自定义 css
     - <link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"> # 评论区表情大小、首页分类 tab 隐藏滚动条与宽度小的浏览器的顶部图片模糊
     - <link rel="stylesheet" href="/css/index-banner-progressive-loader.css?1">
+    - <link rel="stylesheet" href="/css/partner-shuffle-animation.css"> # link 页面友链列表加载动画
 
   bottom:
     # 自定义 js
     - <script src="/js/live2d-widget-loader.js" data-no-pjax></script> # 看板娘加载
-    - <script src="/js/about-music-link-fix.js" data-no-pjax></script> # About 页音乐按钮修复
+    - <script src="/js/about-music-link-fix.js?1" data-no-pjax></script> # About 页音乐按钮修复
+    - <script defer data-pjax src="/js/friend-partner-fetch.js?1"></script> # 动态获取小伙伴友链
     - <script async data-pjax src="/js/index-banner-progressive-loader.js?1"></script> # 首页 Banner 图的渐进式加载
 
 # CDN
