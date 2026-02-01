@@ -2,11 +2,11 @@
   creativity_list:
     # 语言 / 标记
     - name: Python
-      color: "#ffffff"
-      icon: https://bu.dusays.com/2023/04/09/643293b1230f7.png
+      color: "#242938"
+      icon: https://skillicons.dev/icons?i=python
     - name: JS
-      color: "#f7cb4f"
-      icon: https://bu.dusays.com/2023/04/09/643293b121f02.png
+      color: "#f0db4f"
+      icon: https://skillicons.dev/icons?i=js
     - name: C++
       color: "#00599C"
       icon: https://skillicons.dev/icons?i=cpp
@@ -14,7 +14,7 @@
       color: "#e34f26"
       icon: https://skillicons.dev/icons?i=html
     - name: CSS
-      color: "#1572B6"
+      color: "#0277bd"
       icon: https://skillicons.dev/icons?i=css
     - name: Markdown
       color: "#242938"
@@ -78,6 +78,9 @@
     - name: Windows
       color: "#242938"
       icon: https://skillicons.dev/icons?i=windows
+    - name: Android
+      color: "#34a853"
+      icon: https://developer.android.google.cn/images/spot-icons/android-16.svg
     - name: Linux
       color: "#fcc624"
       icon: https://skillicons.dev/icons?i=linux
