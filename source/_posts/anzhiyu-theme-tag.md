@@ -10,12 +10,8 @@ tags:
   - Hexo
   - 主题标签
   - Markdown
-keywords:
-  - Tag Plugins
-  - Hexo
-  - 主题标签
-  - Markdown
-description: "安知鱼主题的「标签（Tag Plugins）」说明书。“主题标签”指的是 AnZhiYu 主题中的 Hexo 标签插件，允许用户在 Markdown 中插入特殊样式的元素（如彩色文本、选项卡、按钮、时间轴、卡片、相册等）。这些标签简化了布局与格式化操作，免去手写 HTML 的麻烦。"
+description: "全面汇总 Hexo 安知鱼（AnZhiYu）主题专属 Tag Plugins 标签外挂语法与配置教程。本文详细演示了超过 20 种实用博客排版组件的使用方法，涵盖折叠框 (folding)、分栏 (tabs)、按钮 (btn)、相册 (gallery)、提示块 (note) 及时间线等。助你突破原生 Markdown 限制，打造高颜值的个性化博客页面，内附完整示例源码可直接复制。"
+ai: "本文全面整理了 AnZhiYu 主题常用标签外挂的语法与用法，涵盖文本样式、按钮、分栏、图片、时间线、友链、相册、Mermaid、隐藏内容、音视频等多种组件，并通过参数说明、效果预览和示例源码，帮助用户快速上手主题的内容增强能力。"
 cover: /img/posts/default_cover/default_cover_1.jpg
 ---
 

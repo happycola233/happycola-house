@@ -11,13 +11,8 @@ tags:
   - 符号链接
   - 硬链接
   - 软链接
-keywords:
-  - Windows
-  - 快捷方式
-  - 符号链接
-  - 硬链接
-  - 软链接
-description: "本篇文章系统讲透 硬链接（Hard Link）、软链接/符号链接（Symbolic Link） 与 快捷方式（.lnk） 三者的概念、差异与使用场景。"
+description: "全面解析 Windows 软链接、硬链接、目录联接与快捷方式（.lnk）的核心差异。本文通过通俗易懂的对比图表与 mklink (/d, /h, /j) 实操命令，带你彻底搞懂文件系统级重定向的底层逻辑、跨分区限制及删除文件的不同影响，附带 Linux/macOS 概念对照表。"
+ai: "本文用通俗易懂的方式讲清硬链接、软链接（符号链接）、目录联接和快捷方式的本质区别，结合 Windows mklink 命令说明它们的适用场景、限制条件以及删除/移动目标后的行为差异，并附带实用示例与避坑建议，帮助读者真正理解“链接”在文件系统中的工作方式。"
 cover: /img/posts/File_Links_Overview/File_Links_Overview_cover.png
 ---
 

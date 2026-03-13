@@ -9,11 +9,8 @@ tags:
   - Windows
   - 快捷方式
   - Advertised Shortcuts
-keywords:
-  - Windows
-  - 快捷方式
-  - Advertised Shortcuts
-description: "当你右键查看某些应用的快捷方式时，可能会发现一个奇怪的现象：“目标”一栏是灰色的，不能编辑；“打开文件所在的位置”也点不了。这些看似“诡异”的快捷方式，其实并没有坏掉，而是一类由 Windows Installer（MSI）特制的 Advertised Shortcut（广告式快捷方式）。"
+description: "为什么 Windows 快捷方式的“目标”是灰色的，且无法点击“打开文件所在的位置”？本文深入解析由 MSI 特制的 Advertised Shortcut（广告式快捷方式）底层原理，揭秘其自修复与按需安装机制，并手把手教你如何通过任务管理器找出真实 exe 路径，轻松破除快捷方式的“限制”魔法。"
+ai: "当你右键查看某些应用的快捷方式时，可能会发现一个奇怪的现象：“目标”一栏是灰色的，不能编辑；“打开文件所在的位置”也点不了。这些看似“诡异”的快捷方式，其实并没有坏掉，而是一类由 Windows Installer（MSI）特制的 Advertised Shortcut（广告式快捷方式）。"
 cover: /img/posts/Advertised-Shortcuts/Advertised-Shortcuts_cover.png
 ---
 

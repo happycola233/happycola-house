@@ -10,12 +10,8 @@ tags:
   - frontmatter
   - anzhiyu
   - 安知鱼
-keywords:
-  - Hexo
-  - frontmatter
-  - anzhiyu
-  - 安知鱼
-description: "详细介绍 Hexo 博客中 front-matter 的概念和用法，结合安知鱼（anzhiyu）主题逐个解析常用字段，并附可直接复制的文章模板。"
+description: "全面解析 Hexo 博客结合安知鱼（Anzhiyu）主题的 front-matter 配置方法。本文详细梳理了 Hexo 原生字段与安知鱼专属扩展字段（含SEO、封面、版权、UI控制等），并提供一份可直接复制的完整 YAML 模板与 sticky 置顶等实用技巧，助你高效完成博客文章设置。"
+ai: "本文全面解析了 Hexo 博客配合安知鱼（anzhiyu）主题时，文章头部配置块（front-matter）的具体用法。从基础概念到 Hexo 原生通用字段，再到安知鱼主题专属的扩展参数（涵盖 SEO、封面样式、阅读体验与版权等），文章不仅逐一拆解了各项配置的作用与优先级，还附带了一份可直接复制的“全量版” YAML 模板，帮助创作者轻松搞定博客文章的精细化排版与个性化设置，告别每次新建文章都要去查文档的烦恼。"
 cover: /img/posts/default_cover/default_cover_2.png
 ---
 
