@@ -160,6 +160,20 @@
 }
 
 /* -------------------------------------------------------
+ * 兼容 AnZhiYu 1.7.1 + 本地 Font Awesome 7 资源
+ * 主题部分伪元素仍写死 Font Awesome 6 Free，升级到 FA7 后会导致 note / headerlink 等图标丢失。
+ * 这里只覆盖字体家族和权重，不改原有 content、颜色和布局。
+ * ----------------------------------------------------- */
+hr::before,
+#article-container a.headerlink::before,
+#post .post-outdate-notice::before,
+.note:not(.no-icon)::before,
+.tip::before {
+  font-family: "Font Awesome 7 Free" !important;
+  font-weight: 900 !important;
+}
+
+/* -------------------------------------------------------
  * 修复移动端 #category-bar 样式
  * 还原圆角，并添加两侧边距使其与 #bbTimeList 等容器对齐
  * ----------------------------------------------------- */
