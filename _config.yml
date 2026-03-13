@@ -29,6 +29,7 @@ category_dir: categories       # 分类页目录
 code_dir: downloads/code       # 代码下载目录（很少用）
 i18n_dir: :lang                # 国际化目录占位
 skip_render:                   # 跳过渲染的路径（原样拷贝到 public）
+  - pluginsSrc/**/*            # 本地镜像的第三方静态资源只做拷贝，避免 Hexo 将其中的 --- 误判为 front matter
   - img/**/*                   # 跳过所有 img 子目录下文件（如需手写 HTML/JS/CSS）
   - robots.txt                 # 让 robots.txt 原样输出
 

@@ -1,0 +1,829 @@
+{
+  "generator": "localize_cdn_resources.py",
+  "resource_count": 55,
+  "resources": {
+    "ClickShowText": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/click-show-text.min.js",
+        "https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/click-show-text.min.js",
+        "https://unpkg.com/butterfly-extsrc@1.1.3/dist/click-show-text.min.js",
+        "https://npm.elemecdn.com/butterfly-extsrc@1.1.3/dist/click-show-text.min.js",
+        "https://npm.onmicrosoft.cn/butterfly-extsrc@1.1.3/dist/click-show-text.min.js",
+        "https://cdn.anheyu.com/npm/butterfly-extsrc@1.1.3/dist/click-show-text.min.js"
+      ],
+      "file": "dist/click-show-text.min.js",
+      "name": "butterfly-extsrc",
+      "relative": "butterfly-extsrc/dist/click-show-text.min.js",
+      "remote_url": "https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/click-show-text.min.js",
+      "version": "1.1.3"
+    },
+    "accesskey_js": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js",
+        "https://cdn.jsdelivr.net/npm/anzhiyu-theme-static@1.1.5/accesskey/accesskey.min.js",
+        "https://unpkg.com/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js",
+        "https://npm.elemecdn.com/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js",
+        "https://npm.onmicrosoft.cn/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js",
+        "https://cdn.anheyu.com/npm/anzhiyu-theme-static@1.1.5/accesskey/accesskey.min.js"
+      ],
+      "file": "accesskey/accesskey.js",
+      "name": "anzhiyu-theme-static",
+      "relative": "anzhiyu-theme-static/accesskey/accesskey.js",
+      "remote_url": "https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js",
+      "version": "1.1.5"
+    },
+    "activate_power_mode": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/activate-power-mode.min.js",
+        "https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/activate-power-mode.min.js",
+        "https://unpkg.com/butterfly-extsrc@1.1.3/dist/activate-power-mode.min.js",
+        "https://npm.elemecdn.com/butterfly-extsrc@1.1.3/dist/activate-power-mode.min.js",
+        "https://npm.onmicrosoft.cn/butterfly-extsrc@1.1.3/dist/activate-power-mode.min.js",
+        "https://cdn.anheyu.com/npm/butterfly-extsrc@1.1.3/dist/activate-power-mode.min.js"
+      ],
+      "file": "dist/activate-power-mode.min.js",
+      "name": "butterfly-extsrc",
+      "relative": "butterfly-extsrc/dist/activate-power-mode.min.js",
+      "remote_url": "https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/activate-power-mode.min.js",
+      "version": "1.1.3"
+    },
+    "algolia_search": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/algoliasearch@4.18.0/dist/algoliasearch-lite.umd.js",
+        "https://cdn.jsdelivr.net/npm/algoliasearch@4.18.0/dist/algoliasearch-lite.umd.min.js",
+        "https://unpkg.com/algoliasearch@4.18.0/dist/algoliasearch-lite.umd.js",
+        "https://npm.elemecdn.com/algoliasearch@4.18.0/dist/algoliasearch-lite.umd.js",
+        "https://npm.onmicrosoft.cn/algoliasearch@4.18.0/dist/algoliasearch-lite.umd.js",
+        "https://cdn.anheyu.com/npm/algoliasearch@4.18.0/dist/algoliasearch-lite.umd.min.js"
+      ],
+      "file": "dist/algoliasearch-lite.umd.js",
+      "name": "algoliasearch",
+      "relative": "algoliasearch/dist/algoliasearch-lite.umd.js",
+      "remote_url": "https://cdn.cbd.int/algoliasearch@4.18.0/dist/algoliasearch-lite.umd.js",
+      "version": "4.18.0"
+    },
+    "ali_iconfont_css": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css",
+        "https://cdn.jsdelivr.net/npm/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.min.css",
+        "https://unpkg.com/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css",
+        "https://npm.elemecdn.com/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css",
+        "https://npm.onmicrosoft.cn/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css",
+        "https://cdn.anheyu.com/npm/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.min.css"
+      ],
+      "file": "icon/ali_iconfont_css.css",
+      "name": "anzhiyu-theme-static",
+      "relative": "anzhiyu-theme-static/icon/ali_iconfont_css.css",
+      "remote_url": "https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css",
+      "version": "1.1.9"
+    },
+    "aplayer_css": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css",
+        "https://cdn.jsdelivr.net/npm/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css",
+        "https://unpkg.com/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css",
+        "https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css",
+        "https://npm.onmicrosoft.cn/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css",
+        "https://cdn.anheyu.com/npm/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css"
+      ],
+      "file": "aplayer/APlayer.min.css",
+      "name": "anzhiyu-theme-static",
+      "relative": "anzhiyu-theme-static/aplayer/APlayer.min.css",
+      "remote_url": "https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css",
+      "version": "1.0.0"
+    },
+    "aplayer_js": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js",
+        "https://cdn.jsdelivr.net/npm/anzhiyu-blog-static@1.0.1/js/APlayer.min.js",
+        "https://unpkg.com/anzhiyu-blog-static@1.0.1/js/APlayer.min.js",
+        "https://npm.elemecdn.com/anzhiyu-blog-static@1.0.1/js/APlayer.min.js",
+        "https://npm.onmicrosoft.cn/anzhiyu-blog-static@1.0.1/js/APlayer.min.js",
+        "https://cdn.anheyu.com/npm/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"
+      ],
+      "file": "js/APlayer.min.js",
+      "name": "anzhiyu-blog-static",
+      "relative": "anzhiyu-blog-static/js/APlayer.min.js",
+      "remote_url": "https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js",
+      "version": "1.0.1"
+    },
+    "artalk_css": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/artalk@2.9.1/dist/Artalk.css",
+        "https://cdn.jsdelivr.net/npm/artalk@2.9.1/dist/Artalk.min.css",
+        "https://unpkg.com/artalk@2.9.1/dist/Artalk.css",
+        "https://npm.elemecdn.com/artalk@2.9.1/dist/Artalk.css",
+        "https://npm.onmicrosoft.cn/artalk@2.9.1/dist/Artalk.css",
+        "https://cdn.anheyu.com/npm/artalk@2.9.1/dist/Artalk.min.css"
+      ],
+      "file": "dist/Artalk.css",
+      "name": "artalk",
+      "relative": "artalk/dist/Artalk.css",
+      "remote_url": "https://cdn.cbd.int/artalk@2.9.1/dist/Artalk.css",
+      "version": "2.9.1"
+    },
+    "artalk_js": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/artalk@2.9.1/dist/Artalk.js",
+        "https://cdn.jsdelivr.net/npm/artalk@2.9.1/dist/Artalk.min.js",
+        "https://unpkg.com/artalk@2.9.1/dist/Artalk.js",
+        "https://npm.elemecdn.com/artalk@2.9.1/dist/Artalk.js",
+        "https://npm.onmicrosoft.cn/artalk@2.9.1/dist/Artalk.js",
+        "https://cdn.anheyu.com/npm/artalk@2.9.1/dist/Artalk.min.js"
+      ],
+      "file": "dist/Artalk.js",
+      "name": "artalk",
+      "relative": "artalk/dist/Artalk.js",
+      "remote_url": "https://cdn.cbd.int/artalk@2.9.1/dist/Artalk.js",
+      "version": "2.9.1"
+    },
+    "blueimp_md5": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/blueimp-md5@2.19.0/js/md5.min.js",
+        "https://cdn.jsdelivr.net/npm/blueimp-md5@2.19.0/js/md5.min.js",
+        "https://unpkg.com/blueimp-md5@2.19.0/js/md5.min.js",
+        "https://npm.elemecdn.com/blueimp-md5@2.19.0/js/md5.min.js",
+        "https://npm.onmicrosoft.cn/blueimp-md5@2.19.0/js/md5.min.js",
+        "https://cdn.anheyu.com/npm/blueimp-md5@2.19.0/js/md5.min.js"
+      ],
+      "file": "js/md5.min.js",
+      "name": "blueimp-md5",
+      "relative": "blueimp-md5/js/md5.min.js",
+      "remote_url": "https://cdn.cbd.int/blueimp-md5@2.19.0/js/md5.min.js",
+      "version": "2.19.0"
+    },
+    "canvas_fluttering_ribbon": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/canvas-fluttering-ribbon.min.js",
+        "https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-fluttering-ribbon.min.js",
+        "https://unpkg.com/butterfly-extsrc@1.1.3/dist/canvas-fluttering-ribbon.min.js",
+        "https://npm.elemecdn.com/butterfly-extsrc@1.1.3/dist/canvas-fluttering-ribbon.min.js",
+        "https://npm.onmicrosoft.cn/butterfly-extsrc@1.1.3/dist/canvas-fluttering-ribbon.min.js",
+        "https://cdn.anheyu.com/npm/butterfly-extsrc@1.1.3/dist/canvas-fluttering-ribbon.min.js"
+      ],
+      "file": "dist/canvas-fluttering-ribbon.min.js",
+      "name": "butterfly-extsrc",
+      "relative": "butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js",
+      "remote_url": "https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/canvas-fluttering-ribbon.min.js",
+      "version": "1.1.3"
+    },
+    "canvas_nest": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/canvas-nest.min.js",
+        "https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-nest.min.js",
+        "https://unpkg.com/butterfly-extsrc@1.1.3/dist/canvas-nest.min.js",
+        "https://npm.elemecdn.com/butterfly-extsrc@1.1.3/dist/canvas-nest.min.js",
+        "https://npm.onmicrosoft.cn/butterfly-extsrc@1.1.3/dist/canvas-nest.min.js",
+        "https://cdn.anheyu.com/npm/butterfly-extsrc@1.1.3/dist/canvas-nest.min.js"
+      ],
+      "file": "dist/canvas-nest.min.js",
+      "name": "butterfly-extsrc",
+      "relative": "butterfly-extsrc/dist/canvas-nest.min.js",
+      "remote_url": "https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/canvas-nest.min.js",
+      "version": "1.1.3"
+    },
+    "canvas_ribbon": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/canvas-ribbon.min.js",
+        "https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-ribbon.min.js",
+        "https://unpkg.com/butterfly-extsrc@1.1.3/dist/canvas-ribbon.min.js",
+        "https://npm.elemecdn.com/butterfly-extsrc@1.1.3/dist/canvas-ribbon.min.js",
+        "https://npm.onmicrosoft.cn/butterfly-extsrc@1.1.3/dist/canvas-ribbon.min.js",
+        "https://cdn.anheyu.com/npm/butterfly-extsrc@1.1.3/dist/canvas-ribbon.min.js"
+      ],
+      "file": "dist/canvas-ribbon.min.js",
+      "name": "butterfly-extsrc",
+      "relative": "butterfly-extsrc/dist/canvas-ribbon.min.js",
+      "remote_url": "https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/canvas-ribbon.min.js",
+      "version": "1.1.3"
+    },
+    "click_heart": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/click-heart.min.js",
+        "https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/click-heart.min.js",
+        "https://unpkg.com/butterfly-extsrc@1.1.3/dist/click-heart.min.js",
+        "https://npm.elemecdn.com/butterfly-extsrc@1.1.3/dist/click-heart.min.js",
+        "https://npm.onmicrosoft.cn/butterfly-extsrc@1.1.3/dist/click-heart.min.js",
+        "https://cdn.anheyu.com/npm/butterfly-extsrc@1.1.3/dist/click-heart.min.js"
+      ],
+      "file": "dist/click-heart.min.js",
+      "name": "butterfly-extsrc",
+      "relative": "butterfly-extsrc/dist/click-heart.min.js",
+      "remote_url": "https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/click-heart.min.js",
+      "version": "1.1.3"
+    },
+    "coin_css": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/coin/coin.min.css",
+        "https://cdn.jsdelivr.net/npm/anzhiyu-theme-static@1.0.0/coin/coin.min.css",
+        "https://unpkg.com/anzhiyu-theme-static@1.0.0/coin/coin.min.css",
+        "https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/coin/coin.min.css",
+        "https://npm.onmicrosoft.cn/anzhiyu-theme-static@1.0.0/coin/coin.min.css",
+        "https://cdn.anheyu.com/npm/anzhiyu-theme-static@1.0.0/coin/coin.min.css"
+      ],
+      "file": "coin/coin.min.css",
+      "name": "anzhiyu-theme-static",
+      "relative": "anzhiyu-theme-static/coin/coin.min.css",
+      "remote_url": "https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/coin/coin.min.css",
+      "version": "1.0.0"
+    },
+    "coin_js": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/coin/coin.js",
+        "https://cdn.jsdelivr.net/npm/anzhiyu-theme-static@1.0.0/coin/coin.min.js",
+        "https://unpkg.com/anzhiyu-theme-static@1.0.0/coin/coin.js",
+        "https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/coin/coin.js",
+        "https://npm.onmicrosoft.cn/anzhiyu-theme-static@1.0.0/coin/coin.js",
+        "https://cdn.anheyu.com/npm/anzhiyu-theme-static@1.0.0/coin/coin.min.js"
+      ],
+      "file": "coin/coin.js",
+      "name": "anzhiyu-theme-static",
+      "relative": "anzhiyu-theme-static/coin/coin.js",
+      "remote_url": "https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/coin/coin.js",
+      "version": "1.0.0"
+    },
+    "colorthief": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/colorthief@2.6.0/dist/color-thief.umd.min.js",
+        "https://cdn.jsdelivr.net/npm/colorthief@2.6.0/dist/color-thief.umd.min.js",
+        "https://unpkg.com/colorthief@2.6.0/dist/color-thief.umd.min.js",
+        "https://npm.elemecdn.com/colorthief@2.6.0/dist/color-thief.umd.min.js",
+        "https://npm.onmicrosoft.cn/colorthief@2.6.0/dist/color-thief.umd.min.js",
+        "https://cdn.anheyu.com/npm/colorthief@2.6.0/dist/color-thief.umd.min.js"
+      ],
+      "file": "dist/color-thief.umd.min.js",
+      "name": "colorthief",
+      "relative": "colorthief/dist/color-thief.umd.min.js",
+      "remote_url": "https://cdn.cbd.int/colorthief@2.6.0/dist/color-thief.umd.min.js",
+      "version": "2.6.0"
+    },
+    "countup_js": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/countup/countup.js",
+        "https://cdn.jsdelivr.net/npm/anzhiyu-theme-static@1.0.0/countup/countup.min.js",
+        "https://unpkg.com/anzhiyu-theme-static@1.0.0/countup/countup.js",
+        "https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/countup/countup.js",
+        "https://npm.onmicrosoft.cn/anzhiyu-theme-static@1.0.0/countup/countup.js",
+        "https://cdn.anheyu.com/npm/anzhiyu-theme-static@1.0.0/countup/countup.min.js"
+      ],
+      "file": "countup/countup.js",
+      "name": "anzhiyu-theme-static",
+      "relative": "anzhiyu-theme-static/countup/countup.js",
+      "remote_url": "https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/countup/countup.js",
+      "version": "1.0.0"
+    },
+    "docsearch_css": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/@docsearch/css@4.3.2/dist/style.css",
+        "https://cdn.jsdelivr.net/npm/@docsearch/css@4.3.2/dist/style.min.css",
+        "https://unpkg.com/@docsearch/css@4.3.2/dist/style.css",
+        "https://npm.elemecdn.com/@docsearch/css@4.3.2/dist/style.css",
+        "https://npm.onmicrosoft.cn/@docsearch/css@4.3.2/dist/style.css",
+        "https://cdn.anheyu.com/npm/@docsearch/css@4.3.2/dist/style.min.css"
+      ],
+      "file": "dist/style.css",
+      "name": "@docsearch/css",
+      "relative": "@docsearch/css/dist/style.css",
+      "remote_url": "https://cdn.cbd.int/@docsearch/css@4.3.2/dist/style.css",
+      "version": "4.3.2"
+    },
+    "docsearch_js": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/@docsearch/js@4.3.2/dist/umd/index.js",
+        "https://cdn.jsdelivr.net/npm/@docsearch/js@4.3.2/dist/umd/index.min.js",
+        "https://unpkg.com/@docsearch/js@4.3.2/dist/umd/index.js",
+        "https://npm.elemecdn.com/@docsearch/js@4.3.2/dist/umd/index.js",
+        "https://npm.onmicrosoft.cn/@docsearch/js@4.3.2/dist/umd/index.js",
+        "https://cdn.anheyu.com/npm/@docsearch/js@4.3.2/dist/umd/index.min.js"
+      ],
+      "file": "dist/umd/index.js",
+      "name": "@docsearch/js",
+      "relative": "@docsearch/js/dist/umd/index.js",
+      "remote_url": "https://cdn.cbd.int/@docsearch/js@4.3.2/dist/umd/index.js",
+      "version": "4.3.2"
+    },
+    "fancybox": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/@fancyapps/ui@6.1.6/dist/fancybox/fancybox.umd.js",
+        "https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.6/dist/fancybox/fancybox.umd.min.js",
+        "https://unpkg.com/@fancyapps/ui@6.1.6/dist/fancybox/fancybox.umd.js",
+        "https://npm.elemecdn.com/@fancyapps/ui@6.1.6/dist/fancybox/fancybox.umd.js",
+        "https://npm.onmicrosoft.cn/@fancyapps/ui@6.1.6/dist/fancybox/fancybox.umd.js",
+        "https://cdn.anheyu.com/npm/@fancyapps/ui@6.1.6/dist/fancybox/fancybox.umd.min.js"
+      ],
+      "file": "dist/fancybox/fancybox.umd.js",
+      "name": "@fancyapps/ui",
+      "relative": "@fancyapps/ui/dist/fancybox/fancybox.umd.js",
+      "remote_url": "https://cdn.cbd.int/@fancyapps/ui@6.1.6/dist/fancybox/fancybox.umd.js",
+      "version": "6.1.6"
+    },
+    "fancybox_css": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/@fancyapps/ui@6.1.6/dist/fancybox/fancybox.css",
+        "https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.6/dist/fancybox/fancybox.min.css",
+        "https://unpkg.com/@fancyapps/ui@6.1.6/dist/fancybox/fancybox.css",
+        "https://npm.elemecdn.com/@fancyapps/ui@6.1.6/dist/fancybox/fancybox.css",
+        "https://npm.onmicrosoft.cn/@fancyapps/ui@6.1.6/dist/fancybox/fancybox.css",
+        "https://cdn.anheyu.com/npm/@fancyapps/ui@6.1.6/dist/fancybox/fancybox.min.css"
+      ],
+      "file": "dist/fancybox/fancybox.css",
+      "name": "@fancyapps/ui",
+      "relative": "@fancyapps/ui/dist/fancybox/fancybox.css",
+      "remote_url": "https://cdn.cbd.int/@fancyapps/ui@6.1.6/dist/fancybox/fancybox.css",
+      "version": "6.1.6"
+    },
+    "fireworks": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/fireworks.min.js",
+        "https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/fireworks.min.js",
+        "https://unpkg.com/butterfly-extsrc@1.1.3/dist/fireworks.min.js",
+        "https://npm.elemecdn.com/butterfly-extsrc@1.1.3/dist/fireworks.min.js",
+        "https://npm.onmicrosoft.cn/butterfly-extsrc@1.1.3/dist/fireworks.min.js",
+        "https://cdn.anheyu.com/npm/butterfly-extsrc@1.1.3/dist/fireworks.min.js"
+      ],
+      "file": "dist/fireworks.min.js",
+      "name": "butterfly-extsrc",
+      "relative": "butterfly-extsrc/dist/fireworks.min.js",
+      "remote_url": "https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/fireworks.min.js",
+      "version": "1.1.3"
+    },
+    "flickr_justified_gallery_css": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/flickr-justified-gallery@2.2.0/dist/fjGallery.css",
+        "https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2.2.0/dist/fjGallery.min.css",
+        "https://unpkg.com/flickr-justified-gallery@2.2.0/dist/fjGallery.css",
+        "https://npm.elemecdn.com/flickr-justified-gallery@2.2.0/dist/fjGallery.css",
+        "https://npm.onmicrosoft.cn/flickr-justified-gallery@2.2.0/dist/fjGallery.css",
+        "https://cdn.anheyu.com/npm/flickr-justified-gallery@2.2.0/dist/fjGallery.min.css"
+      ],
+      "file": "dist/fjGallery.css",
+      "name": "flickr-justified-gallery",
+      "relative": "flickr-justified-gallery/dist/fjGallery.css",
+      "remote_url": "https://cdn.cbd.int/flickr-justified-gallery@2.2.0/dist/fjGallery.css",
+      "version": "2.2.0"
+    },
+    "flickr_justified_gallery_js": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/flickr-justified-gallery@2.2.0/dist/fjGallery.min.js",
+        "https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2.2.0/dist/fjGallery.min.js",
+        "https://unpkg.com/flickr-justified-gallery@2.2.0/dist/fjGallery.min.js",
+        "https://npm.elemecdn.com/flickr-justified-gallery@2.2.0/dist/fjGallery.min.js",
+        "https://npm.onmicrosoft.cn/flickr-justified-gallery@2.2.0/dist/fjGallery.min.js",
+        "https://cdn.anheyu.com/npm/flickr-justified-gallery@2.2.0/dist/fjGallery.min.js"
+      ],
+      "file": "dist/fjGallery.min.js",
+      "name": "flickr-justified-gallery",
+      "relative": "flickr-justified-gallery/dist/fjGallery.min.js",
+      "remote_url": "https://cdn.cbd.int/flickr-justified-gallery@2.2.0/dist/fjGallery.min.js",
+      "version": "2.2.0"
+    },
+    "fontawesome": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/@fortawesome/fontawesome-free@7.1.0/css/all.min.css",
+        "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css",
+        "https://unpkg.com/@fortawesome/fontawesome-free@7.1.0/css/all.min.css",
+        "https://npm.elemecdn.com/@fortawesome/fontawesome-free@7.1.0/css/all.min.css",
+        "https://npm.onmicrosoft.cn/@fortawesome/fontawesome-free@7.1.0/css/all.min.css",
+        "https://cdn.anheyu.com/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"
+      ],
+      "file": "css/all.min.css",
+      "name": "@fortawesome/fontawesome-free",
+      "relative": "@fortawesome/fontawesome-free/css/all.min.css",
+      "remote_url": "https://cdn.cbd.int/@fortawesome/fontawesome-free@7.1.0/css/all.min.css",
+      "version": "7.1.0"
+    },
+    "fontawesome_animation_css": {
+      "fallback_urls": [
+        "https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@1.0.17/lib/assets/font-awesome-animation.min.css"
+      ],
+      "file": "font-awesome-animation/font-awesome-animation.min.css",
+      "name": "",
+      "relative": "font-awesome-animation/font-awesome-animation.min.css",
+      "remote_url": "https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@1.0.17/lib/assets/font-awesome-animation.min.css",
+      "version": ""
+    },
+    "gsap_js": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/gsap/gsap.min.js",
+        "https://cdn.jsdelivr.net/npm/anzhiyu-theme-static@1.0.0/gsap/gsap.min.js",
+        "https://unpkg.com/anzhiyu-theme-static@1.0.0/gsap/gsap.min.js",
+        "https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/gsap/gsap.min.js",
+        "https://npm.onmicrosoft.cn/anzhiyu-theme-static@1.0.0/gsap/gsap.min.js",
+        "https://cdn.anheyu.com/npm/anzhiyu-theme-static@1.0.0/gsap/gsap.min.js"
+      ],
+      "file": "gsap/gsap.min.js",
+      "name": "anzhiyu-theme-static",
+      "relative": "anzhiyu-theme-static/gsap/gsap.min.js",
+      "remote_url": "https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/gsap/gsap.min.js",
+      "version": "1.0.0"
+    },
+    "instantpage": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/instant.page@5.2.0/instantpage.js",
+        "https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js",
+        "https://unpkg.com/instant.page@5.2.0/instantpage.js",
+        "https://npm.elemecdn.com/instant.page@5.2.0/instantpage.js",
+        "https://npm.onmicrosoft.cn/instant.page@5.2.0/instantpage.js",
+        "https://cdn.anheyu.com/npm/instant.page@5.2.0/instantpage.min.js"
+      ],
+      "file": "instantpage.js",
+      "name": "instant.page",
+      "relative": "instant.page/instantpage.js",
+      "remote_url": "https://cdn.cbd.int/instant.page@5.2.0/instantpage.js",
+      "version": "5.2.0"
+    },
+    "instantsearch": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/instantsearch.js@4.84.0/dist/instantsearch.production.min.js",
+        "https://cdn.jsdelivr.net/npm/instantsearch.js@4.84.0/dist/instantsearch.production.min.js",
+        "https://unpkg.com/instantsearch.js@4.84.0/dist/instantsearch.production.min.js",
+        "https://npm.elemecdn.com/instantsearch.js@4.84.0/dist/instantsearch.production.min.js",
+        "https://npm.onmicrosoft.cn/instantsearch.js@4.84.0/dist/instantsearch.production.min.js",
+        "https://cdn.anheyu.com/npm/instantsearch.js@4.84.0/dist/instantsearch.production.min.js"
+      ],
+      "file": "dist/instantsearch.production.min.js",
+      "name": "instantsearch.js",
+      "relative": "instantsearch.js/dist/instantsearch.production.min.js",
+      "remote_url": "https://cdn.cbd.int/instantsearch.js@4.84.0/dist/instantsearch.production.min.js",
+      "version": "4.84.0"
+    },
+    "lazyload": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js",
+        "https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js",
+        "https://unpkg.com/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js",
+        "https://npm.elemecdn.com/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js",
+        "https://npm.onmicrosoft.cn/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js",
+        "https://cdn.anheyu.com/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"
+      ],
+      "file": "dist/lazyload.iife.min.js",
+      "name": "vanilla-lazyload",
+      "relative": "vanilla-lazyload/dist/lazyload.iife.min.js",
+      "remote_url": "https://cdn.cbd.int/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js",
+      "version": "19.1.3"
+    },
+    "medium_zoom": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/medium-zoom@1.1.0/dist/medium-zoom.min.js",
+        "https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js",
+        "https://unpkg.com/medium-zoom@1.1.0/dist/medium-zoom.min.js",
+        "https://npm.elemecdn.com/medium-zoom@1.1.0/dist/medium-zoom.min.js",
+        "https://npm.onmicrosoft.cn/medium-zoom@1.1.0/dist/medium-zoom.min.js",
+        "https://cdn.anheyu.com/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"
+      ],
+      "file": "dist/medium-zoom.min.js",
+      "name": "medium-zoom",
+      "relative": "medium-zoom/dist/medium-zoom.min.js",
+      "remote_url": "https://cdn.cbd.int/medium-zoom@1.1.0/dist/medium-zoom.min.js",
+      "version": "1.1.0"
+    },
+    "mermaid": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/mermaid@11.12.2/dist/mermaid.min.js",
+        "https://cdn.jsdelivr.net/npm/mermaid@11.12.2/dist/mermaid.min.js",
+        "https://unpkg.com/mermaid@11.12.2/dist/mermaid.min.js",
+        "https://npm.elemecdn.com/mermaid@11.12.2/dist/mermaid.min.js",
+        "https://npm.onmicrosoft.cn/mermaid@11.12.2/dist/mermaid.min.js",
+        "https://cdn.anheyu.com/npm/mermaid@11.12.2/dist/mermaid.min.js"
+      ],
+      "file": "dist/mermaid.min.js",
+      "name": "mermaid",
+      "relative": "mermaid/dist/mermaid.min.js",
+      "remote_url": "https://cdn.cbd.int/mermaid@11.12.2/dist/mermaid.min.js",
+      "version": "11.12.2"
+    },
+    "meting_js": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js",
+        "https://cdn.jsdelivr.net/npm/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js",
+        "https://unpkg.com/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js",
+        "https://npm.elemecdn.com/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js",
+        "https://npm.onmicrosoft.cn/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js",
+        "https://cdn.anheyu.com/npm/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"
+      ],
+      "file": "assets/js/Meting2.min.js",
+      "name": "hexo-anzhiyu-music",
+      "relative": "hexo-anzhiyu-music/assets/js/Meting2.min.js",
+      "remote_url": "https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js",
+      "version": "1.0.1"
+    },
+    "pace_default_css": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css",
+        "https://cdn.jsdelivr.net/npm/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.min.css",
+        "https://unpkg.com/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css",
+        "https://npm.elemecdn.com/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css",
+        "https://npm.onmicrosoft.cn/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css",
+        "https://cdn.anheyu.com/npm/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.min.css"
+      ],
+      "file": "progress_bar/progress_bar.css",
+      "name": "anzhiyu-theme-static",
+      "relative": "anzhiyu-theme-static/progress_bar/progress_bar.css",
+      "remote_url": "https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css",
+      "version": "1.1.10"
+    },
+    "pace_js": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/pace-js@1.2.4/pace.min.js",
+        "https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js",
+        "https://unpkg.com/pace-js@1.2.4/pace.min.js",
+        "https://npm.elemecdn.com/pace-js@1.2.4/pace.min.js",
+        "https://npm.onmicrosoft.cn/pace-js@1.2.4/pace.min.js",
+        "https://cdn.anheyu.com/npm/pace-js@1.2.4/pace.min.js"
+      ],
+      "file": "pace.min.js",
+      "name": "pace-js",
+      "relative": "pace-js/pace.min.js",
+      "remote_url": "https://cdn.cbd.int/pace-js@1.2.4/pace.min.js",
+      "version": "1.2.4"
+    },
+    "pangu": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/pangu@4.0.7/dist/browser/pangu.min.js",
+        "https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js",
+        "https://unpkg.com/pangu@4.0.7/dist/browser/pangu.min.js",
+        "https://npm.elemecdn.com/pangu@4.0.7/dist/browser/pangu.min.js",
+        "https://npm.onmicrosoft.cn/pangu@4.0.7/dist/browser/pangu.min.js",
+        "https://cdn.anheyu.com/npm/pangu@4.0.7/dist/browser/pangu.min.js"
+      ],
+      "file": "dist/browser/pangu.min.js",
+      "name": "pangu",
+      "relative": "pangu/dist/browser/pangu.min.js",
+      "remote_url": "https://cdn.cbd.int/pangu@4.0.7/dist/browser/pangu.min.js",
+      "version": "4.0.7"
+    },
+    "pjax": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/pjax@0.2.8/pjax.min.js",
+        "https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js",
+        "https://unpkg.com/pjax@0.2.8/pjax.min.js",
+        "https://npm.elemecdn.com/pjax@0.2.8/pjax.min.js",
+        "https://npm.onmicrosoft.cn/pjax@0.2.8/pjax.min.js",
+        "https://cdn.anheyu.com/npm/pjax@0.2.8/pjax.min.js"
+      ],
+      "file": "pjax.min.js",
+      "name": "pjax",
+      "relative": "pjax/pjax.min.js",
+      "remote_url": "https://cdn.cbd.int/pjax@0.2.8/pjax.min.js",
+      "version": "0.2.8"
+    },
+    "prismjs_autoloader": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/prismjs@1.30.0/plugins/autoloader/prism-autoloader.min.js",
+        "https://cdn.jsdelivr.net/npm/prismjs@1.30.0/plugins/autoloader/prism-autoloader.min.js",
+        "https://unpkg.com/prismjs@1.30.0/plugins/autoloader/prism-autoloader.min.js",
+        "https://npm.elemecdn.com/prismjs@1.30.0/plugins/autoloader/prism-autoloader.min.js",
+        "https://npm.onmicrosoft.cn/prismjs@1.30.0/plugins/autoloader/prism-autoloader.min.js",
+        "https://cdn.anheyu.com/npm/prismjs@1.30.0/plugins/autoloader/prism-autoloader.min.js"
+      ],
+      "file": "plugins/autoloader/prism-autoloader.min.js",
+      "name": "prismjs",
+      "relative": "prismjs/plugins/autoloader/prism-autoloader.min.js",
+      "remote_url": "https://cdn.cbd.int/prismjs@1.30.0/plugins/autoloader/prism-autoloader.min.js",
+      "version": "1.30.0"
+    },
+    "prismjs_js": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/prismjs@1.30.0/prism.js",
+        "https://cdn.jsdelivr.net/npm/prismjs@1.30.0/prism.min.js",
+        "https://unpkg.com/prismjs@1.30.0/prism.js",
+        "https://npm.elemecdn.com/prismjs@1.30.0/prism.js",
+        "https://npm.onmicrosoft.cn/prismjs@1.30.0/prism.js",
+        "https://cdn.anheyu.com/npm/prismjs@1.30.0/prism.min.js"
+      ],
+      "file": "prism.js",
+      "name": "prismjs",
+      "relative": "prismjs/prism.js",
+      "remote_url": "https://cdn.cbd.int/prismjs@1.30.0/prism.js",
+      "version": "1.30.0"
+    },
+    "prismjs_lineNumber_js": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/prismjs@1.30.0/plugins/line-numbers/prism-line-numbers.min.js",
+        "https://cdn.jsdelivr.net/npm/prismjs@1.30.0/plugins/line-numbers/prism-line-numbers.min.js",
+        "https://unpkg.com/prismjs@1.30.0/plugins/line-numbers/prism-line-numbers.min.js",
+        "https://npm.elemecdn.com/prismjs@1.30.0/plugins/line-numbers/prism-line-numbers.min.js",
+        "https://npm.onmicrosoft.cn/prismjs@1.30.0/plugins/line-numbers/prism-line-numbers.min.js",
+        "https://cdn.anheyu.com/npm/prismjs@1.30.0/plugins/line-numbers/prism-line-numbers.min.js"
+      ],
+      "file": "plugins/line-numbers/prism-line-numbers.min.js",
+      "name": "prismjs",
+      "relative": "prismjs/plugins/line-numbers/prism-line-numbers.min.js",
+      "remote_url": "https://cdn.cbd.int/prismjs@1.30.0/plugins/line-numbers/prism-line-numbers.min.js",
+      "version": "1.30.0"
+    },
+    "rightmenu": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/rightmenu/rightmenu.js",
+        "https://cdn.jsdelivr.net/npm/anzhiyu-theme-static@1.0.0/rightmenu/rightmenu.min.js",
+        "https://unpkg.com/anzhiyu-theme-static@1.0.0/rightmenu/rightmenu.js",
+        "https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/rightmenu/rightmenu.js",
+        "https://npm.onmicrosoft.cn/anzhiyu-theme-static@1.0.0/rightmenu/rightmenu.js",
+        "https://cdn.anheyu.com/npm/anzhiyu-theme-static@1.0.0/rightmenu/rightmenu.min.js"
+      ],
+      "file": "rightmenu/rightmenu.js",
+      "name": "anzhiyu-theme-static",
+      "relative": "anzhiyu-theme-static/rightmenu/rightmenu.js",
+      "remote_url": "https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/rightmenu/rightmenu.js",
+      "version": "1.0.0"
+    },
+    "sharejs": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js",
+        "https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js",
+        "https://unpkg.com/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js",
+        "https://npm.elemecdn.com/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js",
+        "https://npm.onmicrosoft.cn/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js",
+        "https://cdn.anheyu.com/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js"
+      ],
+      "file": "sharejs/dist/js/social-share.min.js",
+      "name": "butterfly-extsrc",
+      "relative": "butterfly-extsrc/sharejs/dist/js/social-share.min.js",
+      "remote_url": "https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js",
+      "version": "1.1.3"
+    },
+    "sharejs_css": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css",
+        "https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css",
+        "https://unpkg.com/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css",
+        "https://npm.elemecdn.com/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css",
+        "https://npm.onmicrosoft.cn/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css",
+        "https://cdn.anheyu.com/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css"
+      ],
+      "file": "sharejs/dist/css/share.min.css",
+      "name": "butterfly-extsrc",
+      "relative": "butterfly-extsrc/sharejs/dist/css/share.min.css",
+      "remote_url": "https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css",
+      "version": "1.1.3"
+    },
+    "snackbar": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js",
+        "https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js",
+        "https://unpkg.com/node-snackbar@0.1.16/dist/snackbar.min.js",
+        "https://npm.elemecdn.com/node-snackbar@0.1.16/dist/snackbar.min.js",
+        "https://npm.onmicrosoft.cn/node-snackbar@0.1.16/dist/snackbar.min.js",
+        "https://cdn.anheyu.com/npm/node-snackbar@0.1.16/dist/snackbar.min.js"
+      ],
+      "file": "dist/snackbar.min.js",
+      "name": "node-snackbar",
+      "relative": "node-snackbar/dist/snackbar.min.js",
+      "remote_url": "https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js",
+      "version": "0.1.16"
+    },
+    "snackbar_css": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css",
+        "https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css",
+        "https://unpkg.com/node-snackbar@0.1.16/dist/snackbar.min.css",
+        "https://npm.elemecdn.com/node-snackbar@0.1.16/dist/snackbar.min.css",
+        "https://npm.onmicrosoft.cn/node-snackbar@0.1.16/dist/snackbar.min.css",
+        "https://cdn.anheyu.com/npm/node-snackbar@0.1.16/dist/snackbar.min.css"
+      ],
+      "file": "dist/snackbar.min.css",
+      "name": "node-snackbar",
+      "relative": "node-snackbar/dist/snackbar.min.css",
+      "remote_url": "https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css",
+      "version": "0.1.16"
+    },
+    "swiper_css": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css",
+        "https://cdn.jsdelivr.net/npm/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css",
+        "https://unpkg.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css",
+        "https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css",
+        "https://npm.onmicrosoft.cn/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css",
+        "https://cdn.anheyu.com/npm/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css"
+      ],
+      "file": "swiper/swiper.min.css",
+      "name": "anzhiyu-theme-static",
+      "relative": "anzhiyu-theme-static/swiper/swiper.min.css",
+      "remote_url": "https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css",
+      "version": "1.0.0"
+    },
+    "swiper_js": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/swiper/swiper.min.js",
+        "https://cdn.jsdelivr.net/npm/anzhiyu-theme-static@1.0.0/swiper/swiper.min.js",
+        "https://unpkg.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.js",
+        "https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.js",
+        "https://npm.onmicrosoft.cn/anzhiyu-theme-static@1.0.0/swiper/swiper.min.js",
+        "https://cdn.anheyu.com/npm/anzhiyu-theme-static@1.0.0/swiper/swiper.min.js"
+      ],
+      "file": "swiper/swiper.min.js",
+      "name": "anzhiyu-theme-static",
+      "relative": "anzhiyu-theme-static/swiper/swiper.min.js",
+      "remote_url": "https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/swiper/swiper.min.js",
+      "version": "1.0.0"
+    },
+    "twikoo": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/twikoo@1.6.44/dist/twikoo.all.min.js",
+        "https://cdn.jsdelivr.net/npm/twikoo@1.6.44/dist/twikoo.all.min.js",
+        "https://unpkg.com/twikoo@1.6.44/dist/twikoo.all.min.js",
+        "https://npm.elemecdn.com/twikoo@1.6.44/dist/twikoo.all.min.js",
+        "https://npm.onmicrosoft.cn/twikoo@1.6.44/dist/twikoo.all.min.js",
+        "https://cdn.anheyu.com/npm/twikoo@1.6.44/dist/twikoo.all.min.js"
+      ],
+      "file": "dist/twikoo.all.min.js",
+      "name": "twikoo",
+      "relative": "twikoo/dist/twikoo.all.min.js",
+      "remote_url": "https://cdn.cbd.int/twikoo@1.6.44/dist/twikoo.all.min.js",
+      "version": "1.6.44"
+    },
+    "typed": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/typed.js@2.1.0/dist/typed.umd.js",
+        "https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.min.js",
+        "https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js",
+        "https://npm.elemecdn.com/typed.js@2.1.0/dist/typed.umd.js",
+        "https://npm.onmicrosoft.cn/typed.js@2.1.0/dist/typed.umd.js",
+        "https://cdn.anheyu.com/npm/typed.js@2.1.0/dist/typed.umd.min.js"
+      ],
+      "file": "dist/typed.umd.js",
+      "name": "typed.js",
+      "relative": "typed.js/dist/typed.umd.js",
+      "remote_url": "https://cdn.cbd.int/typed.js@2.1.0/dist/typed.umd.js",
+      "version": "2.1.0"
+    },
+    "valine": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/valine@1.5.1/dist/Valine.min.js",
+        "https://cdn.jsdelivr.net/npm/valine@1.5.1/dist/Valine.min.js",
+        "https://unpkg.com/valine@1.5.1/dist/Valine.min.js",
+        "https://npm.elemecdn.com/valine@1.5.1/dist/Valine.min.js",
+        "https://npm.onmicrosoft.cn/valine@1.5.1/dist/Valine.min.js",
+        "https://cdn.anheyu.com/npm/valine@1.5.1/dist/Valine.min.js"
+      ],
+      "file": "dist/Valine.min.js",
+      "name": "valine",
+      "relative": "valine/dist/Valine.min.js",
+      "remote_url": "https://cdn.cbd.int/valine@1.5.1/dist/Valine.min.js",
+      "version": "1.5.1"
+    },
+    "waline_css": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/@waline/client@3.8.0/dist/waline.css",
+        "https://cdn.jsdelivr.net/npm/@waline/client@3.8.0/dist/waline.min.css",
+        "https://unpkg.com/@waline/client@3.8.0/dist/waline.css",
+        "https://npm.elemecdn.com/@waline/client@3.8.0/dist/waline.css",
+        "https://npm.onmicrosoft.cn/@waline/client@3.8.0/dist/waline.css",
+        "https://cdn.anheyu.com/npm/@waline/client@3.8.0/dist/waline.min.css"
+      ],
+      "file": "dist/waline.css",
+      "name": "@waline/client",
+      "relative": "@waline/client/dist/waline.css",
+      "remote_url": "https://cdn.cbd.int/@waline/client@3.8.0/dist/waline.css",
+      "version": "3.8.0"
+    },
+    "waline_js": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/@waline/client@3.8.0/dist/waline.js",
+        "https://cdn.jsdelivr.net/npm/@waline/client@3.8.0/dist/waline.min.js",
+        "https://unpkg.com/@waline/client@3.8.0/dist/waline.js",
+        "https://npm.elemecdn.com/@waline/client@3.8.0/dist/waline.js",
+        "https://npm.onmicrosoft.cn/@waline/client@3.8.0/dist/waline.js",
+        "https://cdn.anheyu.com/npm/@waline/client@3.8.0/dist/waline.min.js"
+      ],
+      "file": "dist/waline.js",
+      "name": "@waline/client",
+      "relative": "@waline/client/dist/waline.js",
+      "remote_url": "https://cdn.cbd.int/@waline/client@3.8.0/dist/waline.js",
+      "version": "3.8.0"
+    },
+    "waline_meta_css": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/@waline/client@3.8.0/dist/waline-meta.css",
+        "https://cdn.jsdelivr.net/npm/@waline/client@3.8.0/dist/waline-meta.min.css",
+        "https://unpkg.com/@waline/client@3.8.0/dist/waline-meta.css",
+        "https://npm.elemecdn.com/@waline/client@3.8.0/dist/waline-meta.css",
+        "https://npm.onmicrosoft.cn/@waline/client@3.8.0/dist/waline-meta.css",
+        "https://cdn.anheyu.com/npm/@waline/client@3.8.0/dist/waline-meta.min.css"
+      ],
+      "file": "dist/waline-meta.css",
+      "name": "@waline/client",
+      "relative": "@waline/client/dist/waline-meta.css",
+      "remote_url": "https://cdn.cbd.int/@waline/client@3.8.0/dist/waline-meta.css",
+      "version": "3.8.0"
+    },
+    "waterfall": {
+      "fallback_urls": [
+        "https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js",
+        "https://cdn.jsdelivr.net/npm/anzhiyu-theme-static@1.0.0/waterfall/waterfall.min.js",
+        "https://unpkg.com/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js",
+        "https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js",
+        "https://npm.onmicrosoft.cn/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js",
+        "https://cdn.anheyu.com/npm/anzhiyu-theme-static@1.0.0/waterfall/waterfall.min.js"
+      ],
+      "file": "waterfall/waterfall.js",
+      "name": "anzhiyu-theme-static",
+      "relative": "anzhiyu-theme-static/waterfall/waterfall.js",
+      "remote_url": "https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js",
+      "version": "1.0.0"
+    }
+  },
+  "theme_dir": "C:\\Users\\admin\\Documents\\GitHub\\happycola-house\\node_modules\\hexo-theme-anzhiyu",
+  "theme_package": "hexo-theme-anzhiyu",
+  "theme_version": "1.7.1"
+}

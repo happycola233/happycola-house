@@ -1,247 +1,641 @@
 # -*- coding: utf-8 -*-
 """
-本脚本用于将 anzhiyu 主题的第三方依赖从外部 CDN 批量下载到本地 Hexo 工程中，
-以便在配置 CDN 为 local 时，所有资源都从自己服务器（/pluginsSrc）加载，而不是走外网 CDN。
+将 AnZhiYu 主题依赖的第三方静态资源镜像到本地 `source/pluginsSrc/`。
 
-主要功能：
-1. 根据脚本中的 PLUGINS 列表，
-   按 anzhiyu 主题使用的 cbd CDN 规则：
-       https://cdn.cbd.int/${name}@${version}/${file}
-   批量下载对应的 JS / CSS 等文件到：
-       source/pluginsSrc/${name}/${file}
-   这与主题本地模式使用的路径 /pluginsSrc/${name}/${file 一一对应}。
+目标：
+1. 资源清单不再手写维护，而是直接读取当前主题包里的 `plugins.yml`。
+2. 下载 CSS 后，继续补齐其中 `url(...)` 引用的字体 / 图片资源。
+3. 写入一份 manifest，记录本地镜像对应的主题版本、来源 URL 和目标路径。
+4. 提供 `validate` 模式，检查：
+   - 当前主题需要的资源是否都存在于 `source/pluginsSrc/`
+   - CSS 依赖资源是否缺失
+   - 本地 manifest 是否已经和当前主题版本 / 资源清单同步
 
-2. 自动扫描下载到本地的 CSS 文件内容，
-   解析其中的 url(...) 引用（如字体、背景图等），
-   再按相对路径下载这些静态资源到与 CSS 同级的本地目录，
-   用于消除诸如：
-       /pluginsSrc/@fortawesome/fontawesome-free/webfonts/*.woff2
-       /pluginsSrc/anzhiyu-theme-static/icon/*.woff2
-   之类的 404。
-
-3. 通过 EXTRA_CSS 列表额外下载某些不走 plugins.yml、
-   但在主题配置里单独引用的 CSS，例如：
-       icons.fontawesome_animation_css
-   同样会自动扫描并下载其依赖的字体 / 图片资源。
-
-使用方式（默认脚本放在 Hexo 根目录）：
-1. 确认本地已有 Python 3。
-2. 将本文件保存为 download_plugins.py（文件名可自定义）。
-3. 在 Hexo 根目录执行：
-       python download_plugins.py
-4. 脚本会在 source/pluginsSrc 下创建相应目录并写入文件。
-   运行完成后，配合主题配置：
-       CDN.internal_provider: local
-       CDN.third_party_provider: local
-   以及各项指向 /pluginsSrc/... 的本地路径，
-   即可让站点在本地 / 服务器上不再依赖外部 CDN 加载这些资源。
+典型用法：
+    python localize_cdn_resources.py download
+    python localize_cdn_resources.py validate
 """
 
+from __future__ import annotations
 
+import argparse
+import json
 import os
 import re
-from urllib import request, error
+import sys
+from pathlib import Path
+from urllib import error, request
 from urllib.parse import urljoin, urlparse
 
-# 和 anzhiyu 主题里 cbd 的写法保持一致：
-# https://cdn.cbd.int/${name}@${version}/${file}
+
 BASE_URL = "https://cdn.cbd.int"
+THEME_PACKAGE_NAME = "hexo-theme-anzhiyu"
+THEME_FALLBACK_DIR = "anzhiyu"
+MANIFEST_NAME = ".anzhiyu-local-cdn-manifest.json"
+TARGET_SUBDIR = ("source", "pluginsSrc")
+CSS_URL_PATTERN = re.compile(r"url\(([^)]+)\)")
+FALLBACK_PROVIDERS = ("cbd", "jsdelivr", "unpkg", "elemecdn", "onmicrosoft", "anheyu")
+OPTIONAL_SVG_FONT_SUFFIXES = (".woff2", ".woff", ".ttf", ".eot")
 
-# ===== 从 plugins.yml 抄出来的配置 =====
-PLUGINS = [
-    {"id": "algolia_search", "name": "algoliasearch", "file": "dist/algoliasearch-lite.umd.js", "version": "4.18.0"},
-    {"id": "instantsearch", "name": "instantsearch.js", "file": "dist/instantsearch.production.min.js", "version": "4.60.0"},
-    {"id": "docsearch_js", "name": "@docsearch/js", "file": "dist/umd/index.js", "version": "3.5.2"},
-    {"id": "docsearch_css", "name": "@docsearch/css", "file": "dist/style.css", "version": "3.5.2"},
-    {"id": "pjax", "name": "pjax", "file": "pjax.min.js", "version": "0.2.8"},
-    {"id": "blueimp_md5", "name": "blueimp-md5", "file": "js/md5.min.js", "version": "2.19.0"},
-    {"id": "valine", "name": "valine", "file": "dist/Valine.min.js", "version": "1.5.1"},
-    {"id": "twikoo", "name": "twikoo", "file": "dist/twikoo.all.min.js", "version": "1.6.44"},
-    {"id": "waline_js", "name": "@waline/client", "file": "dist/waline.js", "version": "3.1.3"},
-    {"id": "waline_css", "name": "@waline/client", "file": "dist/waline.css", "version": "3.1.3"},
-    {"id": "waline_meta_css", "name": "@waline/client", "file": "dist/waline-meta.css", "version": "3.1.3"},
-    {"id": "sharejs", "name": "butterfly-extsrc", "file": "sharejs/dist/js/social-share.min.js", "version": "1.1.3"},
-    {"id": "sharejs_css", "name": "butterfly-extsrc", "file": "sharejs/dist/css/share.min.css", "version": "1.1.3"},
-    {"id": "mathjax", "name": "mathjax", "file": "es5/tex-mml-chtml.js", "version": "3.2.2"},
-    {"id": "katex", "name": "katex", "file": "dist/katex.min.css", "version": "0.16.0"},
-    {"id": "katex_copytex", "name": "katex", "file": "dist/contrib/copy-tex.min.js", "version": "0.16.0"},
-    {"id": "mermaid", "name": "mermaid", "file": "dist/mermaid.min.js", "version": "10.2.4"},
-    {"id": "canvas_ribbon", "name": "butterfly-extsrc", "file": "dist/canvas-ribbon.min.js", "version": "1.1.3"},
-    {"id": "canvas_fluttering_ribbon", "name": "butterfly-extsrc", "file": "dist/canvas-fluttering-ribbon.min.js", "version": "1.1.3"},
-    {"id": "canvas_nest", "name": "butterfly-extsrc", "file": "dist/canvas-nest.min.js", "version": "1.1.3"},
-    {"id": "activate_power_mode", "name": "butterfly-extsrc", "file": "dist/activate-power-mode.min.js", "version": "1.1.3"},
-    {"id": "fireworks", "name": "butterfly-extsrc", "file": "dist/fireworks.min.js", "version": "1.1.3"},
-    {"id": "click_heart", "name": "butterfly-extsrc", "file": "dist/click-heart.min.js", "version": "1.1.3"},
-    {"id": "ClickShowText", "name": "butterfly-extsrc", "file": "dist/click-show-text.min.js", "version": "1.1.3"},
-    {"id": "lazyload", "name": "vanilla-lazyload", "file": "dist/lazyload.iife.min.js", "version": "17.8.5"},
-    {"id": "instantpage", "name": "instant.page", "file": "instantpage.js", "version": "5.2.0"},
-    {"id": "typed", "name": "typed.js", "file": "dist/typed.umd.js", "version": "2.1.0"},
-    {"id": "pangu", "name": "pangu", "file": "dist/browser/pangu.min.js", "version": "4.0.7"},
-    {"id": "fancybox_css", "name": "@fancyapps/ui", "file": "dist/fancybox/fancybox.css", "version": "5.0.28"},
-    {"id": "fancybox", "name": "@fancyapps/ui", "file": "dist/fancybox/fancybox.umd.js", "version": "5.0.28"},
-    {"id": "medium_zoom", "name": "medium-zoom", "file": "dist/medium-zoom.min.js", "version": "1.1.0"},
-    {"id": "snackbar_css", "name": "node-snackbar", "file": "dist/snackbar.min.css", "version": "0.1.16"},
-    {"id": "snackbar", "name": "node-snackbar", "file": "dist/snackbar.min.js", "version": "0.1.16"},
-    {"id": "fontawesome", "name": "@fortawesome/fontawesome-free", "file": "css/all.min.css", "version": "6.4.0"},
-    {"id": "flickr_justified_gallery_js", "name": "flickr-justified-gallery", "file": "dist/fjGallery.min.js", "version": "2.1.2"},
-    {"id": "flickr_justified_gallery_css", "name": "flickr-justified-gallery", "file": "dist/fjGallery.css", "version": "2.1.2"},
-    {"id": "aplayer_css", "name": "anzhiyu-theme-static", "file": "aplayer/APlayer.min.css", "version": "1.0.0"},
-    {"id": "aplayer_js", "name": "anzhiyu-blog-static", "file": "js/APlayer.min.js", "version": "1.0.1"},
-    {"id": "meting_js", "name": "hexo-anzhiyu-music", "file": "assets/js/Meting2.min.js", "version": "1.0.1"},
-    {"id": "prismjs_js", "name": "prismjs", "file": "prism.js", "version": "1.29.0"},
-    {"id": "prismjs_lineNumber_js", "name": "prismjs", "file": "plugins/line-numbers/prism-line-numbers.min.js", "version": "1.29.0"},
-    {"id": "prismjs_autoloader", "name": "prismjs", "file": "plugins/autoloader/prism-autoloader.min.js", "version": "1.29.0"},
-    {"id": "artalk_js", "name": "artalk", "file": "dist/Artalk.js", "version": "2.6.4"},
-    {"id": "artalk_css", "name": "artalk", "file": "dist/Artalk.css", "version": "2.6.4"},
-    {"id": "pace_js", "name": "pace-js", "file": "pace.min.js", "version": "1.2.4"},
-    {"id": "pace_default_css", "name": "anzhiyu-theme-static", "file": "progress_bar/progress_bar.css", "version": "1.1.10"},
-    {"id": "coin_js", "name": "anzhiyu-theme-static", "file": "coin/coin.js", "version": "1.0.0"},
-    {"id": "coin_css", "name": "anzhiyu-theme-static", "file": "coin/coin.min.css", "version": "1.0.0"},
-    {"id": "countup_js", "name": "anzhiyu-theme-static", "file": "countup/countup.js", "version": "1.0.0"},
-    {"id": "gsap_js", "name": "anzhiyu-theme-static", "file": "gsap/gsap.min.js", "version": "1.0.0"},
-    {"id": "rightmenu", "name": "anzhiyu-theme-static", "file": "rightmenu/rightmenu.js", "version": "1.0.0"},
-    {"id": "waterfall", "name": "anzhiyu-theme-static", "file": "waterfall/waterfall.js", "version": "1.0.0"},
-    {"id": "ali_iconfont_css", "name": "anzhiyu-theme-static", "file": "icon/ali_iconfont_css.css", "version": "1.1.9"},
-    {"id": "accesskey_js", "name": "anzhiyu-theme-static", "file": "accesskey/accesskey.js", "version": "1.1.5"},
-    {"id": "colorthief", "name": "colorthief", "file": "dist/color-thief.umd.min.js", "version": "2.6.0"},
-    {"id": "swiper_css", "name": "anzhiyu-theme-static", "file": "swiper/swiper.min.css", "version": "1.0.0"},
-    {"id": "swiper_js",  "name": "anzhiyu-theme-static", "file": "swiper/swiper.min.js",  "version": "1.0.0"},
-]
-
-# 额外从配置里单独引用的 CSS（当前只有 fontawesome_animation_css）
-EXTRA_CSS = [
+# 这些资源不走主题 plugins.yml，而是你当前配置里显式引用的本地路径。
+# 保持这个列表很小，风险远低于手写整份第三方清单。
+EXTRA_RESOURCES = [
     {
         "id": "fontawesome_animation_css",
         "url": "https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@1.0.17/lib/assets/font-awesome-animation.min.css",
-        # 存在 source/pluginsSrc/font-awesome-animation/font-awesome-animation.min.css
         "relative": "font-awesome-animation/font-awesome-animation.min.css",
-    }
+    },
+    {
+        "id": "swiper_css",
+        "name": "anzhiyu-theme-static",
+        "file": "swiper/swiper.min.css",
+        "version": "1.0.0",
+    },
+    {
+        "id": "swiper_js",
+        "name": "anzhiyu-theme-static",
+        "file": "swiper/swiper.min.js",
+        "version": "1.0.0",
+    },
 ]
 
 
+class UnsafePathError(RuntimeError):
+    """目标路径越过 target_root 时抛出。"""
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Mirror AnZhiYu CDN resources into source/pluginsSrc.")
+    parser.add_argument(
+        "mode",
+        nargs="?",
+        choices=("download", "validate"),
+        default="download",
+        help="download: 下载并刷新本地镜像；validate: 校验本地镜像与当前主题是否一致。",
+    )
+    parser.add_argument(
+        "--theme-dir",
+        help="主题目录。默认自动从 node_modules/hexo-theme-anzhiyu 或 themes/anzhiyu 推断。",
+    )
+    parser.add_argument(
+        "--target-root",
+        help="镜像输出目录。默认是 <hexo根目录>/source/pluginsSrc。",
+    )
+    parser.add_argument(
+        "--timeout",
+        type=int,
+        default=30,
+        help="单个文件下载超时时间（秒），默认 30。",
+    )
+    return parser.parse_args()
+
+
+def strip_quotes(value: str) -> str:
+    value = value.strip()
+    if len(value) >= 2 and value[0] == value[-1] and value[0] in ("'", '"'):
+        return value[1:-1]
+    return value
+
+
+def resolve_theme_dir(base_dir: Path, theme_dir_arg: str | None) -> Path:
+    candidates = []
+
+    if theme_dir_arg:
+        candidates.append(Path(theme_dir_arg))
+
+    env_theme_dir = os.environ.get("ANZHIYU_THEME_DIR")
+    if env_theme_dir:
+        candidates.append(Path(env_theme_dir))
+
+    candidates.append(base_dir / "node_modules" / THEME_PACKAGE_NAME)
+    candidates.append(base_dir / "themes" / THEME_FALLBACK_DIR)
+
+    for candidate in candidates:
+        if candidate and candidate.exists():
+            return candidate.resolve()
+
+    raise FileNotFoundError(
+        "找不到主题目录。请确认已安装主题，或使用 --theme-dir 指定。"
+    )
+
+
+def resolve_target_root(base_dir: Path, target_root_arg: str | None) -> Path:
+    if target_root_arg:
+        return Path(target_root_arg).resolve()
+    return (base_dir / Path(*TARGET_SUBDIR)).resolve()
+
+
+def load_theme_version(theme_dir: Path) -> str:
+    package_json = theme_dir / "package.json"
+    try:
+        data = json.loads(package_json.read_text(encoding="utf-8"))
+        return str(data.get("version", "unknown"))
+    except Exception as exc:
+        raise RuntimeError(f"无法读取主题版本：{package_json} ({exc})") from exc
+
+
+def load_theme_plugins(theme_dir: Path) -> dict[str, dict[str, str]]:
+    plugins_yml = theme_dir / "plugins.yml"
+    if not plugins_yml.exists():
+        raise FileNotFoundError(f"找不到主题 plugins.yml：{plugins_yml}")
+
+    plugins: dict[str, dict[str, str]] = {}
+    current_id: str | None = None
+    current: dict[str, str] = {}
+
+    for raw_line in plugins_yml.read_text(encoding="utf-8").splitlines():
+        stripped = raw_line.strip()
+        if not stripped or stripped.startswith("#"):
+            continue
+
+        if not raw_line.startswith(" "):
+            if current_id and {"name", "file", "version"} <= current.keys():
+                plugins[current_id] = current
+            current_id = stripped[:-1] if stripped.endswith(":") else stripped
+            current = {}
+            continue
+
+        if current_id is None:
+            continue
+
+        match = re.match(r"\s+([A-Za-z0-9_]+):\s*(.*?)\s*$", raw_line)
+        if not match:
+            continue
+
+        key, value = match.groups()
+        current[key] = strip_quotes(value)
+
+    if current_id and {"name", "file", "version"} <= current.keys():
+        plugins[current_id] = current
+
+    if not plugins:
+        raise RuntimeError(f"未能从 {plugins_yml} 解析出任何插件配置。")
+
+    return plugins
+
+
+def load_project_section_settings(base_dir: Path) -> dict[str, dict[str, str]]:
+    config_path = base_dir / "_config.anzhiyu.yml"
+    if not config_path.exists():
+        return {}
+
+    sections: dict[str, dict[str, str]] = {}
+    current_section: str | None = None
+
+    for raw_line in config_path.read_text(encoding="utf-8").splitlines():
+        stripped = raw_line.strip()
+        if not stripped or stripped.startswith("#"):
+            continue
+
+        top_level = re.match(r"^([A-Za-z0-9_]+):\s*$", raw_line)
+        if top_level:
+            current_section = top_level.group(1)
+            sections.setdefault(current_section, {})
+            continue
+
+        if current_section is None:
+            continue
+
+        nested = re.match(r"^\s{2}([A-Za-z0-9_]+):\s*(.*?)\s*$", raw_line)
+        if nested:
+            key, value = nested.groups()
+            sections[current_section][key] = strip_quotes(value)
+            continue
+
+        if raw_line and not raw_line.startswith(" "):
+            current_section = None
+
+    return sections
+
+
+def is_section_enabled(section_settings: dict[str, dict[str, str]], section: str) -> bool:
+    if section not in section_settings:
+        return True
+
+    value = section_settings.get(section, {}).get("enable", "")
+    if not value:
+        return True
+    return value.lower() == "true"
+
+
+def filter_resources_for_project(
+    resources: list[dict[str, str]],
+    section_settings: dict[str, dict[str, str]],
+) -> list[dict[str, str]]:
+    disabled_features = {
+        "mathjax": {"mathjax"},
+        "katex": {"katex", "katex_copytex"},
+        "mermaid": {"mermaid"},
+    }
+
+    optional_disabled_ids: set[str] = set()
+    for section, resource_ids in disabled_features.items():
+        if not is_section_enabled(section_settings, section):
+            optional_disabled_ids.update(resource_ids)
+
+    return [resource for resource in resources if resource["id"] not in optional_disabled_ids]
+
+
 def build_url(name: str, version: str, file_path: str) -> str:
-    """
-    构造 cbd CDN 地址：
-    https://cdn.cbd.int/${name}@${version}/${file}
-    """
     file_path = file_path.lstrip("/")
     return f"{BASE_URL}/{name}@{version}/{file_path}"
 
 
-def build_local_path(root: str, name: str, file_path: str) -> str:
-    """
-    构造本地保存路径，对应 /pluginsSrc/${name}/${file}
-    """
-    relative = f"{name}/{file_path.lstrip('/')}"
-    parts = relative.split("/")
-    return os.path.join(root, *parts)
+def build_fallback_urls(name: str, version: str, file_path: str) -> list[str]:
+    file_path = normalize_path_fragment(file_path)
+    version_tag = f"@{version}" if version else ""
+    min_file = re.sub(r"(?<!\.min)\.(js|css)$", r".min.\1", file_path)
+
+    provider_map = {
+        "cbd": f"https://cdn.cbd.int/{name}{version_tag}/{file_path}",
+        "jsdelivr": f"https://cdn.jsdelivr.net/npm/{name}{version_tag}/{min_file}",
+        "unpkg": f"https://unpkg.com/{name}{version_tag}/{file_path}",
+        "elemecdn": f"https://npm.elemecdn.com/{name}{version_tag}/{file_path}",
+        "onmicrosoft": f"https://npm.onmicrosoft.cn/{name}{version_tag}/{file_path}",
+        "anheyu": f"https://cdn.anheyu.com/npm/{name}{version_tag}/{min_file}",
+    }
+    return [provider_map[provider] for provider in FALLBACK_PROVIDERS]
 
 
-def download_file(url: str, dest: str, timeout: int = 30) -> bool:
-    """
-    下载单个文件
-    """
-    os.makedirs(os.path.dirname(dest), exist_ok=True)
+def normalize_path_fragment(path_fragment: str) -> str:
+    return path_fragment.lstrip("/").replace("\\", "/")
+
+
+def ensure_within_root(candidate: Path, target_root: Path, context: str) -> Path:
+    resolved_root = target_root.resolve(strict=False)
+    resolved_candidate = candidate.resolve(strict=False)
+
     try:
-        print(f"-> {url}")
-        with request.urlopen(url, timeout=timeout) as resp, open(dest, "wb") as f:
-            f.write(resp.read())
-        print(f"   Saved to {dest}")
-        return True
-    except error.HTTPError as e:
-        print(f"   [HTTP {e.code}] Failed to download {url}")
-    except error.URLError as e:
-        print(f"   [URL Error] Failed to download {url}: {e.reason}")
-    except Exception as e:
-        print(f"   [Error] Failed to download {url}: {e}")
-    return False
+        resolved_candidate.relative_to(resolved_root)
+    except ValueError as exc:
+        raise UnsafePathError(
+            f"{context}: {resolved_candidate} 越过了目标根目录 {resolved_root}"
+        ) from exc
+
+    return resolved_candidate
 
 
-def download_css_assets(local_css_path: str, remote_css_url: str):
-    """
-    扫描本地 CSS 里的 url(...)，把其中引用的静态资源也下载下来。
-    例如：
-      - ../webfonts/fa-solid-900.woff2
-      - font_2508400_fpn9ui60u6q.woff2?t=1690446183540
-    """
-    print(f"   [CSS] Scan assets in {local_css_path}")
-    try:
+def make_resource(resource_id: str, spec: dict[str, str]) -> dict[str, str]:
+    if "url" in spec:
+        relative = normalize_path_fragment(spec["relative"])
+        remote_url = spec["url"]
+        name = spec.get("name", "")
+        file_path = spec.get("file", relative)
+        version = spec.get("version", "")
+        fallback_urls = build_fallback_urls(name, version, file_path) if name and version and file_path else [remote_url]
+    else:
+        name = spec["name"]
+        file_path = normalize_path_fragment(spec["file"])
+        version = spec["version"]
+        relative = normalize_path_fragment(f"{name}/{file_path}")
+        remote_url = build_url(name, version, file_path)
+        fallback_urls = build_fallback_urls(name, version, file_path)
+
+    return {
+        "id": resource_id,
+        "name": name,
+        "file": file_path,
+        "version": version,
+        "relative": relative,
+        "remote_url": remote_url,
+        "fallback_urls": list(dict.fromkeys([remote_url, *fallback_urls])),
+    }
+
+
+def build_resource_list(theme_plugins: dict[str, dict[str, str]]) -> list[dict[str, str]]:
+    resources = []
+
+    for resource_id in sorted(theme_plugins.keys()):
+        resources.append(make_resource(resource_id, theme_plugins[resource_id]))
+
+    for extra in EXTRA_RESOURCES:
+        resources.append(make_resource(extra["id"], extra))
+
+    return resources
+
+
+def build_local_path(target_root: Path, relative: str) -> Path:
+    candidate = target_root / Path(*normalize_path_fragment(relative).split("/"))
+    return ensure_within_root(candidate, target_root, f"主资源路径 {relative}")
+
+
+def download_file(urls: str | list[str], dest: Path, timeout: int = 30) -> str | None:
+    if isinstance(urls, str):
+        urls = [urls]
+
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    tmp_dest = dest.with_suffix(dest.suffix + ".codex-download")
+
+    for url in urls:
         try:
-            text = open(local_css_path, "r", encoding="utf-8").read()
-        except UnicodeDecodeError:
-            text = open(local_css_path, "r", encoding="latin-1").read()
-    except Exception as e:
-        print(f"   [CSS] Cannot read {local_css_path}: {e}")
+            print(f"-> {url}")
+            with request.urlopen(url, timeout=timeout) as response, tmp_dest.open("wb") as handle:
+                handle.write(response.read())
+            os.replace(tmp_dest, dest)
+            print(f"   Saved to {dest}")
+            return url
+        except error.HTTPError as exc:
+            print(f"   [HTTP {exc.code}] Failed to download {url}")
+        except error.URLError as exc:
+            print(f"   [URL Error] Failed to download {url}: {exc.reason}")
+        except Exception as exc:  # pragma: no cover - 兜底日志
+            print(f"   [Error] Failed to download {url}: {exc}")
+        finally:
+            if tmp_dest.exists():
+                tmp_dest.unlink(missing_ok=True)
+
+    return None
+
+
+def read_text_with_fallback(path: Path) -> str:
+    try:
+        return path.read_text(encoding="utf-8")
+    except UnicodeDecodeError:
+        return path.read_text(encoding="latin-1")
+
+
+def build_css_asset_urls(remote_css_url: str, raw_path: str) -> list[str]:
+    parsed_raw = urlparse(raw_path)
+    sanitized_path = parsed_raw.path
+    candidates = []
+
+    if sanitized_path:
+        candidates.append(urljoin(remote_css_url, sanitized_path))
+    candidates.append(urljoin(remote_css_url, raw_path))
+
+    return list(dict.fromkeys(candidates))
+
+
+def is_optional_missing_css_asset(path: Path) -> bool:
+    if path.suffix.lower() != ".svg":
+        return False
+
+    stem = path.with_suffix("")
+    return any(stem.with_suffix(ext).exists() for ext in OPTIONAL_SVG_FONT_SUFFIXES)
+
+
+def iter_css_assets(local_css_path: Path, remote_css_url: str, target_root: Path):
+    try:
+        text = read_text_with_fallback(local_css_path)
+    except Exception as exc:
+        print(f"   [CSS] Cannot read {local_css_path}: {exc}")
         return
 
-    css_dir = os.path.dirname(local_css_path)
-    pattern = re.compile(r"url\(([^)]+)\)")
+    css_dir = ensure_within_root(
+        local_css_path.parent,
+        target_root,
+        f"CSS 基路径 {local_css_path.parent}",
+    )
 
-    for m in pattern.finditer(text):
-        raw = m.group(1).strip().strip('\'"')
-        if not raw:
-            continue
-        # 忽略绝对地址和 data: URI
-        if raw.startswith(("data:", "http://", "https://", "//")):
-            continue
-
-        # 远程资源 URL（相对 CSS 所在路径）
-        asset_remote = urljoin(remote_css_url, raw)
-        # 本地保存路径：相对 CSS 文件目录
-        parsed = urlparse(raw)
-        asset_rel_path = parsed.path  # 去掉 ?t= 这类 query
-        dest_path = os.path.normpath(os.path.join(css_dir, asset_rel_path))
-
-        if os.path.exists(dest_path):
-            # 已存在就跳过
+    for match in CSS_URL_PATTERN.finditer(text):
+        raw = match.group(1).strip().strip('\'"')
+        if not raw or raw.startswith(("data:", "http://", "https://", "//")):
             continue
 
-        print(f"   [CSS asset] {asset_remote}")
-        download_file(asset_remote, dest_path)
+        asset_urls = build_css_asset_urls(remote_css_url, raw)
+        asset_path = urlparse(raw).path
+        candidate = Path(os.path.normpath(os.path.join(css_dir, asset_path)))
+        dest = ensure_within_root(
+            candidate,
+            target_root,
+            f"CSS 资源路径 {raw} from {local_css_path}",
+        )
+        yield asset_urls, dest
 
 
-def main():
-    # 默认脚本放在 Hexo 根目录
-    base_dir = os.path.dirname(os.path.abspath(__file__))
-    target_root = os.path.join(base_dir, "source", "pluginsSrc")
+def download_css_assets(
+    local_css_path: Path,
+    remote_css_url: str,
+    target_root: Path,
+    timeout: int,
+) -> int:
+    print(f"   [CSS] Scan assets in {local_css_path}")
+    failed = 0
+    for asset_urls, dest_path in iter_css_assets(local_css_path, remote_css_url, target_root):
+        if dest_path.exists():
+            continue
+        print(f"   [CSS asset] {asset_urls[0]}")
+        if download_file(asset_urls, dest_path, timeout=timeout) is None:
+            if is_optional_missing_css_asset(dest_path):
+                print(f"   [CSS asset optional] Skip missing legacy SVG font {dest_path}")
+                continue
+            failed += 1
+    return failed
 
-    print(f"Target root: {target_root}")
+
+def manifest_path(target_root: Path) -> Path:
+    return target_root / MANIFEST_NAME
+
+
+def write_manifest(
+    target_root: Path,
+    theme_dir: Path,
+    theme_version: str,
+    resources: list[dict[str, str]],
+) -> None:
+    payload = {
+        "generator": "localize_cdn_resources.py",
+        "theme_package": THEME_PACKAGE_NAME,
+        "theme_dir": str(theme_dir),
+        "theme_version": theme_version,
+        "resource_count": len(resources),
+        "resources": {
+            resource["id"]: {
+                "name": resource["name"],
+                "file": resource["file"],
+                "version": resource["version"],
+                "relative": resource["relative"],
+                "remote_url": resource["remote_url"],
+                "fallback_urls": resource["fallback_urls"],
+            }
+            for resource in resources
+        },
+    }
+
+    target_root.mkdir(parents=True, exist_ok=True)
+    manifest = manifest_path(target_root)
+    manifest.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=True),
+        encoding="utf-8",
+    )
+    print(f"\nManifest written to {manifest}")
+
+
+def load_manifest(target_root: Path) -> dict | None:
+    manifest = manifest_path(target_root)
+    if not manifest.exists():
+        return None
+
+    try:
+        return json.loads(manifest.read_text(encoding="utf-8"))
+    except Exception as exc:
+        raise RuntimeError(f"无法读取 manifest：{manifest} ({exc})") from exc
+
+
+def download_resources(
+    resources: list[dict[str, str]],
+    target_root: Path,
+    timeout: int,
+) -> tuple[int, int]:
     success = 0
     failed = 0
 
-    # 1. 下载 plugins.yml 中的所有文件
-    for p in PLUGINS:
-        name = p["name"]
-        version = p["version"]
-        file_path = p["file"]
+    for resource in resources:
+        print(f"\n[{resource['id']}]")
+        dest = build_local_path(target_root, resource["relative"])
 
-        print(f"\n[{p['id']}]")
-        remote_url = build_url(name, version, file_path)
-        dest = build_local_path(target_root, name, file_path)
-
-        if download_file(remote_url, dest):
+        used_url = download_file(resource["fallback_urls"], dest, timeout=timeout)
+        if used_url is not None:
             success += 1
-            # 如果是 CSS，同步下载它引用的资源（字体等）
-            if file_path.lower().endswith(".css"):
-                download_css_assets(dest, remote_url)
+            if dest.suffix.lower() == ".css":
+                css_failed = download_css_assets(dest, used_url, target_root, timeout)
+                failed += css_failed
         else:
             failed += 1
 
-    # 2. 下载额外的 CSS（例如 fontawesome_animation_css）
-    for e in EXTRA_CSS:
-        print(f"\n[{e['id']}] (extra css)")
-        remote_url = e["url"]
-        dest = os.path.join(target_root, *e["relative"].split("/"))
+    return success, failed
 
-        if download_file(remote_url, dest):
-            success += 1
-            download_css_assets(dest, remote_url)
-        else:
-            failed += 1
+
+def validate_resources(
+    resources: list[dict[str, str]],
+    target_root: Path,
+    theme_version: str,
+) -> int:
+    missing_files: list[str] = []
+    missing_css_assets: list[str] = []
+    stale_manifest: list[str] = []
+    path_risks: list[str] = []
+
+    manifest = load_manifest(target_root)
+    manifest_resources = (manifest or {}).get("resources", {})
+
+    should_check_manifest_entries = manifest is not None
+
+    if manifest is None:
+        stale_manifest.append(
+            f"缺少 {MANIFEST_NAME}，无法确认本地镜像是否已经和当前主题同步。"
+        )
+    else:
+        manifest_theme_version = str(manifest.get("theme_version", ""))
+        if manifest_theme_version != theme_version:
+            stale_manifest.append(
+                f"manifest 主题版本为 {manifest_theme_version or 'unknown'}，当前主题版本为 {theme_version}。"
+            )
+
+    for resource in resources:
+        resource_id = resource["id"]
+        try:
+            dest = build_local_path(target_root, resource["relative"])
+        except UnsafePathError as exc:
+            path_risks.append(f"{resource_id}: {exc}")
+            continue
+
+        if should_check_manifest_entries:
+            manifest_entry = manifest_resources.get(resource_id)
+            if manifest_entry is None:
+                stale_manifest.append(f"{resource_id}: manifest 未记录该资源。")
+            else:
+                for field in ("relative", "remote_url", "version"):
+                    expected = resource[field]
+                    actual = str(manifest_entry.get(field, ""))
+                    if actual != expected:
+                        stale_manifest.append(
+                            f"{resource_id}: manifest {field}={actual or '∅'}，当前应为 {expected or '∅'}。"
+                        )
+                        break
+                else:
+                    expected_fallbacks = resource["fallback_urls"]
+                    actual_fallbacks = manifest_entry.get("fallback_urls", [])
+                    if actual_fallbacks != expected_fallbacks:
+                        stale_manifest.append(
+                            f"{resource_id}: manifest fallback_urls 已过期。"
+                        )
+                        continue
+
+        if not dest.exists():
+            missing_files.append(f"{resource_id}: 缺少 {dest}")
+            continue
+
+        if dest.suffix.lower() == ".css":
+            try:
+                for asset_urls, asset_dest in iter_css_assets(
+                    dest, resource["remote_url"], target_root
+                ):
+                    if not asset_dest.exists():
+                        if is_optional_missing_css_asset(asset_dest):
+                            continue
+                        missing_css_assets.append(
+                            f"{resource_id}: CSS 依赖缺少 {asset_dest} (from {asset_urls[0]})"
+                        )
+            except UnsafePathError as exc:
+                path_risks.append(f"{resource_id}: {exc}")
+
+    if path_risks:
+        print("[unsafe paths]")
+        for item in path_risks:
+            print(f"  - {item}")
+
+    if stale_manifest:
+        print("[manifest]")
+        for item in stale_manifest:
+            print(f"  - {item}")
+
+    if missing_files:
+        print("[missing files]")
+        for item in missing_files:
+            print(f"  - {item}")
+
+    if missing_css_assets:
+        print("[missing css assets]")
+        for item in missing_css_assets:
+            print(f"  - {item}")
+
+    if not (path_risks or stale_manifest or missing_files or missing_css_assets):
+        print("Validation passed. 本地镜像与当前主题资源清单一致。")
+        return 0
+
+    print("\nValidation failed.")
+    print("建议先执行：python localize_cdn_resources.py download")
+    return 1
+
+
+def main() -> int:
+    args = parse_args()
+    base_dir = Path(__file__).resolve().parent
+    theme_dir = resolve_theme_dir(base_dir, args.theme_dir)
+    target_root = resolve_target_root(base_dir, args.target_root)
+    theme_version = load_theme_version(theme_dir)
+    theme_plugins = load_theme_plugins(theme_dir)
+    section_settings = load_project_section_settings(base_dir)
+    resources = filter_resources_for_project(
+        build_resource_list(theme_plugins),
+        section_settings,
+    )
+
+    print(f"Theme dir   : {theme_dir}")
+    print(f"Theme ver   : {theme_version}")
+    print(f"Target root : {target_root}")
+    print(f"Resources   : {len(resources)}")
+
+    if args.mode == "validate":
+        return validate_resources(resources, target_root, theme_version)
+
+    try:
+        success, failed = download_resources(resources, target_root, timeout=args.timeout)
+    except UnsafePathError as exc:
+        print(f"\n[unsafe path] {exc}")
+        print("已中止下载，避免写出 target_root 之外。")
+        return 2
+
+    if failed == 0:
+        write_manifest(target_root, theme_dir, theme_version, resources)
+    else:
+        print("\nManifest not updated because some downloads failed.")
 
     print("\nDone.")
     print(f"Success: {success}, Failed: {failed}")
+    return 1 if failed else 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

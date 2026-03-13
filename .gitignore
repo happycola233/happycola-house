@@ -1,5 +1,6 @@
 .DS_Store
 Thumbs.db
+__pycache__/
 db.json
 *.log
 node_modules/
