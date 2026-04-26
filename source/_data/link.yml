@@ -56,6 +56,11 @@
       siteshot: /img/friendship-links/sess-xhustudio-eu-org.png
       color: vip
       tag: 技术
+    - name: 弹幕塚
+      link: https://danmaku.site/
+      avatar: https://danmaku.site/favicon.ico
+      descr: 某野生的神弹幕存档站ヽ(✿ﾟ▽ﾟ)ノ
+      siteshot: /img/friendship-links/danmaku-site.png
 
 - class_name: 小伙伴
   class_desc: 包括但不限于这些哦~

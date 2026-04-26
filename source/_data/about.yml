@@ -13,7 +13,7 @@
       - 擅长打羽毛球 🏸
       - 喜欢听音乐 🎧
   name: 肥宅水水呀
-  description: 是一名 学生、B 站 UP 主、业余的程序员
+  description: 是一名 学生、B 站 UP 主
   aboutsiteTips:
     tips: 追求
     title1: 源于
@@ -49,10 +49,10 @@
     selfInfoContent3: 大一学生👨‍🎓
   personalities:
     author_name: 执政官
-    personality_type: ESFJ-T
+    personality_type: INFJ-T
     photo_url: /img/about-me/EveOneCat.png
-    personality_img: https://npm.elemecdn.com/anzhiyu-blog@2.0.8/img/svg/ESFJ-A.svg # ESFJ-T 与 ESFJ-A 的图标是相同的
-    name_url: https://www.16personalities.com/ch/esfj-%E4%BA%BA%E6%A0%BC
+    personality_img: /img/about-me/INFJ-T.svg
+    name_url: https://www.16personalities.com/ch/infj-%E4%BA%BA%E6%A0%BC
   maxim:
     maxim_tips: 座右铭
     maxim_top: 致知在格物
