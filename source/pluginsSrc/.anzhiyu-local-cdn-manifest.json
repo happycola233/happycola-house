@@ -15,6 +15,7 @@
       "name": "butterfly-extsrc",
       "relative": "butterfly-extsrc/dist/click-show-text.min.js",
       "remote_url": "https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/click-show-text.min.js",
+      "sha256": "9fec4f465555c235fd9aee4b6222b52d11b2e31940a05d38156b8c8e206b44cd",
       "version": "1.1.3"
     },
     "accesskey_js": {
@@ -30,6 +31,7 @@
       "name": "anzhiyu-theme-static",
       "relative": "anzhiyu-theme-static/accesskey/accesskey.js",
       "remote_url": "https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js",
+      "sha256": "3223056d70cd6f9c4d941ded8b9307613be88afe4e30bd65909787fc6154c121",
       "version": "1.1.5"
     },
     "activate_power_mode": {
@@ -45,6 +47,7 @@
       "name": "butterfly-extsrc",
       "relative": "butterfly-extsrc/dist/activate-power-mode.min.js",
       "remote_url": "https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/activate-power-mode.min.js",
+      "sha256": "a562be778df645bc818a61e58a9555ae6b0b89bdd37841a288f59cfd14b1cd61",
       "version": "1.1.3"
     },
     "algolia_search": {
@@ -60,9 +63,64 @@
       "name": "algoliasearch",
       "relative": "algoliasearch/dist/algoliasearch-lite.umd.js",
       "remote_url": "https://cdn.cbd.int/algoliasearch@4.18.0/dist/algoliasearch-lite.umd.js",
+      "sha256": "57718756531202ca204f7c0bd0e63f9787777d12dae7a80dce59f37483012168",
       "version": "4.18.0"
     },
     "ali_iconfont_css": {
+      "css_assets": [
+        {
+          "relative": "anzhiyu-theme-static/icon/font_2508400_fpn9ui60u6q.eot",
+          "sha256": "6d195e700839e6d1162777af50c103f42cf3f6628bdd69fc3373815db53e92ee",
+          "source_urls": [
+            "https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/font_2508400_fpn9ui60u6q.eot",
+            "https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/font_2508400_fpn9ui60u6q.eot?t=1690446183540&local_v=6d195e700839#iefix",
+            "https://cdn.jsdelivr.net/npm/anzhiyu-theme-static@1.1.9/icon/font_2508400_fpn9ui60u6q.eot",
+            "https://unpkg.com/anzhiyu-theme-static@1.1.9/icon/font_2508400_fpn9ui60u6q.eot",
+            "https://npm.elemecdn.com/anzhiyu-theme-static@1.1.9/icon/font_2508400_fpn9ui60u6q.eot",
+            "https://npm.onmicrosoft.cn/anzhiyu-theme-static@1.1.9/icon/font_2508400_fpn9ui60u6q.eot",
+            "https://cdn.anheyu.com/npm/anzhiyu-theme-static@1.1.9/icon/font_2508400_fpn9ui60u6q.eot"
+          ]
+        },
+        {
+          "relative": "anzhiyu-theme-static/icon/font_2508400_fpn9ui60u6q.ttf",
+          "sha256": "48d67032e8d19f09af404cbeb4f3c2381e3274b210ccfd18bb18e84df81c9770",
+          "source_urls": [
+            "https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/font_2508400_fpn9ui60u6q.ttf",
+            "https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/font_2508400_fpn9ui60u6q.ttf?t=1690446183540&local_v=48d67032e8d1",
+            "https://cdn.jsdelivr.net/npm/anzhiyu-theme-static@1.1.9/icon/font_2508400_fpn9ui60u6q.ttf",
+            "https://unpkg.com/anzhiyu-theme-static@1.1.9/icon/font_2508400_fpn9ui60u6q.ttf",
+            "https://npm.elemecdn.com/anzhiyu-theme-static@1.1.9/icon/font_2508400_fpn9ui60u6q.ttf",
+            "https://npm.onmicrosoft.cn/anzhiyu-theme-static@1.1.9/icon/font_2508400_fpn9ui60u6q.ttf",
+            "https://cdn.anheyu.com/npm/anzhiyu-theme-static@1.1.9/icon/font_2508400_fpn9ui60u6q.ttf"
+          ]
+        },
+        {
+          "relative": "anzhiyu-theme-static/icon/font_2508400_fpn9ui60u6q.woff",
+          "sha256": "1495d0fc16d43f0132a8e6a262e23edda4dc4010eded782fbeb6c05ceccf23b5",
+          "source_urls": [
+            "https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/font_2508400_fpn9ui60u6q.woff",
+            "https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/font_2508400_fpn9ui60u6q.woff?t=1690446183540&local_v=1495d0fc16d4",
+            "https://cdn.jsdelivr.net/npm/anzhiyu-theme-static@1.1.9/icon/font_2508400_fpn9ui60u6q.woff",
+            "https://unpkg.com/anzhiyu-theme-static@1.1.9/icon/font_2508400_fpn9ui60u6q.woff",
+            "https://npm.elemecdn.com/anzhiyu-theme-static@1.1.9/icon/font_2508400_fpn9ui60u6q.woff",
+            "https://npm.onmicrosoft.cn/anzhiyu-theme-static@1.1.9/icon/font_2508400_fpn9ui60u6q.woff",
+            "https://cdn.anheyu.com/npm/anzhiyu-theme-static@1.1.9/icon/font_2508400_fpn9ui60u6q.woff"
+          ]
+        },
+        {
+          "relative": "anzhiyu-theme-static/icon/font_2508400_fpn9ui60u6q.woff2",
+          "sha256": "499f0b658abd31e449091e071d1abcd3f533eb4d09a4dc9a43be4c6b875b8874",
+          "source_urls": [
+            "https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/font_2508400_fpn9ui60u6q.woff2",
+            "https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/font_2508400_fpn9ui60u6q.woff2?t=1690446183540&local_v=499f0b658abd",
+            "https://cdn.jsdelivr.net/npm/anzhiyu-theme-static@1.1.9/icon/font_2508400_fpn9ui60u6q.woff2",
+            "https://unpkg.com/anzhiyu-theme-static@1.1.9/icon/font_2508400_fpn9ui60u6q.woff2",
+            "https://npm.elemecdn.com/anzhiyu-theme-static@1.1.9/icon/font_2508400_fpn9ui60u6q.woff2",
+            "https://npm.onmicrosoft.cn/anzhiyu-theme-static@1.1.9/icon/font_2508400_fpn9ui60u6q.woff2",
+            "https://cdn.anheyu.com/npm/anzhiyu-theme-static@1.1.9/icon/font_2508400_fpn9ui60u6q.woff2"
+          ]
+        }
+      ],
       "fallback_urls": [
         "https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css",
         "https://cdn.jsdelivr.net/npm/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.min.css",
@@ -75,9 +133,11 @@
       "name": "anzhiyu-theme-static",
       "relative": "anzhiyu-theme-static/icon/ali_iconfont_css.css",
       "remote_url": "https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css",
+      "sha256": "c6834b1a93021075a92e995f4a4ae930b03dbb311fffbcb0174e9b5e8e26080e",
       "version": "1.1.9"
     },
     "aplayer_css": {
+      "css_assets": [],
       "fallback_urls": [
         "https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css",
         "https://cdn.jsdelivr.net/npm/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css",
@@ -90,6 +150,7 @@
       "name": "anzhiyu-theme-static",
       "relative": "anzhiyu-theme-static/aplayer/APlayer.min.css",
       "remote_url": "https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css",
+      "sha256": "bbaaa17935d0cb3f93b3017e2f06d5cd27a6831e0ed658528c314714e8ccdb46",
       "version": "1.0.0"
     },
     "aplayer_js": {
@@ -105,9 +166,11 @@
       "name": "anzhiyu-blog-static",
       "relative": "anzhiyu-blog-static/js/APlayer.min.js",
       "remote_url": "https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js",
+      "sha256": "e80cbd75db6bc8d821af97ebfd641d16d2eb2911a103f15aa77bb4d63cb55a73",
       "version": "1.0.1"
     },
     "artalk_css": {
+      "css_assets": [],
       "fallback_urls": [
         "https://cdn.cbd.int/artalk@2.9.1/dist/Artalk.css",
         "https://cdn.jsdelivr.net/npm/artalk@2.9.1/dist/Artalk.min.css",
@@ -120,6 +183,7 @@
       "name": "artalk",
       "relative": "artalk/dist/Artalk.css",
       "remote_url": "https://cdn.cbd.int/artalk@2.9.1/dist/Artalk.css",
+      "sha256": "d2f2f730e7e2457096ed4983dc16e88bed95bfe2dcd69f614f773d244e10780f",
       "version": "2.9.1"
     },
     "artalk_js": {
@@ -135,6 +199,7 @@
       "name": "artalk",
       "relative": "artalk/dist/Artalk.js",
       "remote_url": "https://cdn.cbd.int/artalk@2.9.1/dist/Artalk.js",
+      "sha256": "aa719d3e5fdeafeb91127c594d7f2834c8d581f10fe416f1c9a5f7c5e5b75b63",
       "version": "2.9.1"
     },
     "blueimp_md5": {
@@ -150,6 +215,7 @@
       "name": "blueimp-md5",
       "relative": "blueimp-md5/js/md5.min.js",
       "remote_url": "https://cdn.cbd.int/blueimp-md5@2.19.0/js/md5.min.js",
+      "sha256": "64d7ded388c562e4bde9e58ce205e5fa01b9734fcd434d496eb7b4fbfe9b927d",
       "version": "2.19.0"
     },
     "canvas_fluttering_ribbon": {
@@ -165,6 +231,7 @@
       "name": "butterfly-extsrc",
       "relative": "butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js",
       "remote_url": "https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/canvas-fluttering-ribbon.min.js",
+      "sha256": "ae4d9f6cdc03736996029a8806cc162ec4340a92fc4bfa2bc273d4a46466b68a",
       "version": "1.1.3"
     },
     "canvas_nest": {
@@ -180,6 +247,7 @@
       "name": "butterfly-extsrc",
       "relative": "butterfly-extsrc/dist/canvas-nest.min.js",
       "remote_url": "https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/canvas-nest.min.js",
+      "sha256": "2c8951c894a012c98e55c3ba80045863c627cc5d144665bd54c286ac75f2a7dd",
       "version": "1.1.3"
     },
     "canvas_ribbon": {
@@ -195,6 +263,7 @@
       "name": "butterfly-extsrc",
       "relative": "butterfly-extsrc/dist/canvas-ribbon.min.js",
       "remote_url": "https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/canvas-ribbon.min.js",
+      "sha256": "0397a7e1a38f78ef831c1e284cf39c81263bdd022e1b462ad4c0955acf9ea3a6",
       "version": "1.1.3"
     },
     "click_heart": {
@@ -210,9 +279,11 @@
       "name": "butterfly-extsrc",
       "relative": "butterfly-extsrc/dist/click-heart.min.js",
       "remote_url": "https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/click-heart.min.js",
+      "sha256": "10cd55c4c251a8846f92d030d9c56b9f8645ad0944d540f0743ed7731cae2589",
       "version": "1.1.3"
     },
     "coin_css": {
+      "css_assets": [],
       "fallback_urls": [
         "https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/coin/coin.min.css",
         "https://cdn.jsdelivr.net/npm/anzhiyu-theme-static@1.0.0/coin/coin.min.css",
@@ -225,6 +296,7 @@
       "name": "anzhiyu-theme-static",
       "relative": "anzhiyu-theme-static/coin/coin.min.css",
       "remote_url": "https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/coin/coin.min.css",
+      "sha256": "16eebe0a800a4992e4e2d2e626b09a068d0420542258657f56446666c05ec860",
       "version": "1.0.0"
     },
     "coin_js": {
@@ -240,6 +312,7 @@
       "name": "anzhiyu-theme-static",
       "relative": "anzhiyu-theme-static/coin/coin.js",
       "remote_url": "https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/coin/coin.js",
+      "sha256": "d2fa73a3775e3ae69ca5ddeebed20a414e12d644db9efb5dde3f5a3097ecc75f",
       "version": "1.0.0"
     },
     "colorthief": {
@@ -255,6 +328,7 @@
       "name": "colorthief",
       "relative": "colorthief/dist/color-thief.umd.min.js",
       "remote_url": "https://cdn.cbd.int/colorthief@2.6.0/dist/color-thief.umd.min.js",
+      "sha256": "1a25fef28769a8a5fcb2fc6ce4ef34ab20289b7c0bebda4429a2dcd57946b3c8",
       "version": "2.6.0"
     },
     "countup_js": {
@@ -270,9 +344,11 @@
       "name": "anzhiyu-theme-static",
       "relative": "anzhiyu-theme-static/countup/countup.js",
       "remote_url": "https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/countup/countup.js",
+      "sha256": "d7ec1a6a525c43bf5d92700818c28300058f3056c283aacbf24aef841229f0ff",
       "version": "1.0.0"
     },
     "docsearch_css": {
+      "css_assets": [],
       "fallback_urls": [
         "https://cdn.cbd.int/@docsearch/css@4.3.2/dist/style.css",
         "https://cdn.jsdelivr.net/npm/@docsearch/css@4.3.2/dist/style.min.css",
@@ -285,6 +361,7 @@
       "name": "@docsearch/css",
       "relative": "@docsearch/css/dist/style.css",
       "remote_url": "https://cdn.cbd.int/@docsearch/css@4.3.2/dist/style.css",
+      "sha256": "5ac48d6755d201f8423eeb6cc2220b89474235342093acedc4c74134eef9e4a5",
       "version": "4.3.2"
     },
     "docsearch_js": {
@@ -300,6 +377,7 @@
       "name": "@docsearch/js",
       "relative": "@docsearch/js/dist/umd/index.js",
       "remote_url": "https://cdn.cbd.int/@docsearch/js@4.3.2/dist/umd/index.js",
+      "sha256": "0904ca8a45215105da301b2e3fd38e7eefd81dbe81e610f378f2d22d0012e652",
       "version": "4.3.2"
     },
     "fancybox": {
@@ -315,9 +393,11 @@
       "name": "@fancyapps/ui",
       "relative": "@fancyapps/ui/dist/fancybox/fancybox.umd.js",
       "remote_url": "https://cdn.cbd.int/@fancyapps/ui@6.1.6/dist/fancybox/fancybox.umd.js",
+      "sha256": "7b4b23bae0ad329c64bb4a5ed63effd20beb966e815f7f42a9d05a4b3507ff3f",
       "version": "6.1.6"
     },
     "fancybox_css": {
+      "css_assets": [],
       "fallback_urls": [
         "https://cdn.cbd.int/@fancyapps/ui@6.1.6/dist/fancybox/fancybox.css",
         "https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.6/dist/fancybox/fancybox.min.css",
@@ -330,6 +410,7 @@
       "name": "@fancyapps/ui",
       "relative": "@fancyapps/ui/dist/fancybox/fancybox.css",
       "remote_url": "https://cdn.cbd.int/@fancyapps/ui@6.1.6/dist/fancybox/fancybox.css",
+      "sha256": "0161a94af920904e1c0f3a2816ff66843b3d482c378f943901b01c34551c093f",
       "version": "6.1.6"
     },
     "fireworks": {
@@ -345,9 +426,11 @@
       "name": "butterfly-extsrc",
       "relative": "butterfly-extsrc/dist/fireworks.min.js",
       "remote_url": "https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/fireworks.min.js",
+      "sha256": "68637e56c6a33560e77f903c80a920db9ba32b87cfcf41dd2e0b72183a03c1ba",
       "version": "1.1.3"
     },
     "flickr_justified_gallery_css": {
+      "css_assets": [],
       "fallback_urls": [
         "https://cdn.cbd.int/flickr-justified-gallery@2.2.0/dist/fjGallery.css",
         "https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2.2.0/dist/fjGallery.min.css",
@@ -360,6 +443,7 @@
       "name": "flickr-justified-gallery",
       "relative": "flickr-justified-gallery/dist/fjGallery.css",
       "remote_url": "https://cdn.cbd.int/flickr-justified-gallery@2.2.0/dist/fjGallery.css",
+      "sha256": "35a3dfb1999e7d4060f47b4e38c135ffc55cef2b4333c958d909c10255f36fcd",
       "version": "2.2.0"
     },
     "flickr_justified_gallery_js": {
@@ -375,9 +459,64 @@
       "name": "flickr-justified-gallery",
       "relative": "flickr-justified-gallery/dist/fjGallery.min.js",
       "remote_url": "https://cdn.cbd.int/flickr-justified-gallery@2.2.0/dist/fjGallery.min.js",
+      "sha256": "fbdf1508e4a09f4bbe79cde1ca4c3e1b2f4264150ef30a36cf80dfa019685f0d",
       "version": "2.2.0"
     },
     "fontawesome": {
+      "css_assets": [
+        {
+          "relative": "@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2",
+          "sha256": "061dd5c333459ea42dba764617793fd6ea2d316b7ab644f157e4d2354dac02af",
+          "source_urls": [
+            "https://cdn.cbd.int/@fortawesome/fontawesome-free@7.1.0/webfonts/fa-brands-400.woff2",
+            "https://cdn.cbd.int/@fortawesome/fontawesome-free@7.1.0/webfonts/fa-brands-400.woff2?local_v=061dd5c33345",
+            "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/webfonts/fa-brands-400.woff2",
+            "https://unpkg.com/@fortawesome/fontawesome-free@7.1.0/webfonts/fa-brands-400.woff2",
+            "https://npm.elemecdn.com/@fortawesome/fontawesome-free@7.1.0/webfonts/fa-brands-400.woff2",
+            "https://npm.onmicrosoft.cn/@fortawesome/fontawesome-free@7.1.0/webfonts/fa-brands-400.woff2",
+            "https://cdn.anheyu.com/npm/@fortawesome/fontawesome-free@7.1.0/webfonts/fa-brands-400.woff2"
+          ]
+        },
+        {
+          "relative": "@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2",
+          "sha256": "81159a6b36876a5545555ae689144f074e2fc802d57d36f2c21bc6f3a12f4e48",
+          "source_urls": [
+            "https://cdn.cbd.int/@fortawesome/fontawesome-free@7.1.0/webfonts/fa-regular-400.woff2",
+            "https://cdn.cbd.int/@fortawesome/fontawesome-free@7.1.0/webfonts/fa-regular-400.woff2?local_v=81159a6b3687",
+            "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/webfonts/fa-regular-400.woff2",
+            "https://unpkg.com/@fortawesome/fontawesome-free@7.1.0/webfonts/fa-regular-400.woff2",
+            "https://npm.elemecdn.com/@fortawesome/fontawesome-free@7.1.0/webfonts/fa-regular-400.woff2",
+            "https://npm.onmicrosoft.cn/@fortawesome/fontawesome-free@7.1.0/webfonts/fa-regular-400.woff2",
+            "https://cdn.anheyu.com/npm/@fortawesome/fontawesome-free@7.1.0/webfonts/fa-regular-400.woff2"
+          ]
+        },
+        {
+          "relative": "@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2",
+          "sha256": "bdd7887ef769948024a5cc37a018f19da6a9b355b4a09973836115e0d31ead55",
+          "source_urls": [
+            "https://cdn.cbd.int/@fortawesome/fontawesome-free@7.1.0/webfonts/fa-solid-900.woff2",
+            "https://cdn.cbd.int/@fortawesome/fontawesome-free@7.1.0/webfonts/fa-solid-900.woff2?local_v=bdd7887ef769",
+            "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/webfonts/fa-solid-900.woff2",
+            "https://unpkg.com/@fortawesome/fontawesome-free@7.1.0/webfonts/fa-solid-900.woff2",
+            "https://npm.elemecdn.com/@fortawesome/fontawesome-free@7.1.0/webfonts/fa-solid-900.woff2",
+            "https://npm.onmicrosoft.cn/@fortawesome/fontawesome-free@7.1.0/webfonts/fa-solid-900.woff2",
+            "https://cdn.anheyu.com/npm/@fortawesome/fontawesome-free@7.1.0/webfonts/fa-solid-900.woff2"
+          ]
+        },
+        {
+          "relative": "@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.woff2",
+          "sha256": "c18e29ec6e1d46025f8fb1cf2e636c38078598ffa9399ccc52c7df07bb4ab1d0",
+          "source_urls": [
+            "https://cdn.cbd.int/@fortawesome/fontawesome-free@7.1.0/webfonts/fa-v4compatibility.woff2",
+            "https://cdn.cbd.int/@fortawesome/fontawesome-free@7.1.0/webfonts/fa-v4compatibility.woff2?local_v=c18e29ec6e1d",
+            "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/webfonts/fa-v4compatibility.woff2",
+            "https://unpkg.com/@fortawesome/fontawesome-free@7.1.0/webfonts/fa-v4compatibility.woff2",
+            "https://npm.elemecdn.com/@fortawesome/fontawesome-free@7.1.0/webfonts/fa-v4compatibility.woff2",
+            "https://npm.onmicrosoft.cn/@fortawesome/fontawesome-free@7.1.0/webfonts/fa-v4compatibility.woff2",
+            "https://cdn.anheyu.com/npm/@fortawesome/fontawesome-free@7.1.0/webfonts/fa-v4compatibility.woff2"
+          ]
+        }
+      ],
       "fallback_urls": [
         "https://cdn.cbd.int/@fortawesome/fontawesome-free@7.1.0/css/all.min.css",
         "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css",
@@ -390,9 +529,11 @@
       "name": "@fortawesome/fontawesome-free",
       "relative": "@fortawesome/fontawesome-free/css/all.min.css",
       "remote_url": "https://cdn.cbd.int/@fortawesome/fontawesome-free@7.1.0/css/all.min.css",
+      "sha256": "dfa5782401f4f4ded008e020aeafa37596b804fb9d42335d3f1eddbfa7f0fe37",
       "version": "7.1.0"
     },
     "fontawesome_animation_css": {
+      "css_assets": [],
       "fallback_urls": [
         "https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@1.0.17/lib/assets/font-awesome-animation.min.css"
       ],
@@ -400,6 +541,7 @@
       "name": "",
       "relative": "font-awesome-animation/font-awesome-animation.min.css",
       "remote_url": "https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@1.0.17/lib/assets/font-awesome-animation.min.css",
+      "sha256": "10fa38d6f20bb78b9ddcb57530310c8d12fea3c87162709edf2a2b1a8b91b737",
       "version": ""
     },
     "gsap_js": {
@@ -415,6 +557,7 @@
       "name": "anzhiyu-theme-static",
       "relative": "anzhiyu-theme-static/gsap/gsap.min.js",
       "remote_url": "https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/gsap/gsap.min.js",
+      "sha256": "6dbe9c2e13cf06c6633ea3fcf6d7bd30452561202a205c75a035cd1d8b93368f",
       "version": "1.0.0"
     },
     "instantpage": {
@@ -430,6 +573,7 @@
       "name": "instant.page",
       "relative": "instant.page/instantpage.js",
       "remote_url": "https://cdn.cbd.int/instant.page@5.2.0/instantpage.js",
+      "sha256": "07689a5af800d1c8fe8c505afb5313a9b7efec17d6b78a968f9d703b51810483",
       "version": "5.2.0"
     },
     "instantsearch": {
@@ -445,6 +589,7 @@
       "name": "instantsearch.js",
       "relative": "instantsearch.js/dist/instantsearch.production.min.js",
       "remote_url": "https://cdn.cbd.int/instantsearch.js@4.84.0/dist/instantsearch.production.min.js",
+      "sha256": "aa2df4ef1e242299e2bf55462d3ae72d61ed064c99f21d5d1eb2136cc47a86cc",
       "version": "4.84.0"
     },
     "lazyload": {
@@ -460,6 +605,7 @@
       "name": "vanilla-lazyload",
       "relative": "vanilla-lazyload/dist/lazyload.iife.min.js",
       "remote_url": "https://cdn.cbd.int/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js",
+      "sha256": "a89234d3dfa453efeefcda31f7007f2502ba1714b58ec5921a959c608d25ee19",
       "version": "19.1.3"
     },
     "medium_zoom": {
@@ -475,6 +621,7 @@
       "name": "medium-zoom",
       "relative": "medium-zoom/dist/medium-zoom.min.js",
       "remote_url": "https://cdn.cbd.int/medium-zoom@1.1.0/dist/medium-zoom.min.js",
+      "sha256": "6603320c02180d81b16dca4971f52763035ebc6ff18bd38729a47ff062be8d67",
       "version": "1.1.0"
     },
     "mermaid": {
@@ -490,6 +637,7 @@
       "name": "mermaid",
       "relative": "mermaid/dist/mermaid.min.js",
       "remote_url": "https://cdn.cbd.int/mermaid@11.12.2/dist/mermaid.min.js",
+      "sha256": "d0830a6c05546e9edb8fe20a8f545f3e0dc7c4c3134d584bad9c13a99d7a71e0",
       "version": "11.12.2"
     },
     "meting_js": {
@@ -505,9 +653,11 @@
       "name": "hexo-anzhiyu-music",
       "relative": "hexo-anzhiyu-music/assets/js/Meting2.min.js",
       "remote_url": "https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js",
+      "sha256": "94e50ffa5f6a2db31368260a2cd74beac05917ef0966b1715e65eb55bcd2823d",
       "version": "1.0.1"
     },
     "pace_default_css": {
+      "css_assets": [],
       "fallback_urls": [
         "https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css",
         "https://cdn.jsdelivr.net/npm/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.min.css",
@@ -520,6 +670,7 @@
       "name": "anzhiyu-theme-static",
       "relative": "anzhiyu-theme-static/progress_bar/progress_bar.css",
       "remote_url": "https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css",
+      "sha256": "a195c2261edd026020f7e859398111a0190973be932479742b304f8ed1eccde4",
       "version": "1.1.10"
     },
     "pace_js": {
@@ -535,6 +686,7 @@
       "name": "pace-js",
       "relative": "pace-js/pace.min.js",
       "remote_url": "https://cdn.cbd.int/pace-js@1.2.4/pace.min.js",
+      "sha256": "82a77b6138e0fc1b5fa964b0b093af9dd97407173c8052262c4917413f3eaa3d",
       "version": "1.2.4"
     },
     "pangu": {
@@ -550,6 +702,7 @@
       "name": "pangu",
       "relative": "pangu/dist/browser/pangu.min.js",
       "remote_url": "https://cdn.cbd.int/pangu@4.0.7/dist/browser/pangu.min.js",
+      "sha256": "8feca3e7a71d118d82c2456d1b2cf5f1f3726c51a930627c2711b7192c8edbe2",
       "version": "4.0.7"
     },
     "pjax": {
@@ -565,6 +718,7 @@
       "name": "pjax",
       "relative": "pjax/pjax.min.js",
       "remote_url": "https://cdn.cbd.int/pjax@0.2.8/pjax.min.js",
+      "sha256": "c9819844d18cf059f52a7da53f786d418348cc662dd7e243f009ec559bac85e2",
       "version": "0.2.8"
     },
     "prismjs_autoloader": {
@@ -580,6 +734,7 @@
       "name": "prismjs",
       "relative": "prismjs/plugins/autoloader/prism-autoloader.min.js",
       "remote_url": "https://cdn.cbd.int/prismjs@1.30.0/plugins/autoloader/prism-autoloader.min.js",
+      "sha256": "0233342795c86e2079f7406bce72c481918b9ce416aedeb6b37044abae50fc8d",
       "version": "1.30.0"
     },
     "prismjs_js": {
@@ -595,6 +750,7 @@
       "name": "prismjs",
       "relative": "prismjs/prism.js",
       "remote_url": "https://cdn.cbd.int/prismjs@1.30.0/prism.js",
+      "sha256": "b801451d9b4cbf1857715a97ecae442e26c111bab6e19fee0e83dfda70cc2900",
       "version": "1.30.0"
     },
     "prismjs_lineNumber_js": {
@@ -610,6 +766,7 @@
       "name": "prismjs",
       "relative": "prismjs/plugins/line-numbers/prism-line-numbers.min.js",
       "remote_url": "https://cdn.cbd.int/prismjs@1.30.0/plugins/line-numbers/prism-line-numbers.min.js",
+      "sha256": "f5c99feed70b757a4ab0f8bfd80584f773db6694e9e0ce2dab3164fa55a89a35",
       "version": "1.30.0"
     },
     "rightmenu": {
@@ -625,6 +782,7 @@
       "name": "anzhiyu-theme-static",
       "relative": "anzhiyu-theme-static/rightmenu/rightmenu.js",
       "remote_url": "https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/rightmenu/rightmenu.js",
+      "sha256": "6f81932a5395032288106950cff7cccb44c2caf6450347173872cc9ddb860220",
       "version": "1.0.0"
     },
     "sharejs": {
@@ -640,9 +798,64 @@
       "name": "butterfly-extsrc",
       "relative": "butterfly-extsrc/sharejs/dist/js/social-share.min.js",
       "remote_url": "https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js",
+      "sha256": "1e3406c8b6014c72d1530bac4f0348bd8efaf99fcecf5cf4cc2a9a17785e4681",
       "version": "1.1.3"
     },
     "sharejs_css": {
+      "css_assets": [
+        {
+          "relative": "butterfly-extsrc/sharejs/dist/fonts/iconfont.eot",
+          "sha256": "71af058de3d5c8f4c9300fba3cfc5b8a80b25a7b84f6f1230197d21b4d2e9eaf",
+          "source_urls": [
+            "https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/fonts/iconfont.eot",
+            "https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/fonts/iconfont.eot?local_v=71af058de3d5#iefix",
+            "https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/fonts/iconfont.eot",
+            "https://unpkg.com/butterfly-extsrc@1.1.3/sharejs/dist/fonts/iconfont.eot",
+            "https://npm.elemecdn.com/butterfly-extsrc@1.1.3/sharejs/dist/fonts/iconfont.eot",
+            "https://npm.onmicrosoft.cn/butterfly-extsrc@1.1.3/sharejs/dist/fonts/iconfont.eot",
+            "https://cdn.anheyu.com/npm/butterfly-extsrc@1.1.3/sharejs/dist/fonts/iconfont.eot"
+          ]
+        },
+        {
+          "relative": "butterfly-extsrc/sharejs/dist/fonts/iconfont.svg",
+          "sha256": "50f182e2809d0a0f796325be5281a1a161855e3cbe1715a9344b1c561d0c61fe",
+          "source_urls": [
+            "https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/fonts/iconfont.svg",
+            "https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/fonts/iconfont.svg?local_v=50f182e2809d#iconfont",
+            "https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/fonts/iconfont.svg",
+            "https://unpkg.com/butterfly-extsrc@1.1.3/sharejs/dist/fonts/iconfont.svg",
+            "https://npm.elemecdn.com/butterfly-extsrc@1.1.3/sharejs/dist/fonts/iconfont.svg",
+            "https://npm.onmicrosoft.cn/butterfly-extsrc@1.1.3/sharejs/dist/fonts/iconfont.svg",
+            "https://cdn.anheyu.com/npm/butterfly-extsrc@1.1.3/sharejs/dist/fonts/iconfont.svg"
+          ]
+        },
+        {
+          "relative": "butterfly-extsrc/sharejs/dist/fonts/iconfont.ttf",
+          "sha256": "0e6a8be6754c03dd038b018c178496b8777a3cb343083e54078bb8abb1bcd70d",
+          "source_urls": [
+            "https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/fonts/iconfont.ttf",
+            "https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/fonts/iconfont.ttf?local_v=0e6a8be6754c",
+            "https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/fonts/iconfont.ttf",
+            "https://unpkg.com/butterfly-extsrc@1.1.3/sharejs/dist/fonts/iconfont.ttf",
+            "https://npm.elemecdn.com/butterfly-extsrc@1.1.3/sharejs/dist/fonts/iconfont.ttf",
+            "https://npm.onmicrosoft.cn/butterfly-extsrc@1.1.3/sharejs/dist/fonts/iconfont.ttf",
+            "https://cdn.anheyu.com/npm/butterfly-extsrc@1.1.3/sharejs/dist/fonts/iconfont.ttf"
+          ]
+        },
+        {
+          "relative": "butterfly-extsrc/sharejs/dist/fonts/iconfont.woff",
+          "sha256": "cc03f86ff3bc607f21bd97fbe16d7105b35a627afb1bf42917fba639f480190c",
+          "source_urls": [
+            "https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/fonts/iconfont.woff",
+            "https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/fonts/iconfont.woff?local_v=cc03f86ff3bc",
+            "https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/fonts/iconfont.woff",
+            "https://unpkg.com/butterfly-extsrc@1.1.3/sharejs/dist/fonts/iconfont.woff",
+            "https://npm.elemecdn.com/butterfly-extsrc@1.1.3/sharejs/dist/fonts/iconfont.woff",
+            "https://npm.onmicrosoft.cn/butterfly-extsrc@1.1.3/sharejs/dist/fonts/iconfont.woff",
+            "https://cdn.anheyu.com/npm/butterfly-extsrc@1.1.3/sharejs/dist/fonts/iconfont.woff"
+          ]
+        }
+      ],
       "fallback_urls": [
         "https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css",
         "https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css",
@@ -655,6 +868,7 @@
       "name": "butterfly-extsrc",
       "relative": "butterfly-extsrc/sharejs/dist/css/share.min.css",
       "remote_url": "https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css",
+      "sha256": "2710b573a0236057b98eff2eb9a1b809f2ccd083bc8990bd1259677a0c3f9c42",
       "version": "1.1.3"
     },
     "snackbar": {
@@ -670,9 +884,11 @@
       "name": "node-snackbar",
       "relative": "node-snackbar/dist/snackbar.min.js",
       "remote_url": "https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js",
+      "sha256": "34eaac416486ba5585e23d327c5945c24f6b985a40a115799e8746a881f28d4a",
       "version": "0.1.16"
     },
     "snackbar_css": {
+      "css_assets": [],
       "fallback_urls": [
         "https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css",
         "https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css",
@@ -685,9 +901,11 @@
       "name": "node-snackbar",
       "relative": "node-snackbar/dist/snackbar.min.css",
       "remote_url": "https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css",
+      "sha256": "a9fb1d56a55e28f572e7c1f1f6a0889fc36c761d93535ca2704ec1e441e2f92b",
       "version": "0.1.16"
     },
     "swiper_css": {
+      "css_assets": [],
       "fallback_urls": [
         "https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css",
         "https://cdn.jsdelivr.net/npm/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css",
@@ -700,6 +918,7 @@
       "name": "anzhiyu-theme-static",
       "relative": "anzhiyu-theme-static/swiper/swiper.min.css",
       "remote_url": "https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css",
+      "sha256": "8087679cf0f77b05748eb972d20c09a2e3da68257510fefeac4eeea846a1f730",
       "version": "1.0.0"
     },
     "swiper_js": {
@@ -715,6 +934,7 @@
       "name": "anzhiyu-theme-static",
       "relative": "anzhiyu-theme-static/swiper/swiper.min.js",
       "remote_url": "https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/swiper/swiper.min.js",
+      "sha256": "7defe6a9e6bafc47b031c2897487bcdf51718012d6b982745dd917eb7609cc4e",
       "version": "1.0.0"
     },
     "twikoo": {
@@ -730,6 +950,7 @@
       "name": "twikoo",
       "relative": "twikoo/dist/twikoo.all.min.js",
       "remote_url": "https://cdn.cbd.int/twikoo@1.6.44/dist/twikoo.all.min.js",
+      "sha256": "9b0a058e55ee012f6fbeffec2e0b5d22488ee59d9761bb1898bd0beceecbd453",
       "version": "1.6.44"
     },
     "typed": {
@@ -745,6 +966,7 @@
       "name": "typed.js",
       "relative": "typed.js/dist/typed.umd.js",
       "remote_url": "https://cdn.cbd.int/typed.js@2.1.0/dist/typed.umd.js",
+      "sha256": "58424467abb3fa4b302a80c7108fe20ca8328e4ecb4275cf1a04db3fa5f83f27",
       "version": "2.1.0"
     },
     "valine": {
@@ -760,9 +982,11 @@
       "name": "valine",
       "relative": "valine/dist/Valine.min.js",
       "remote_url": "https://cdn.cbd.int/valine@1.5.1/dist/Valine.min.js",
+      "sha256": "3da7a85585e6535c297344e2b69dc4eb7f0a75046eda9a4f26eb36ede3f1a7d9",
       "version": "1.5.1"
     },
     "waline_css": {
+      "css_assets": [],
       "fallback_urls": [
         "https://cdn.cbd.int/@waline/client@3.8.0/dist/waline.css",
         "https://cdn.jsdelivr.net/npm/@waline/client@3.8.0/dist/waline.min.css",
@@ -775,6 +999,7 @@
       "name": "@waline/client",
       "relative": "@waline/client/dist/waline.css",
       "remote_url": "https://cdn.cbd.int/@waline/client@3.8.0/dist/waline.css",
+      "sha256": "79478ecc1978e03996877cc9bd88406e1c8139dc493984063f9f16c045ac7300",
       "version": "3.8.0"
     },
     "waline_js": {
@@ -790,9 +1015,11 @@
       "name": "@waline/client",
       "relative": "@waline/client/dist/waline.js",
       "remote_url": "https://cdn.cbd.int/@waline/client@3.8.0/dist/waline.js",
+      "sha256": "7f7cde00e0c6b7f22cba2b0d810153197d00949746d0ad38ece40758d361ff45",
       "version": "3.8.0"
     },
     "waline_meta_css": {
+      "css_assets": [],
       "fallback_urls": [
         "https://cdn.cbd.int/@waline/client@3.8.0/dist/waline-meta.css",
         "https://cdn.jsdelivr.net/npm/@waline/client@3.8.0/dist/waline-meta.min.css",
@@ -805,6 +1032,7 @@
       "name": "@waline/client",
       "relative": "@waline/client/dist/waline-meta.css",
       "remote_url": "https://cdn.cbd.int/@waline/client@3.8.0/dist/waline-meta.css",
+      "sha256": "bb0bbb3a77691738a32a4b4e310aa09062d7521a22c337f60c10d9da746456a6",
       "version": "3.8.0"
     },
     "waterfall": {
@@ -820,9 +1048,11 @@
       "name": "anzhiyu-theme-static",
       "relative": "anzhiyu-theme-static/waterfall/waterfall.js",
       "remote_url": "https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js",
+      "sha256": "9346717edb8b8f4664ffe8233bb5458c8d4720442d1e27e2a3347d5c33f2e767",
       "version": "1.0.0"
     }
   },
+  "schema_version": 2,
   "theme_dir": "C:\\Users\\admin\\Documents\\GitHub\\happycola-house\\node_modules\\hexo-theme-anzhiyu",
   "theme_package": "hexo-theme-anzhiyu",
   "theme_version": "1.7.1"

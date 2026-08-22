@@ -5,11 +5,12 @@
 目标：
 1. 资源清单不再手写维护，而是直接读取当前主题包里的 `plugins.yml`。
 2. 下载 CSS 后，继续补齐其中 `url(...)` 引用的字体 / 图片资源。
-3. 写入一份 manifest，记录本地镜像对应的主题版本、来源 URL 和目标路径。
-4. 提供 `validate` 模式，检查：
+3. 刷新已有 CSS 子资源，并用内容哈希为字体 / 图片 URL 添加缓存版本。
+4. 写入一份 manifest，记录本地镜像对应的主题版本、来源 URL、目标路径和 SHA-256。
+5. 提供 `validate` 模式，检查：
    - 当前主题需要的资源是否都存在于 `source/pluginsSrc/`
    - CSS 依赖资源是否缺失
-   - 本地 manifest 是否已经和当前主题版本 / 资源清单同步
+   - 本地 manifest 是否已经和当前主题版本 / 资源清单及实际文件内容同步
 
 典型用法：
     python localize_cdn_resources.py download
@@ -19,23 +20,29 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
+import posixpath
 import re
 import sys
 from pathlib import Path
 from urllib import error, request
-from urllib.parse import urljoin, urlparse
+from urllib.parse import parse_qsl, urlencode, urljoin, urlparse, urlsplit, urlunsplit
 
 
 BASE_URL = "https://cdn.cbd.int"
 THEME_PACKAGE_NAME = "hexo-theme-anzhiyu"
 THEME_FALLBACK_DIR = "anzhiyu"
 MANIFEST_NAME = ".anzhiyu-local-cdn-manifest.json"
+MANIFEST_SCHEMA_VERSION = 2
 TARGET_SUBDIR = ("source", "pluginsSrc")
 CSS_URL_PATTERN = re.compile(r"url\(([^)]+)\)")
 FALLBACK_PROVIDERS = ("cbd", "jsdelivr", "unpkg", "elemecdn", "onmicrosoft", "anheyu")
 OPTIONAL_SVG_FONT_SUFFIXES = (".woff2", ".woff", ".ttf", ".eot")
+TEXT_HASH_SUFFIXES = frozenset(
+    {".css", ".html", ".js", ".json", ".map", ".mjs", ".svg", ".txt", ".xml"}
+)
 
 # 这些资源不走主题 plugins.yml，而是你当前配置里显式引用的本地路径。
 # 保持这个列表很小，风险远低于手写整份第三方清单。
@@ -347,6 +354,13 @@ def download_file(urls: str | list[str], dest: Path, timeout: int = 30) -> str |
     return None
 
 
+def file_sha256(path: Path) -> str:
+    data = path.read_bytes()
+    if path.suffix.lower() in TEXT_HASH_SUFFIXES:
+        data = data.replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+    return hashlib.sha256(data).hexdigest()
+
+
 def read_text_with_fallback(path: Path) -> str:
     try:
         return path.read_text(encoding="utf-8")
@@ -354,7 +368,11 @@ def read_text_with_fallback(path: Path) -> str:
         return path.read_text(encoding="latin-1")
 
 
-def build_css_asset_urls(remote_css_url: str, raw_path: str) -> list[str]:
+def build_css_asset_urls(
+    remote_css_url: str,
+    raw_path: str,
+    resource: dict[str, str] | None = None,
+) -> list[str]:
     parsed_raw = urlparse(raw_path)
     sanitized_path = parsed_raw.path
     candidates = []
@@ -362,6 +380,17 @@ def build_css_asset_urls(remote_css_url: str, raw_path: str) -> list[str]:
     if sanitized_path:
         candidates.append(urljoin(remote_css_url, sanitized_path))
     candidates.append(urljoin(remote_css_url, raw_path))
+
+    if resource and sanitized_path and not sanitized_path.startswith("/"):
+        css_file = normalize_path_fragment(resource.get("file", ""))
+        asset_file = posixpath.normpath(
+            posixpath.join(posixpath.dirname(css_file), sanitized_path)
+        )
+        if asset_file not in ("", ".", "..") and not asset_file.startswith("../"):
+            name = resource.get("name", "")
+            version = resource.get("version", "")
+            if name:
+                candidates.extend(build_fallback_urls(name, version, asset_file))
 
     return list(dict.fromkeys(candidates))
 
@@ -374,7 +403,12 @@ def is_optional_missing_css_asset(path: Path) -> bool:
     return any(stem.with_suffix(ext).exists() for ext in OPTIONAL_SVG_FONT_SUFFIXES)
 
 
-def iter_css_assets(local_css_path: Path, remote_css_url: str, target_root: Path):
+def iter_css_assets(
+    local_css_path: Path,
+    remote_css_url: str,
+    target_root: Path,
+    resource: dict[str, str] | None = None,
+):
     try:
         text = read_text_with_fallback(local_css_path)
     except Exception as exc:
@@ -392,7 +426,7 @@ def iter_css_assets(local_css_path: Path, remote_css_url: str, target_root: Path
         if not raw or raw.startswith(("data:", "http://", "https://", "//")):
             continue
 
-        asset_urls = build_css_asset_urls(remote_css_url, raw)
+        asset_urls = build_css_asset_urls(remote_css_url, raw, resource)
         asset_path = urlparse(raw).path
         candidate = Path(os.path.normpath(os.path.join(css_dir, asset_path)))
         dest = ensure_within_root(
@@ -408,13 +442,22 @@ def download_css_assets(
     remote_css_url: str,
     target_root: Path,
     timeout: int,
+    resource: dict[str, str],
 ) -> int:
     print(f"   [CSS] Scan assets in {local_css_path}")
     failed = 0
-    for asset_urls, dest_path in iter_css_assets(local_css_path, remote_css_url, target_root):
-        if dest_path.exists():
+    seen: set[Path] = set()
+    for asset_urls, dest_path in iter_css_assets(
+        local_css_path,
+        remote_css_url,
+        target_root,
+        resource,
+    ):
+        if dest_path in seen:
             continue
-        print(f"   [CSS asset] {asset_urls[0]}")
+        seen.add(dest_path)
+        action = "refresh" if dest_path.exists() else "download"
+        print(f"   [CSS asset {action}] {asset_urls[0]}")
         if download_file(asset_urls, dest_path, timeout=timeout) is None:
             if is_optional_missing_css_asset(dest_path):
                 print(f"   [CSS asset optional] Skip missing legacy SVG font {dest_path}")
@@ -423,8 +466,93 @@ def download_css_assets(
     return failed
 
 
+def rewrite_css_asset_urls_with_hashes(local_css_path: Path, target_root: Path) -> int:
+    """为本地 CSS 子资源追加内容哈希，避免浏览器继续使用旧字体/图片缓存。"""
+    text = read_text_with_fallback(local_css_path)
+    css_dir = ensure_within_root(
+        local_css_path.parent,
+        target_root,
+        f"CSS 基路径 {local_css_path.parent}",
+    )
+    hash_cache: dict[Path, str] = {}
+    rewritten = 0
+
+    def replace_url(match: re.Match[str]) -> str:
+        nonlocal rewritten
+
+        token = match.group(1)
+        leading = token[: len(token) - len(token.lstrip())]
+        trailing = token[len(token.rstrip()) :]
+        wrapped = token.strip()
+        quote = wrapped[0] if len(wrapped) >= 2 and wrapped[0] == wrapped[-1] and wrapped[0] in ("'", '"') else ""
+        raw = wrapped[1:-1] if quote else wrapped
+
+        if not raw or raw.startswith(("data:", "http://", "https://", "//")):
+            return match.group(0)
+
+        asset_path = urlparse(raw).path
+        candidate = Path(os.path.normpath(os.path.join(css_dir, asset_path)))
+        dest = ensure_within_root(
+            candidate,
+            target_root,
+            f"CSS 资源路径 {raw} from {local_css_path}",
+        )
+        if not dest.exists():
+            return match.group(0)
+
+        if dest not in hash_cache:
+            hash_cache[dest] = file_sha256(dest)[:12]
+
+        parts = urlsplit(raw)
+        query = [(key, value) for key, value in parse_qsl(parts.query, keep_blank_values=True) if key != "local_v"]
+        query.append(("local_v", hash_cache[dest]))
+        versioned = urlunsplit((parts.scheme, parts.netloc, parts.path, urlencode(query), parts.fragment))
+        value = f"{quote}{versioned}{quote}" if quote else versioned
+        rewritten += 1
+        return f"url({leading}{value}{trailing})"
+
+    updated = CSS_URL_PATTERN.sub(replace_url, text)
+    if updated != text:
+        local_css_path.write_text(updated, encoding="utf-8")
+        print(f"   [CSS cache] Added content hashes to {rewritten} local asset URL(s)")
+    return rewritten
+
+
 def manifest_path(target_root: Path) -> Path:
     return target_root / MANIFEST_NAME
+
+
+def relative_to_target(path: Path, target_root: Path) -> str:
+    resolved = ensure_within_root(path, target_root, f"manifest 文件路径 {path}")
+    return resolved.relative_to(target_root.resolve(strict=False)).as_posix()
+
+
+def collect_css_asset_records(
+    local_css_path: Path,
+    remote_css_url: str,
+    target_root: Path,
+    resource: dict[str, str],
+) -> list[dict[str, object]]:
+    records: dict[str, dict[str, object]] = {}
+    for asset_urls, asset_path in iter_css_assets(
+        local_css_path,
+        remote_css_url,
+        target_root,
+        resource,
+    ):
+        if not asset_path.exists() and is_optional_missing_css_asset(asset_path):
+            continue
+
+        relative = relative_to_target(asset_path, target_root)
+        record: dict[str, object] = {
+            "relative": relative,
+            "source_urls": asset_urls,
+        }
+        if asset_path.exists():
+            record["sha256"] = file_sha256(asset_path)
+        records[relative] = record
+
+    return [records[key] for key in sorted(records)]
 
 
 def write_manifest(
@@ -433,23 +561,35 @@ def write_manifest(
     theme_version: str,
     resources: list[dict[str, str]],
 ) -> None:
+    manifest_resources: dict[str, dict[str, object]] = {}
+    for resource in resources:
+        dest = build_local_path(target_root, resource["relative"])
+        entry: dict[str, object] = {
+            "name": resource["name"],
+            "file": resource["file"],
+            "version": resource["version"],
+            "relative": resource["relative"],
+            "remote_url": resource["remote_url"],
+            "fallback_urls": resource["fallback_urls"],
+            "sha256": file_sha256(dest),
+        }
+        if dest.suffix.lower() == ".css":
+            entry["css_assets"] = collect_css_asset_records(
+                dest,
+                resource["remote_url"],
+                target_root,
+                resource,
+            )
+        manifest_resources[resource["id"]] = entry
+
     payload = {
         "generator": "localize_cdn_resources.py",
+        "schema_version": MANIFEST_SCHEMA_VERSION,
         "theme_package": THEME_PACKAGE_NAME,
         "theme_dir": str(theme_dir),
         "theme_version": theme_version,
         "resource_count": len(resources),
-        "resources": {
-            resource["id"]: {
-                "name": resource["name"],
-                "file": resource["file"],
-                "version": resource["version"],
-                "relative": resource["relative"],
-                "remote_url": resource["remote_url"],
-                "fallback_urls": resource["fallback_urls"],
-            }
-            for resource in resources
-        },
+        "resources": manifest_resources,
     }
 
     target_root.mkdir(parents=True, exist_ok=True)
@@ -488,8 +628,16 @@ def download_resources(
         if used_url is not None:
             success += 1
             if dest.suffix.lower() == ".css":
-                css_failed = download_css_assets(dest, used_url, target_root, timeout)
+                css_failed = download_css_assets(
+                    dest,
+                    used_url,
+                    target_root,
+                    timeout,
+                    resource,
+                )
                 failed += css_failed
+                if css_failed == 0:
+                    rewrite_css_asset_urls_with_hashes(dest, target_root)
         else:
             failed += 1
 
@@ -504,11 +652,11 @@ def validate_resources(
     missing_files: list[str] = []
     missing_css_assets: list[str] = []
     stale_manifest: list[str] = []
+    hash_mismatches: list[str] = []
     path_risks: list[str] = []
 
     manifest = load_manifest(target_root)
     manifest_resources = (manifest or {}).get("resources", {})
-
     should_check_manifest_entries = manifest is not None
 
     if manifest is None:
@@ -516,14 +664,27 @@ def validate_resources(
             f"缺少 {MANIFEST_NAME}，无法确认本地镜像是否已经和当前主题同步。"
         )
     else:
+        manifest_schema = manifest.get("schema_version")
+        if manifest_schema != MANIFEST_SCHEMA_VERSION:
+            stale_manifest.append(
+                f"manifest schema={manifest_schema or '∅'}，当前应为 {MANIFEST_SCHEMA_VERSION}。"
+            )
+
         manifest_theme_version = str(manifest.get("theme_version", ""))
         if manifest_theme_version != theme_version:
             stale_manifest.append(
                 f"manifest 主题版本为 {manifest_theme_version or 'unknown'}，当前主题版本为 {theme_version}。"
             )
 
+        manifest_count = manifest.get("resource_count")
+        if manifest_count != len(resources):
+            stale_manifest.append(
+                f"manifest resource_count={manifest_count or '∅'}，当前应为 {len(resources)}。"
+            )
+
     for resource in resources:
         resource_id = resource["id"]
+        manifest_entry = manifest_resources.get(resource_id) if should_check_manifest_entries else None
         try:
             dest = build_local_path(target_root, resource["relative"])
         except UnsafePathError as exc:
@@ -531,7 +692,6 @@ def validate_resources(
             continue
 
         if should_check_manifest_entries:
-            manifest_entry = manifest_resources.get(resource_id)
             if manifest_entry is None:
                 stale_manifest.append(f"{resource_id}: manifest 未记录该资源。")
             else:
@@ -550,16 +710,30 @@ def validate_resources(
                         stale_manifest.append(
                             f"{resource_id}: manifest fallback_urls 已过期。"
                         )
-                        continue
 
         if not dest.exists():
             missing_files.append(f"{resource_id}: 缺少 {dest}")
             continue
 
+        if manifest_entry is not None:
+            recorded_hash = str(manifest_entry.get("sha256", ""))
+            if not recorded_hash:
+                stale_manifest.append(f"{resource_id}: manifest 缺少主文件 sha256。")
+            else:
+                actual_hash = file_sha256(dest)
+                if actual_hash != recorded_hash:
+                    hash_mismatches.append(
+                        f"{resource_id}: {dest} 哈希不匹配（manifest={recorded_hash}, actual={actual_hash}）。"
+                    )
+
         if dest.suffix.lower() == ".css":
+            actual_css_assets: dict[str, str] = {}
             try:
                 for asset_urls, asset_dest in iter_css_assets(
-                    dest, resource["remote_url"], target_root
+                    dest,
+                    resource["remote_url"],
+                    target_root,
+                    resource,
                 ):
                     if not asset_dest.exists():
                         if is_optional_missing_css_asset(asset_dest):
@@ -567,8 +741,49 @@ def validate_resources(
                         missing_css_assets.append(
                             f"{resource_id}: CSS 依赖缺少 {asset_dest} (from {asset_urls[0]})"
                         )
+                        continue
+
+                    relative = relative_to_target(asset_dest, target_root)
+                    actual_css_assets[relative] = file_sha256(asset_dest)
             except UnsafePathError as exc:
                 path_risks.append(f"{resource_id}: {exc}")
+                continue
+
+            if manifest_entry is not None:
+                manifest_css_assets = manifest_entry.get("css_assets")
+                if not isinstance(manifest_css_assets, list):
+                    stale_manifest.append(f"{resource_id}: manifest 缺少 css_assets 清单。")
+                    continue
+
+                recorded_css_assets: dict[str, str] = {}
+                for item in manifest_css_assets:
+                    if not isinstance(item, dict) or not item.get("relative"):
+                        stale_manifest.append(f"{resource_id}: manifest 含无效的 CSS 子资源记录。")
+                        continue
+                    recorded_css_assets[str(item["relative"])] = str(item.get("sha256", ""))
+
+                for relative, actual_hash in actual_css_assets.items():
+                    if relative not in recorded_css_assets:
+                        stale_manifest.append(
+                            f"{resource_id}: manifest 未记录 CSS 子资源 {relative}。"
+                        )
+                        continue
+
+                    recorded_hash = recorded_css_assets[relative]
+                    if not recorded_hash:
+                        stale_manifest.append(
+                            f"{resource_id}: CSS 子资源 {relative} 缺少 sha256。"
+                        )
+                    elif recorded_hash != actual_hash:
+                        hash_mismatches.append(
+                            f"{resource_id}: CSS 子资源 {relative} 哈希不匹配"
+                            f"（manifest={recorded_hash}, actual={actual_hash}）。"
+                        )
+
+                for relative in sorted(recorded_css_assets.keys() - actual_css_assets.keys()):
+                    stale_manifest.append(
+                        f"{resource_id}: manifest 仍记录 CSS 已不再引用的子资源 {relative}。"
+                    )
 
     if path_risks:
         print("[unsafe paths]")
@@ -590,7 +805,18 @@ def validate_resources(
         for item in missing_css_assets:
             print(f"  - {item}")
 
-    if not (path_risks or stale_manifest or missing_files or missing_css_assets):
+    if hash_mismatches:
+        print("[hash mismatches]")
+        for item in hash_mismatches:
+            print(f"  - {item}")
+
+    if not (
+        path_risks
+        or stale_manifest
+        or missing_files
+        or missing_css_assets
+        or hash_mismatches
+    ):
         print("Validation passed. 本地镜像与当前主题资源清单一致。")
         return 0
 

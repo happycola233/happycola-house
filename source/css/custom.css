@@ -108,6 +108,14 @@
   background: none !important;
 }
 
+/*
+ * 正文超链接：主题使用 2px 的 border-bottom 模拟下划线，
+ * 这里将它压到 1.2px；排除项与主题保持一致，避免影响图片、标题锚点和按钮。
+ */
+#article-container a:not([data-fancybox='gallery']):not(.headerlink):not(.cf-friends-link):not(.tag-Link):not(.btn-anzhiyu):not(.no-text-decoration) {
+  border-bottom-width: 1.2px !important;
+}
+
 
 
 /* 移动端深色模式：将即刻短文页 Banner 按钮改成黑底白箭头圆形，避免原主题半透明样式导致的“白块”问题 */
@@ -235,4 +243,48 @@ hr::before,
     border-radius: 12px !important;
     overflow: hidden;
   }
+}
+
+/* -------------------------------------------------------
+ * Markdown 列表
+ * 恢复浏览器原生的有序列表编号，并为无序列表明确设置三级标记：
+ * 一级实心圆、二级空心圆、三级及更深层级实心方块。
+ * 仅处理没有 class 的普通 Markdown 列表，避免影响 tabs、目录等组件。
+ * ----------------------------------------------------- */
+#article-container ol:not([class]),
+#article-container ul:not([class]) {
+  padding-left: 2em;
+  list-style-position: outside;
+  counter-reset: none;
+}
+
+#article-container ol:not([class]) {
+  list-style-type: decimal;
+}
+
+#article-container ul:not([class]) {
+  list-style-type: disc;
+}
+
+#article-container ul:not([class]) ul:not([class]) {
+  list-style-type: circle;
+}
+
+#article-container ul:not([class]) ul:not([class]) ul:not([class]) {
+  list-style-type: square;
+}
+
+#article-container :where(ol, ul):not([class]) > li:not(.tab) {
+  padding: 0;
+}
+
+/* 覆盖主题生成的蓝色圆形编号/圆点，重新显示原生 marker。 */
+#article-container :where(ol, ul):not([class]) > li:not(.tab)::before {
+  display: none !important;
+  content: none !important;
+}
+
+#article-container :where(ol, ul):not([class]) > li:not(.tab)::marker {
+  content: normal !important;
+  color: currentColor;
 }
